@@ -1,0 +1,1 @@
+<blockquote {{ $attributes }}>{{ $slot }}</blockquote>

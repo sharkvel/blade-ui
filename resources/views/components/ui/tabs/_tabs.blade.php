@@ -1,0 +1,1 @@
+<div {{ $attributes }} x-data="{ tab: '{{ $defaultValue }}' }">{{$slot}}</div>
