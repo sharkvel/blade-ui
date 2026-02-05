@@ -1,0 +1,36 @@
+{
+  "name": "sharkvel/blade-ui",
+  "description": "This is a blade only component library",
+  "version": "0.0.0",
+  "type": "library",
+  "license": "MIT",
+  "require": {
+    "php": "^8.2",
+    "illuminate/console": "^12.50",
+    "illuminate/support": "^12.50",
+    "guzzlehttp/guzzle": "^7.10"
+  },
+  "autoload": {
+    "psr-4": {
+      "Sharkvel\\BladeUi\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Jaypal Sapara",
+      "email": "48550828+jaypalsapara@users.noreply.github.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Sharkvel\\BladeUi\\BladeUiServiceProvider"
+      ]
+    }
+  },
+  "require-dev": {
+    "laravel/pint": "^1.27"
+  }
+}
