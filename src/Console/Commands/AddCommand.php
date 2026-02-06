@@ -4,11 +4,14 @@ namespace Sharkvel\BladeUi\Console\Commands;
 
 use GuzzleHttp\Client;
 use Illuminate\Console\Command;
+use Illuminate\Support\Str;
+use Sharkvel\BladeUi\Trait\CursorTrait;
 use Symfony\Component\Console\Cursor;
 use Symfony\Component\Console\Helper\ProgressIndicator;
 
 class AddCommand extends Command
 {
+    use CursorTrait;
     /**
      * The name and signature of the console command.
      *
@@ -25,8 +28,6 @@ class AddCommand extends Command
 
     protected $registry;
 
-    protected $cursor;
-
     protected $sourceRoot = 'https://raw.githubusercontent.com/sharkvel/blade-ui-showcase/main';
 
     public function __construct()
@@ -41,7 +42,7 @@ class AddCommand extends Command
      */
     public function handle()
     {
-        $this->cursor = new Cursor($this->output);
+        $this->initCursor();
         $this->newLine();
 
         $component = $this->argument('component');
@@ -50,7 +51,6 @@ class AddCommand extends Command
 
         // Registry checking
         $this->line('Checking registry...');
-        $this->newLine();
 
         $config = array_find($registry['items'], fn($val) => $val['name'] === $component) ?? null;
 
@@ -59,15 +59,19 @@ class AddCommand extends Command
             return 1;
         }
 
-        $this->line("<fg=green>✔</> Registry Checked");
+        $this->line("<fg=green>✔</> Registry checked");
         $this->newLine();
 
         // Dependencies checking
         $this->line('Checking dependencies...');
-        $this->installDependencies($config);
+        if (blank($config['registryDependencies'])) {
+            $this->line("<fg=green>✔</> Dependencies checked");
+            $this->newLine();
+        } else {
+            $this->installDependencies($config);
+        }
 
         // Component installing
-        $this->newLine(2);
         $this->line('Installing component...');
         $this->installComponent($component, $config);
 
@@ -84,6 +88,7 @@ class AddCommand extends Command
 
         $info = null;
         $isOverride = null;
+        $files = [];
 
         foreach ($config['files'] as $file) {
             // Set destination
@@ -91,6 +96,8 @@ class AddCommand extends Command
                 'component:blade' => resource_path('views/components/ui/' . basename($file['path'])),
                 'component:class' => app_path('View/Components/Ui/' . basename($file['path']))
             };
+
+            $files[] = Str::after($file['path'], base_path());
 
             // Create directory if not exists
             if (!file_exists(dirname($destination))) {
@@ -101,11 +108,7 @@ class AddCommand extends Command
             if (file_exists($destination) && $isOverride === null) {
 
                 $confirm = $this->confirm("Component [{$component}] already exists. Overwrite it?");
-                $this->cursor->moveUp(3);
-                $this->cursor->clearLine();
-                $this->cursor->moveDown();
-                $this->cursor->clearLine();
-                $this->cursor->moveUp();
+                $this->clearLine(4);
 
                 if (!$confirm) {
                     $info = "<fg=cyan>-</> [{$component}] component was skipped.";
@@ -130,8 +133,11 @@ class AddCommand extends Command
             file_put_contents($destination, $content);
 
         }
-
         $this->line($info ?? "<fg=green>✔</> [{$component}] component has been added!");
+        foreach ($files as $filepath) {
+            $this->line("<fg=gray>  - " . $filepath . "</>");
+        }
+        $this->newLine(2);
     }
 
     /**

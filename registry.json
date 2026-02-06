@@ -18,7 +18,7 @@
       ],
       "dependencies": [],
       "composerDependencies": [],
-      "registryDependencies": ["input"]
+      "registryDependencies": []
     },
     {
       "name": "input",
