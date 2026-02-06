@@ -48,49 +48,41 @@ class AddCommand extends Command
 
         $registry = $this->registry;
 
-        // Add all components
-        if ($component === 'all' && !empty($registry)) {
-            $components = array_keys($registry);
-            foreach ($components as $component) {
-                $config = $registry[$component];
+        // Registry checking
+        $this->line('Checking registry...');
+        $this->newLine();
 
-                $this->installDependencies($config);
+        $config = array_find($registry['items'], fn($val) => $val['name'] === $component) ?? null;
 
-                $this->installComponent($component, $config);
-            }
-        } else {
-            $this->line('Checking registry...');
-            $this->newLine();
-            // Add specific component
-            $config = array_find($registry['items'], fn($val) => $val['name'] === $component) ?? null;
-
-            if (!$config) {
-                $this->line("<fg=red>✖</> Component [{$component}] not found");
-
-                return 1;
-            }
-
-            // ✔ ✖
-            $this->line("<fg=green>✔</> Registry Checked");
-            $this->newLine();
-
-            $this->line('Checking dependencies...');
-            $this->installDependencies($config);
-
-            $this->newLine(2);
-            $this->line('Installing component...');
-            $this->installComponent($component, $config);
+        if (!$config) {
+            $this->line("<fg=red>✖</> Component [{$component}] not found");
+            return 1;
         }
+
+        $this->line("<fg=green>✔</> Registry Checked");
+        $this->newLine();
+
+        // Dependencies checking
+        $this->line('Checking dependencies...');
+        $this->installDependencies($config);
+
+        // Component installing
+        $this->newLine(2);
+        $this->line('Installing component...');
+        $this->installComponent($component, $config);
+
     }
 
     /**
      * Install component
+     * 
+     * @param string $component 
+     * @param array  $config
      */
     protected function installComponent(string $component, array $config)
     {
 
-        $info = "<fg=green>✔</> [{$component}] component has been added!";
-
+        $info = null;
         $isOverride = null;
 
         foreach ($config['files'] as $file) {
@@ -106,7 +98,7 @@ class AddCommand extends Command
             }
 
             // Ask for override if exists
-            if (file_exists($destination) && is_null($isOverride)) {
+            if (file_exists($destination) && $isOverride === null) {
 
                 $confirm = $this->confirm("Component [{$component}] already exists. Overwrite it?");
                 $this->cursor->moveUp(3);
@@ -116,17 +108,16 @@ class AddCommand extends Command
                 $this->cursor->moveUp();
 
                 if (!$confirm) {
-
                     $info = "<fg=cyan>-</> [{$component}] component was skipped.";
-
                     $isOverride = false;
+
                 } else {
                     $info = "<fg=green>✔</> [{$component}] component has been overridden!";
-
                     $isOverride = true;
                 }
             }
 
+            // Skip if override false
             if ($isOverride === false) {
                 continue;
             }
@@ -140,11 +131,13 @@ class AddCommand extends Command
 
         }
 
-        $this->line($info);
+        $this->line($info ?? "<fg=green>✔</> [{$component}] component has been added!");
     }
 
     /**
      * Install component dependencies
+     * 
+     * @param array $config
      */
     protected function installDependencies(array $config)
     {
@@ -161,7 +154,6 @@ class AddCommand extends Command
 
             if (!$dependencyConfig) {
                 $this->line("<fg=red>✖</>Dependency component [{$dependency}] not found");
-
                 continue;
             }
 
