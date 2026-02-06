@@ -1,10 +1,10 @@
 <footer class="flex flex-col border-t">
     <div class="section-wrapper mx-auto flex min-h-32 grow flex-col justify-center">
         <x-ui.p class="text-center text-sm text-muted-foreground">
-            Build with love by
-            <x-ui.a href="https://jaypalsapara.in" target="_blank" class="text-inherit">Jaypal Sapara</x-ui.a>
+            Build by
+            <x-ui.a href="https://jaypalsapara.in" target="_blank" class="text-inherit">Jaypal Sapara</x-ui.a> at <x-ui.a href="https://sharkvel.com" target="_blank" class="text-inherit">Sharkvel</x-ui.a>
             for Developers.
         </x-ui.p>
-        <x-ui.small class="mt-2 text-center text-muted-foreground">v0.5.19-Beta</x-ui.small>
+        <x-ui.small class="mt-2 text-center text-muted-foreground">v0.5.25-Beta</x-ui.small>
     </div>
 </footer>
