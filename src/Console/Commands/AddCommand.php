@@ -43,7 +43,6 @@ class AddCommand extends Command
     public function handle()
     {
         $this->initCursor();
-        $this->newLine();
 
         $component = $this->argument('component');
 
@@ -55,7 +54,7 @@ class AddCommand extends Command
         $config = array_find($registry['items'], fn($val) => $val['name'] === $component) ?? null;
 
         if (!$config) {
-            $this->line("<fg=red>✖</> Component [{$component}] not found");
+            $this->line("<fg=red>✖</> Component [<fg=cyan>{$component}</>] not found");
             return 1;
         }
 
@@ -107,15 +106,15 @@ class AddCommand extends Command
             // Ask for override if exists
             if (file_exists($destination) && $isOverride === null) {
 
-                $confirm = $this->confirm("Component [{$component}] already exists. Overwrite it?");
+                $confirm = $this->confirm("<fg=default>Component [<fg=cyan>{$component}</>] already exists. Overwrite it?</>");
                 $this->clearLine(4);
 
                 if (!$confirm) {
-                    $info = "<fg=cyan>-</> [{$component}] component was skipped.";
+                    $info = "<fg=cyan>-</> Component [<fg=cyan>{$component}</>] was skipped.";
                     $isOverride = false;
 
                 } else {
-                    $info = "<fg=green>✔</> [{$component}] component has been overridden!";
+                    $info = "<fg=green>✔</> Component [<fg=cyan>{$component}</>] has been overridden!";
                     $isOverride = true;
                 }
             }
@@ -133,7 +132,7 @@ class AddCommand extends Command
             file_put_contents($destination, $content);
 
         }
-        $this->line($info ?? "<fg=green>✔</> [{$component}] component has been added!");
+        $this->line($info ?? "<fg=green>✔</> Component [<fg=cyan>{$component}</>] has been added!");
         foreach ($files as $filepath) {
             $this->line("<fg=gray>  - " . $filepath . "</>");
         }
