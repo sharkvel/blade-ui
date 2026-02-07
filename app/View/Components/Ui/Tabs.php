@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\Ui\Tabs;
+namespace App\View\Components\Ui;
 
 use Closure;
 use Illuminate\Contracts\View\View;
@@ -18,7 +18,8 @@ class Tabs extends Component
      */
     public function __construct(
         public string $defaultValue = ''
-    ) {
+    )
+    {
         //
     }
 
@@ -32,7 +33,7 @@ class Tabs extends Component
                 $this->baseClasses,
             );
 
-            return view('components.ui.tabs._tabs', compact('attributes'));
+            return view('components.ui.tabs', compact('attributes'));
         };
     }
 }

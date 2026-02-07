@@ -1,12 +1,12 @@
 <?php
 
-namespace App\View\Components\Ui\Tabs;
+namespace App\View\Components\Ui;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Trigger extends Component
+class TabsTrigger extends Component
 {
     /**
      * Skeleton classes
@@ -19,7 +19,6 @@ class Trigger extends Component
     protected array $bodyClasses = [
         'default' => 'rounded-md border-transparent border data-[state=active]:bg-background data-[state=active]:shadow-sm data-[state=active]:text-foreground dark:data-[state=active]:bg-input/30 dark:data-[state=active]:border-input',
         'line' => 'after:w-full after:border-b-2 after:absolute after:-bottom-1 data-[state=active]:after:border-foreground after:border-transparent data-[state=active]:text-foreground',
-
     ];
 
     /**
@@ -33,7 +32,6 @@ class Trigger extends Component
         'icon' => 'size-7',
         'icon-lg' => 'size-8',
     ];
-
     /**
      * Create a new component instance.
      */
@@ -41,7 +39,9 @@ class Trigger extends Component
         public string $value,
         public string $variant = 'default',
         public string $size = 'default'
-    ) {}
+    ) {
+        //
+    }
 
     /**
      * Get the view / contents that represent the component.
@@ -55,7 +55,7 @@ class Trigger extends Component
                 $this->sizeClasses[$this->size]
             );
 
-            return view('components.ui.tabs.trigger', compact('attributes'));
+            return view('components.ui.tabs-trigger', compact('attributes'));
         };
     }
 }

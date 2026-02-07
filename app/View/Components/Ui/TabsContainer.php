@@ -1,12 +1,12 @@
 <?php
 
-namespace App\View\Components\Ui\Tabs;
+namespace App\View\Components\Ui;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Container extends Component
+class TabsContainer extends Component
 {
     /**
      * Skeleton classes
@@ -48,7 +48,6 @@ class Container extends Component
      */
     public function render(): View|Closure|string
     {
-
         return function (array $data) {
             $attributes = $data['attributes']->twMerge(
                 $this->skeletonClasses,
@@ -56,7 +55,7 @@ class Container extends Component
                 $this->sizeClasses[$this->size],
             );
 
-            return view('components.ui.tabs.container', compact('attributes'));
+            return view('components.ui.tabs-container', compact('attributes'));
         };
     }
 }

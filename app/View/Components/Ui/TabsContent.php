@@ -1,19 +1,20 @@
 <?php
 
-namespace App\View\Components\Ui\Tabs;
+namespace App\View\Components\Ui;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Content extends Component
+class TabsContent extends Component
 {
     /**
      * Create a new component instance.
      */
     public function __construct(
         public string $value
-    ) {
+    )
+    {
         //
     }
 
@@ -22,6 +23,6 @@ class Content extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.ui.tabs.content');
+        return view('components.ui.tabs-content');
     }
 }

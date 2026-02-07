@@ -12,6 +12,8 @@
         @include("components.examples.area.select-variants")
         {{-- Typography --}}
         @include("components.examples.area.typography-variants")
+        {{-- Tabs --}}
+        @include("components.examples.area.tabs-variants")
         <x-ui.example-area title="Code light">
             <x-ui.codelight view="components.examples.area.plain-code" />
         </x-ui.example-area>
