@@ -26,7 +26,7 @@
 <div class="flex flex-col">
     {{-- Base --}}
     <x-ui.h1 class="text-4xl font-medium">Collapsible</x-ui.h1>
-    <x-ui.p class="max-w-[55ch] text-muted-foreground mt-4">An interactive component which expands/collapses a panel.</x-ui.p>
+    <x-ui.p class="mt-4 max-w-[55ch] text-muted-foreground">An interactive component which expands/collapses a panel.</x-ui.p>
     <x-playground class="mt-12" example="examples.components.collapsible.hero" />
 
     {{-- Installation --}}
@@ -55,7 +55,7 @@
     <x-ui.h6 class="mt-16 max-w-fit font-medium">
         <a href="#reference" class="hash-link">Reference</a>
     </x-ui.h6>
-    <x-ui.p class="max-w-[60ch] mt-4">
+    <x-ui.p class="mt-4 max-w-[60ch]">
         If you want to default state set to expanded then add
         <x-ui.code>open</x-ui.code>
         or

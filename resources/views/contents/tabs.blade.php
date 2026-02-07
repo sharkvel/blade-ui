@@ -26,7 +26,9 @@
 <div class="flex flex-col">
     {{-- Base --}}
     <x-ui.h1 class="text-4xl font-medium">Tabs</x-ui.h1>
-    <x-ui.p class="max-w-[55ch] text-muted-foreground mt-4">A set of layered sections of content—known as tab panels—that are displayed one at a time.</x-ui.p>
+    <x-ui.p class="mt-4 max-w-[55ch] text-muted-foreground">
+        A set of layered sections of content—known as tab panels—that are displayed one at a time.
+    </x-ui.p>
     <x-playground class="mt-12" example="examples.components.tabs.hero" />
 
     {{-- Installation --}}
@@ -55,15 +57,16 @@
     <x-ui.h6 class="mt-16 max-w-fit font-medium">
         <a href="#reference" class="hash-link">Reference</a>
     </x-ui.h6>
-    <x-ui.p class="max-w-[60ch] mt-4">
+    <x-ui.p class="mt-4 max-w-[60ch]">
         The
-        <x-ui.code>x-ui.tabs.container</x-ui.code> and
+        <x-ui.code>x-ui.tabs.container</x-ui.code>
+        and
         <x-ui.code>x-ui.tabs.trigger</x-ui.code>
         components have variety of styles and functionality.
     </x-ui.p>
 
     {{-- Table --}}
-    <div class="mt-6 rounded-lg border w-full">
+    <div class="mt-6 w-full rounded-lg border">
         <x-ui.table>
             <x-ui.table.thead>
                 <x-ui.table.tr>

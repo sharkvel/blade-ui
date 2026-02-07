@@ -1,4 +1,7 @@
-<aside class="hide-scrollbar sticky top-16 hidden h-[calc(100svh-4rem)] w-3xs flex-col gap-10 overflow-auto py-12 lg:flex" id="sidebar">
+<aside
+    class="hide-scrollbar sticky top-16 hidden h-[calc(100svh-4rem)] w-3xs flex-col gap-10 overflow-auto overscroll-contain py-12 lg:flex"
+    id="sidebar"
+>
     @foreach ($sidebarItems as $section => $items)
         @continue(in_array($section, ["Menus"]))
         <div class="flex flex-col gap-2">

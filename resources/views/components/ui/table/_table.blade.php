@@ -1,3 +1,3 @@
-<div class="hide-scrollbar relative grid overflow-x-auto w-full">
+<div class="hide-scrollbar relative grid w-full overflow-x-auto">
     <table {{ $attributes }}>{{ $slot }}</table>
 </div>

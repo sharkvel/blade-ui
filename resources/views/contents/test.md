@@ -1,10 +1,9 @@
 # Heading
+
 ## test
 
 demo
 
-
-
 ```html
-<hr/>
+<hr />
 ```

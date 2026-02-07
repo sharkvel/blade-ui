@@ -21,7 +21,7 @@
 <div class="flex flex-col">
     {{-- Base --}}
     <x-ui.h1 class="text-4xl font-medium">Table</x-ui.h1>
-    <x-ui.p class="max-w-[55ch] text-muted-foreground mt-4">A responsive table component.</x-ui.p>
+    <x-ui.p class="mt-4 max-w-[55ch] text-muted-foreground">A responsive table component.</x-ui.p>
     <x-playground class="mt-12" example="examples.components.table.hero" />
 
     {{-- Installation --}}

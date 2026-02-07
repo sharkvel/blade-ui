@@ -26,7 +26,7 @@
 <div class="flex flex-col">
     {{-- Base --}}
     <x-ui.h1 class="text-4xl font-medium">Separator</x-ui.h1>
-    <x-ui.p class="max-w-[55ch] text-muted-foreground mt-4">Visually or semantically separates content.</x-ui.p>
+    <x-ui.p class="mt-4 max-w-[55ch] text-muted-foreground">Visually or semantically separates content.</x-ui.p>
     <x-playground class="mt-12" example="examples.components.separator.hero" />
 
     {{-- Installation --}}
@@ -55,7 +55,7 @@
     <x-ui.h6 class="mt-16 max-w-fit font-medium">
         <a href="#reference" class="hash-link">Reference</a>
     </x-ui.h6>
-    <x-ui.p class="max-w-[60ch] mt-4">
+    <x-ui.p class="mt-4 max-w-[60ch]">
         The
         <x-ui.code>x-ui.separator</x-ui.code>
         component is a wrapper around the

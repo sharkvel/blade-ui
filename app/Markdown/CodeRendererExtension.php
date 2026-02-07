@@ -20,7 +20,7 @@ class CodeRendererExtension implements ExtensionInterface, NodeRendererInterface
     {
         $environment->addRenderer(FencedCode::class, $this, 100);
         // $environment->addRenderer(IndentedCode::class, $this, 100);
-        $environment->addEventListener(DocumentRenderedEvent::class, [$this, 'onDocumentRenderedEvent']);
+        $environment->addEventListener(DocumentRenderedEvent::class, $this->onDocumentRenderedEvent(...));
     }
 
     public function render(Node $node, ChildNodeRendererInterface $childRenderer)

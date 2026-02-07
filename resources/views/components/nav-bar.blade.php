@@ -75,7 +75,7 @@
                     @if ($menu["available_from"])
                         <a href="{{ $menu["url"] }}">
                             <li
-                                class="menu-item flex h-10 lg:h-8 items-center gap-2 pl-4 text-base lg:text-[0.825rem] font-normal data-[active='true']:font-medium md:pl-12"
+                                class="menu-item flex h-10 items-center gap-2 pl-4 text-base font-normal data-[active='true']:font-medium md:pl-12 lg:h-8 lg:text-[0.825rem]"
                                 data-active="{{ request()->url() === $menu["url"] && $allowSidebarFeatures ? "true" : "false" }}"
                                 data-available="{{ $menu["available_from"] ? "true" : "false" }}"
                             >
@@ -83,7 +83,7 @@
                             </li>
                         </a>
                     @else
-                        <li class="flex h-10 lg:h-8 items-center gap-2 pl-4 text-base lg:text-[0.825rem] font-normal text-muted-foreground md:pl-12">
+                        <li class="flex h-10 items-center gap-2 pl-4 text-base font-normal text-muted-foreground md:pl-12 lg:h-8 lg:text-[0.825rem]">
                             {{ $menu["name"] }}
                             <span class="flex items-center rounded-xs bg-muted px-0.5 py-0.5 text-xs leading-none text-muted-foreground">soon</span>
                         </li>

@@ -21,7 +21,7 @@
 <div class="flex flex-col">
     {{-- Base --}}
     <x-ui.h1 class="text-4xl font-medium">Typography</x-ui.h1>
-    <x-ui.p class="max-w-[55ch] text-muted-foreground mt-4">Styles for headings, paragraphs, lists...etc</x-ui.p>
+    <x-ui.p class="mt-4 max-w-[55ch] text-muted-foreground">Styles for headings, paragraphs, lists...etc</x-ui.p>
     <x-playground class="mt-12" example="examples.components.typography.hero" />
 
     {{-- Installation --}}
