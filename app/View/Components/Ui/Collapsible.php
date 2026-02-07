@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\Ui\Collapsible;
+namespace App\View\Components\Ui;
 
 use Closure;
 use Illuminate\Contracts\View\View;
@@ -32,7 +32,7 @@ class Collapsible extends Component
                 $this->baseClasses,
             );
 
-            return view('components.ui.collapsible._collapsible', compact('attributes'));
+            return view('components.ui.collapsible', compact('attributes'));
         };
     }
 }

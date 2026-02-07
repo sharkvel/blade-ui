@@ -14,6 +14,8 @@
         @include("components.examples.area.typography-variants")
         {{-- Tabs --}}
         @include("components.examples.area.tabs-variants")
+        {{-- Collapsible --}}
+        @include("components.examples.area.collapsible-variants")
         <x-ui.example-area title="Code light">
             <x-ui.codelight view="components.examples.area.plain-code" />
         </x-ui.example-area>

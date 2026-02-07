@@ -1,12 +1,12 @@
 <?php
 
-namespace App\View\Components\Ui\Collapsible;
+namespace App\View\Components\Ui;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Indicator extends Component
+class CollapsibleIndicator extends Component
 {
     /**
      * Base Classes
@@ -31,7 +31,7 @@ class Indicator extends Component
                 $this->baseClasses,
             );
 
-            return view('components.ui.collapsible.indicator', compact('attributes'));
+            return view('components.ui.collapsible-indicator', compact('attributes'));
         };
     }
 }
