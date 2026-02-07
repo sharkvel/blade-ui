@@ -1,17 +1,17 @@
 <?php
 
-namespace App\View\Components\Ui\Sidebar\Menu\Sub;
+namespace App\View\Components\Ui;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Sub extends Component
+class SidebarFooter extends Component
 {
     /**
      * Base Classes
      */
-    protected string $baseClasses = 'flex flex-col gap-1 mx-3.5 px-2.5 py-0.5 border-l';
+    protected string $baseClasses = 'p-2';
 
     /**
      * Create a new component instance.
@@ -31,7 +31,7 @@ class Sub extends Component
                 $this->baseClasses,
             );
 
-            return view('components.ui.sidebar.menu.sub._sub', compact('attributes'));
+            return view('components.ui.sidebar-footer', compact('attributes'));
         };
     }
 }

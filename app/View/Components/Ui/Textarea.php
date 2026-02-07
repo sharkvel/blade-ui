@@ -11,7 +11,7 @@ class Textarea extends Component
     /**
      * Skeleton classes
      */
-    protected string $skeletonClasses = 'w-full resize-y placeholder:text-muted-foreground rounded-md flex bg-transparent field-sizing-content rounded-radius border border-transparent text-base transition-colors outline-none focus-within:border-ring focus-visible:ring-2 focus-visible:ring-ring/40 disabled:pointer-events-none disabled:opacity-50 md:text-sm';
+    protected string $skeletonClasses = 'w-full resize-y placeholder:text-muted-foreground rounded-md flex bg-transparent field-sizing-content rounded-md border border-transparent text-base transition-colors outline-none focus-within:border-ring focus-visible:ring-2 focus-visible:ring-ring/40 disabled:pointer-events-none disabled:opacity-50 md:text-sm';
 
     /**
      * Body classes

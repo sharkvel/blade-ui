@@ -1,17 +1,17 @@
 <?php
 
-namespace App\View\Components\Ui\Sidebar\Menu;
+namespace App\View\Components\Ui;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Item extends Component
+class SidebarContent extends Component
 {
     /**
      * Base Classes
      */
-    protected string $baseClasses = 'relative';
+    protected string $baseClasses = 'grow overflow-auto flex flex-col gap-2';
 
     /**
      * Create a new component instance.
@@ -31,7 +31,7 @@ class Item extends Component
                 $this->baseClasses,
             );
 
-            return view('components.ui.sidebar.menu.item', compact('attributes'));
+            return view('components.ui.sidebar-content', compact('attributes'));
         };
     }
 }

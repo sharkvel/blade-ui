@@ -21,5 +21,8 @@
         <x-ui.example-area title="Code light">
             <x-ui.codelight view="components.examples.area.plain-code" />
         </x-ui.example-area>
+        <x-ui.example-area title="Sidebar">
+            <iframe src="" frameborder="0"></iframe>
+        </x-ui.example-area>
     </div>
 </x-app-layout>

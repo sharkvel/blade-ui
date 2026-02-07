@@ -1,17 +1,17 @@
 <?php
 
-namespace App\View\Components\Ui\Sidebar\Group;
+namespace App\View\Components\Ui;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Label extends Component
+class SidebarContainer extends Component
 {
     /**
      * Base Classes
      */
-    protected string $baseClasses = 'flex h-8 items-center px-2 text-xs text-muted-foreground';
+    protected string $baseClasses = 'flex min-h-svh';
 
     /**
      * Create a new component instance.
@@ -31,7 +31,7 @@ class Label extends Component
                 $this->baseClasses,
             );
 
-            return view('components.ui.sidebar.group.label', compact('attributes'));
+            return view('components.ui.sidebar-container', compact('attributes'));
         };
     }
 }

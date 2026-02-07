@@ -1,17 +1,17 @@
 <?php
 
-namespace App\View\Components\Ui\Sidebar;
+namespace App\View\Components\Ui;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Footer extends Component
+class SidebarGroupContent extends Component
 {
     /**
      * Base Classes
      */
-    protected string $baseClasses = 'p-2';
+    protected string $baseClasses = 'w-full text-sm';
 
     /**
      * Create a new component instance.
@@ -31,7 +31,7 @@ class Footer extends Component
                 $this->baseClasses,
             );
 
-            return view('components.ui.sidebar.footer', compact('attributes'));
+            return view('components.ui.sidebar-group-content', compact('attributes'));
         };
     }
 }

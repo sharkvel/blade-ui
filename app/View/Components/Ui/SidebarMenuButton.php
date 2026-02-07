@@ -1,17 +1,17 @@
 <?php
 
-namespace App\View\Components\Ui\Sidebar\Menu;
+namespace App\View\Components\Ui;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Button extends Component
+class SidebarMenuButton extends Component
 {
     /**
      * Base Classes
      */
-    protected string $baseClasses = "flex h-8 w-full items-center gap-2 rounded-radius p-2 hover:bg-muted data-[active='true']:font-medium data-[active='true']:bg-muted [&_svg]:size-4";
+    protected string $baseClasses = "flex h-8 w-full items-center gap-2 rounded-md p-2 hover:bg-muted data-[active='true']:font-medium data-[active='true']:bg-muted [&_svg]:size-4";
 
     /**
      * Create a new component instance.
@@ -31,7 +31,7 @@ class Button extends Component
                 $this->baseClasses,
             );
 
-            return view('components.ui.sidebar.menu.button', compact('attributes'));
+            return view('components.ui.sidebar-menu-button', compact('attributes'));
         };
     }
 }

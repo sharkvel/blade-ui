@@ -1,12 +1,12 @@
 <?php
 
-namespace App\View\Components\Ui\Sidebar\Group;
+namespace App\View\Components\Ui;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Group extends Component
+class SidebarGroup extends Component
 {
     /**
      * Base Classes
@@ -31,7 +31,7 @@ class Group extends Component
                 $this->baseClasses,
             );
 
-            return view('components.ui.sidebar.group._group', compact('attributes'));
+            return view('components.ui.sidebar-group', compact('attributes'));
         };
     }
 }

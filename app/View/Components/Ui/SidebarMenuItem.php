@@ -1,17 +1,17 @@
 <?php
 
-namespace App\View\Components\Ui\Sidebar;
+namespace App\View\Components\Ui;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Header extends Component
+class SidebarMenuItem extends Component
 {
     /**
      * Base Classes
      */
-    protected string $baseClasses = 'p-2';
+    protected string $baseClasses = 'relative';
 
     /**
      * Create a new component instance.
@@ -31,7 +31,7 @@ class Header extends Component
                 $this->baseClasses,
             );
 
-            return view('components.ui.sidebar.header', compact('attributes'));
+            return view('components.ui.sidebar-menu-item', compact('attributes'));
         };
     }
 }

@@ -1,17 +1,17 @@
 <?php
 
-namespace App\View\Components\Ui\Sidebar;
+namespace App\View\Components\Ui;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Trigger extends Component
+class SidebarMenuSubItem extends Component
 {
     /**
      * Base Classes
      */
-    protected string $baseClasses = 'contents';
+    protected string $baseClasses = 'relative';
 
     /**
      * Create a new component instance.
@@ -31,7 +31,7 @@ class Trigger extends Component
                 $this->baseClasses,
             );
 
-            return view('components.ui.sidebar.trigger', compact('attributes'));
+            return view('components.ui.sidebar-menu-sub-item', compact('attributes'));
         };
     }
 }
