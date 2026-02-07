@@ -22,7 +22,7 @@
             <x-ui.codelight view="components.examples.area.plain-code" />
         </x-ui.example-area>
         <x-ui.example-area title="Sidebar">
-            <iframe src="{{ route("live.sidebar") }}" class="w-full h-96" frameborder="0"></iframe>
+            <iframe src="{{ route("live.sidebar") }}" class="w-full h-96 border rounded-md overflow-hidden"></iframe>
         </x-ui.example-area>
     </div>
 </x-app-layout>
