@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
  */
 Route::get('/', HomeController::class)->name('home');
 Route::get('/playground', fn () => view('pages.playground'));
-Route::get('/live-example/sidebar', fn () => view('components.examples.area.sidebar-variants'));
+Route::get('/live-example/sidebar', fn () => view('examples.components.sidebar.hero'))->name('live.sidebar');
 
 Route::get('/docs', IntroductionController::class)->name('docs');
 Route::get('/docs/installation', InstallationController::class)->name('docs.installation');
