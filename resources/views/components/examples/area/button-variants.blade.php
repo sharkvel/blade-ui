@@ -4,6 +4,7 @@
         <x-ui.button size="lg">Large</x-ui.button>
         <x-ui.button>Default</x-ui.button>
         <x-ui.button size="sm">Small</x-ui.button>
+        <x-ui.button size="xs">Extra Small</x-ui.button>
     </div>
     {{-- Primary --}}
     <div>
@@ -17,6 +18,33 @@
         </x-ui.button>
         <x-ui.button size="sm">
             <i data-lucide="globe"></i>
+            Default
+        </x-ui.button>
+        <x-ui.button size="xs">
+            <i data-lucide="globe"></i>
+            Default
+        </x-ui.button>
+    </div>
+    {{-- Inline --}}
+    <div>
+        <x-ui.button size="lg">
+            {{-- <span class="size-10 border border-red-500 absolute left-0"></span> --}}
+            <i data-lucide="globe" data-icon="inline-start"></i>
+            Default
+        </x-ui.button>
+        <x-ui.button>
+            {{-- <span class="size-9 border border-red-500 absolute left-0"></span> --}}
+            <i data-lucide="globe" data-icon="inline-start"></i>
+            Default
+        </x-ui.button>
+        <x-ui.button size="sm">
+            {{-- <span class="size-8 border border-red-500 absolute left-0"></span> --}}
+            <i data-lucide="globe" data-icon="inline-start"></i>
+            Default
+        </x-ui.button>
+        <x-ui.button size="xs">
+            {{-- <span class="size-7 border border-red-500 absolute left-0"></span> --}}
+            <i data-lucide="globe" data-icon="inline-start"></i>
             Default
         </x-ui.button>
     </div>
@@ -86,6 +114,7 @@
         <x-ui.button variant="link">Link</x-ui.button>
         <x-ui.button size="sm" variant="link">Link</x-ui.button>
     </div>
+
     {{-- Icons --}}
     <div>
         <x-ui.button size="lg" variant="outline" size="icon-lg">
