@@ -46,32 +46,32 @@
 @endphp
 
 <x-ui.table>
-    <x-ui.table.caption>A list of your recent invoices.</x-ui.table.caption>
+    <x-ui.table-caption>A list of your recent invoices.</x-ui.table-caption>
     {{-- Head --}}
-    <x-ui.table.thead>
-        <x-ui.table.tr>
-            <x-ui.table.th>Invoice</x-ui.table.th>
-            <x-ui.table.th>Status</x-ui.table.th>
-            <x-ui.table.th>Method</x-ui.table.th>
-            <x-ui.table.th class="text-right">Amount</x-ui.table.th>
-        </x-ui.table.tr>
-    </x-ui.table.thead>
+    <x-ui.table-header>
+        <x-ui.table-row>
+            <x-ui.table-head>Invoice</x-ui.table-head>
+            <x-ui.table-head>Status</x-ui.table-head>
+            <x-ui.table-head>Method</x-ui.table-head>
+            <x-ui.table-head class="text-right">Amount</x-ui.table-head>
+        </x-ui.table-row>
+    </x-ui.table-header>
     {{-- Body --}}
-    <x-ui.table.tbody>
+    <x-ui.table-body>
         @foreach ($invoices as $invoice)
-            <x-ui.table.tr>
-                <x-ui.table.td class="font-medium">{{ $invoice["invoice"] }}</x-ui.table.td>
-                <x-ui.table.td>{{ $invoice["paymentStatus"] }}</x-ui.table.td>
-                <x-ui.table.td>{{ $invoice["paymentMethod"] }}</x-ui.table.td>
-                <x-ui.table.td class="text-right tabular-nums">{{ $invoice["totalAmount"] }}</x-ui.table.td>
-            </x-ui.table.tr>
+            <x-ui.table-row>
+                <x-ui.table-cell class="font-medium">{{ $invoice["invoice"] }}</x-ui.table-cell>
+                <x-ui.table-cell>{{ $invoice["paymentStatus"] }}</x-ui.table-cell>
+                <x-ui.table-cell>{{ $invoice["paymentMethod"] }}</x-ui.table-cell>
+                <x-ui.table-cell class="text-right tabular-nums">{{ $invoice["totalAmount"] }}</x-ui.table-cell>
+            </x-ui.table-row>
         @endforeach
-    </x-ui.table.tbody>
+    </x-ui.table-body>
     {{-- Footer --}}
-    <x-ui.table.tfoot>
-        <x-ui.table.tr>
-            <x-ui.table.td colspan="3">Total</x-ui.table.td>
-            <x-ui.table.td class="text-right tabular-nums">$2,500.00</x-ui.table.td>
-        </x-ui.table.tr>
-    </x-ui.table.tfoot>
+    <x-ui.table-footer>
+        <x-ui.table-row>
+            <x-ui.table-cell colspan="3">Total</x-ui.table-cell>
+            <x-ui.table-cell class="text-right tabular-nums">$2,500.00</x-ui.table-cell>
+        </x-ui.table-row>
+    </x-ui.table-footer>
 </x-ui.table>

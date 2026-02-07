@@ -61,9 +61,9 @@
                     <div class="flex items-center gap-2">
                         <x-ui.label for="theme">Theme</x-ui.label>
                         <x-ui.select size="sm" id="theme">
-                            <x-ui.select.option value="neutral">Neutral</x-ui.select.option>
-                            <x-ui.select.option value="blue">Blue</x-ui.select.option>
-                            <x-ui.select.option value="yellow">Yellow</x-ui.select.option>
+                            <x-ui.select-option value="neutral">Neutral</x-ui.select-option>
+                            <x-ui.select-option value="blue">Blue</x-ui.select-option>
+                            <x-ui.select-option value="yellow">Yellow</x-ui.select-option>
                         </x-ui.select>
                         <x-ui.button size="icon-sm" variant="outline"><i data-lucide="copy"></i></x-ui.button>
                     </div>

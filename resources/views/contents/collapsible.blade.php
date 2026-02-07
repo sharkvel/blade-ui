@@ -68,20 +68,20 @@
     {{-- Table --}}
     <div class="mt-6 rounded-lg border">
         <x-ui.table>
-            <x-ui.table.thead>
-                <x-ui.table.tr>
-                    <x-ui.table.th>Prop</x-ui.table.th>
-                    <x-ui.table.th>Type</x-ui.table.th>
-                    <x-ui.table.th>Default</x-ui.table.th>
-                </x-ui.table.tr>
-            </x-ui.table.thead>
-            <x-ui.table.tbody>
-                <x-ui.table.tr>
-                    <x-ui.table.td>open</x-ui.table.td>
-                    <x-ui.table.td>boolean</x-ui.table.td>
-                    <x-ui.table.td>false</x-ui.table.td>
-                </x-ui.table.tr>
-            </x-ui.table.tbody>
+            <x-ui.table-header>
+                <x-ui.table-row>
+                    <x-ui.table-head>Prop</x-ui.table-head>
+                    <x-ui.table-head>Type</x-ui.table-head>
+                    <x-ui.table-head>Default</x-ui.table-head>
+                </x-ui.table-row>
+            </x-ui.table-header>
+            <x-ui.table-body>
+                <x-ui.table-row>
+                    <x-ui.table-cell>open</x-ui.table-cell>
+                    <x-ui.table-cell>boolean</x-ui.table-cell>
+                    <x-ui.table-cell>false</x-ui.table-cell>
+                </x-ui.table-row>
+            </x-ui.table-body>
         </x-ui.table>
     </div>
 </div>

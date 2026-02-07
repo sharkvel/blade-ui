@@ -66,25 +66,25 @@
     {{-- Table --}}
     <div class="mt-6 rounded-lg border">
         <x-ui.table>
-            <x-ui.table.thead>
-                <x-ui.table.tr>
-                    <x-ui.table.th>Prop</x-ui.table.th>
-                    <x-ui.table.th>Type</x-ui.table.th>
-                    <x-ui.table.th>Default</x-ui.table.th>
-                </x-ui.table.tr>
-            </x-ui.table.thead>
-            <x-ui.table.tbody>
-                <x-ui.table.tr>
-                    <x-ui.table.td>variant</x-ui.table.td>
-                    <x-ui.table.td>"default" | "outline" | "ghost" | "secondary"</x-ui.table.td>
-                    <x-ui.table.td>"default"</x-ui.table.td>
-                </x-ui.table.tr>
-                <x-ui.table.tr>
-                    <x-ui.table.td>size</x-ui.table.td>
-                    <x-ui.table.td>"default" | "sm" | "lg"</x-ui.table.td>
-                    <x-ui.table.td>"default"</x-ui.table.td>
-                </x-ui.table.tr>
-            </x-ui.table.tbody>
+            <x-ui.table-header>
+                <x-ui.table-row>
+                    <x-ui.table-head>Prop</x-ui.table-head>
+                    <x-ui.table-head>Type</x-ui.table-head>
+                    <x-ui.table-head>Default</x-ui.table-head>
+                </x-ui.table-row>
+            </x-ui.table-header>
+            <x-ui.table-body>
+                <x-ui.table-row>
+                    <x-ui.table-cell>variant</x-ui.table-cell>
+                    <x-ui.table-cell>"default" | "outline" | "ghost" | "secondary"</x-ui.table-cell>
+                    <x-ui.table-cell>"default"</x-ui.table-cell>
+                </x-ui.table-row>
+                <x-ui.table-row>
+                    <x-ui.table-cell>size</x-ui.table-cell>
+                    <x-ui.table-cell>"default" | "sm" | "lg"</x-ui.table-cell>
+                    <x-ui.table-cell>"default"</x-ui.table-cell>
+                </x-ui.table-row>
+            </x-ui.table-body>
         </x-ui.table>
     </div>
 </div>

@@ -1,12 +1,12 @@
 <x-ui.tabs defaultValue="overview" class="w-96">
     {{-- Tabs --}}
-    <x-ui.tabs.container class="max-w-max">
-        <x-ui.tabs.trigger value="overview">Overview</x-ui.tabs.trigger>
-        <x-ui.tabs.trigger value="analytics">Analytics</x-ui.tabs.trigger>
-        <x-ui.tabs.trigger value="reports">Reports</x-ui.tabs.trigger>
-    </x-ui.tabs.container>
+    <x-ui.tabs-container class="max-w-max">
+        <x-ui.tabs-trigger value="overview">Overview</x-ui.tabs-trigger>
+        <x-ui.tabs-trigger value="analytics">Analytics</x-ui.tabs-trigger>
+        <x-ui.tabs-trigger value="reports">Reports</x-ui.tabs-trigger>
+    </x-ui.tabs-container>
     {{-- Content --}}
-    <x-ui.tabs.content value="overview">
+    <x-ui.tabs-content value="overview">
         <div class="rounded-lg border p-4">
             <x-ui.p class="font-medium">Overview</x-ui.p>
             <x-ui.p class="mt-2 text-sm text-muted-foreground">
@@ -14,8 +14,8 @@
                 pending tasks.
             </x-ui.p>
         </div>
-    </x-ui.tabs.content>
-    <x-ui.tabs.content value="analytics">
+    </x-ui.tabs-content>
+    <x-ui.tabs-content value="analytics">
         <div class="rounded-lg border p-4">
             <x-ui.p class="font-medium">Analytics</x-ui.p>
             <x-ui.p class="mt-2 text-sm text-muted-foreground">
@@ -23,8 +23,8 @@
                 last month.
             </x-ui.p>
         </div>
-    </x-ui.tabs.content>
-    <x-ui.tabs.content value="reports">
+    </x-ui.tabs-content>
+    <x-ui.tabs-content value="reports">
         <div class="rounded-lg border p-4">
             <x-ui.p class="font-medium">Reports</x-ui.p>
             <x-ui.p class="mt-2 text-sm text-muted-foreground">
@@ -32,5 +32,5 @@
                 export.
             </x-ui.p>
         </div>
-    </x-ui.tabs.content>
+    </x-ui.tabs-content>
 </x-ui.tabs>
