@@ -17,7 +17,7 @@ class Input extends Component
      * Body classes
      */
     protected array $bodyClasses = [
-        'default' => 'border-input shadow-xs dark:bg-input/30 dark:hover:bg-input/50',
+        'default' => 'border-input shadow-xs dark:bg-input/30 dark:hover:bg-input/50 dark:[&::-webkit-calendar-picker-indicator]:invert ',
     ];
 
     /**
