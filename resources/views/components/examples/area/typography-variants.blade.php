@@ -9,7 +9,7 @@
         <x-ui.p class="mt-0!">The quick brown fox jumps over the lazy dog</x-ui.p>
         <x-ui.small>The quick brown fox jumps over the lazy dog</x-ui.small>
 
-        <x-ui.hr />
+        <x-ui.separator class="my-6" />
 
         <x-ui.label>Label</x-ui.label>
         <x-ui.small class="text-muted-foreground">This is subtext</x-ui.small>
@@ -30,15 +30,20 @@
             moment, I was a marine biologist.
         </x-ui.p>
 
-        <x-ui.hr />
+        <x-ui.separator class="my-6" />
         <x-ui.code>$sizeClasses = match ($size) { "sm" => "h-8 px-ui.3", "default" => "h-9 px-ui.3", "lg" => "h-10 px-ui.3", };</x-ui.code>
-        <x-ui.hr />
+        <x-ui.separator class="my-6" />
         <x-ui.blockquote>
             "After all," he said, "everyone enjoys a good joke, so it's only fair that they should pay for the privilege."
         </x-ui.blockquote>
-        <x-ui.hr />
+        <x-ui.separator class="my-6" />
         <p>
-            This is <x-ui.a>Go to link<i data-lucide="square-arrow-out-up-right" data-icon="inline-end"></i></x-ui.a> ok done
+            This is
+            <x-ui.a>
+                Go to link
+                <i data-lucide="square-arrow-out-up-right" data-icon="inline-end"></i>
+            </x-ui.a>
+            ok done
         </p>
     </div>
 </x-ui.example-area>
