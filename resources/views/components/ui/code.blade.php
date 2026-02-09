@@ -1,1 +1,8 @@
-<code {{ $attributes }}>{{ $slot }}</code>
+@php
+    /**
+     * Base classes
+     */
+    $baseClasses = "relative rounded bg-muted px-1 py-0.5 font-mono text-sm";
+@endphp
+
+<code {{ $attributes->twMerge($baseClasses) }}>{{ $slot }}</code>

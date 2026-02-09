@@ -24,14 +24,14 @@
                         <x-ui.sidebar-menu>
                             <x-ui.sidebar-menu-item>
                                 <x-ui.collapsible>
-                                    <x-ui.collapsible-trigger>
+                                    <x-ui.collapsible.trigger>
                                         <x-ui.sidebar-menu-button>
                                             <i data-lucide="square-terminal"></i>
                                             Playground
-                                            <x-ui.collapsible-indicator />
+                                            <x-ui.collapsible.indicator />
                                         </x-ui.sidebar-menu-button>
-                                    </x-ui.collapsible-trigger>
-                                    <x-ui.collapsible-content>
+                                    </x-ui.collapsible.trigger>
+                                    <x-ui.collapsible.content>
                                         <x-ui.sidebar-menu-sub>
                                             <x-ui.sidebar-menu-sub-item>
                                                 <x-ui.sidebar-menu-sub-button>History</x-ui.sidebar-menu-sub-button>
@@ -39,26 +39,26 @@
                                                 <x-ui.sidebar-menu-sub-button>Settings</x-ui.sidebar-menu-sub-button>
                                             </x-ui.sidebar-menu-sub-item>
                                         </x-ui.sidebar-menu-sub>
-                                    </x-ui.collapsible-content>
+                                    </x-ui.collapsible.content>
                                 </x-ui.collapsible>
                             </x-ui.sidebar-menu-item>
                             <x-ui.sidebar-menu-item>
                                 <x-ui.collapsible>
-                                    <x-ui.collapsible-trigger>
+                                    <x-ui.collapsible.trigger>
                                         <x-ui.sidebar-menu-button>
                                             <i data-lucide="bot"></i>
                                             Models
-                                            <x-ui.collapsible-indicator />
+                                            <x-ui.collapsible.indicator />
                                         </x-ui.sidebar-menu-button>
-                                    </x-ui.collapsible-trigger>
-                                    <x-ui.collapsible-content>
+                                    </x-ui.collapsible.trigger>
+                                    <x-ui.collapsible.content>
                                         <x-ui.sidebar-menu-sub>
                                             <x-ui.sidebar-menu-sub-item>
                                                 <x-ui.sidebar-menu-sub-button>Genesis</x-ui.sidebar-menu-sub-button>
                                                 <x-ui.sidebar-menu-sub-button>Explorer</x-ui.sidebar-menu-sub-button>
                                             </x-ui.sidebar-menu-sub-item>
                                         </x-ui.sidebar-menu-sub>
-                                    </x-ui.collapsible-content>
+                                    </x-ui.collapsible.content>
                                 </x-ui.collapsible>
                             </x-ui.sidebar-menu-item>
                         </x-ui.sidebar-menu>
