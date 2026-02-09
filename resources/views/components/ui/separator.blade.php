@@ -11,7 +11,7 @@
         $baseClasses = "h-full shrink-0 border-r";
     @endphp
 
-    <vr {{ $attributes }}></vr>
+    <vr {{ $attributes->twMerge($baseClasses) }}></vr>
 @else
     @php
         /**
@@ -21,5 +21,5 @@
         $baseClasses = "w-full shrink-0";
     @endphp
 
-    <hr {{ $attributes }} />
+    <hr {{ $attributes->twMerge($baseClasses) }} />
 @endif
