@@ -68,25 +68,25 @@
     {{-- Table --}}
     <div class="mt-6 w-full rounded-lg border">
         <x-ui.table>
-            <x-ui.table-header>
-                <x-ui.table-row>
-                    <x-ui.table-head>Prop</x-ui.table-head>
-                    <x-ui.table-head>Type</x-ui.table-head>
-                    <x-ui.table-head>Default</x-ui.table-head>
-                </x-ui.table-row>
-            </x-ui.table-header>
-            <x-ui.table-body>
-                <x-ui.table-row>
-                    <x-ui.table-cell>variant</x-ui.table-cell>
-                    <x-ui.table-cell>"default" | "line"</x-ui.table-cell>
-                    <x-ui.table-cell>"default"</x-ui.table-cell>
-                </x-ui.table-row>
-                <x-ui.table-row>
-                    <x-ui.table-cell>size</x-ui.table-cell>
-                    <x-ui.table-cell>"default" | "sm" | "lg" | "icon-sm" | "icon" | "icon-lg"</x-ui.table-cell>
-                    <x-ui.table-cell>"default"</x-ui.table-cell>
-                </x-ui.table-row>
-            </x-ui.table-body>
+            <x-ui.table.header>
+                <x-ui.table.row>
+                    <x-ui.table.head>Prop</x-ui.table.head>
+                    <x-ui.table.head>Type</x-ui.table.head>
+                    <x-ui.table.head>Default</x-ui.table.head>
+                </x-ui.table.row>
+            </x-ui.table.header>
+            <x-ui.table.body>
+                <x-ui.table.row>
+                    <x-ui.table.cell>variant</x-ui.table.cell>
+                    <x-ui.table.cell>"default" | "line"</x-ui.table.cell>
+                    <x-ui.table.cell>"default"</x-ui.table.cell>
+                </x-ui.table.row>
+                <x-ui.table.row>
+                    <x-ui.table.cell>size</x-ui.table.cell>
+                    <x-ui.table.cell>"default" | "sm" | "lg" | "icon-sm" | "icon" | "icon-lg"</x-ui.table.cell>
+                    <x-ui.table.cell>"default"</x-ui.table.cell>
+                </x-ui.table.row>
+            </x-ui.table.body>
         </x-ui.table>
     </div>
 </div>

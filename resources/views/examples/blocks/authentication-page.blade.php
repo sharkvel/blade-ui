@@ -26,7 +26,7 @@
                 <x-ui.button>Sign In with Email</x-ui.button>
             </div>
             <div class="relative">
-                <x-ui.hr class="my-6.5" />
+                <x-ui.separator class="my-6.5" />
                 <span class="absolute top-1/2 left-1/2 -translate-1/2 bg-background px-2 text-center text-sm leading-none text-muted-foreground">
                     Or continue with
                 </span>

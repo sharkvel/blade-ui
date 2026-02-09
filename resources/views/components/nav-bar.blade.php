@@ -39,7 +39,7 @@
                     K
                 </x-ui.kbd>
             </x-ui.button>
-            <x-ui.vr class="mx-4 mr-2 hidden h-4 lg:block" />
+            <x-ui.separator orientation="vertical" class="mx-4 mr-2 hidden h-4 lg:block" />
             <x-ui.button variant="ghost">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="currentColor">
                     <path
@@ -48,11 +48,11 @@
                 </svg>
                 101k
             </x-ui.button>
-            <x-ui.vr class="mx-2 h-4" />
+            <x-ui.separator orientation="vertical" class="mx-2 h-4" />
             <x-ui.button id="appearanceToggle" size="icon" variant="ghost" @click="$store.darkMode.toggle()">
                 <i data-lucide="contrast"></i>
             </x-ui.button>
-            <x-ui.vr class="mx-4 ml-2 h-4" />
+            <x-ui.separator orientation="vertical" class="mx-4 ml-2 h-4" />
             <x-ui.button>Get Started</x-ui.button>
         </div>
     </div>

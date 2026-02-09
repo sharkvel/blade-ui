@@ -63,20 +63,20 @@
     </x-ui.p>
     <div class="mt-6 rounded-lg border">
         <x-ui.table>
-            <x-ui.table-header>
-                <x-ui.table-row>
-                    <x-ui.table-head class="px-4">Prop</x-ui.table-head>
-                    <x-ui.table-head class="px-4">Type</x-ui.table-head>
-                    <x-ui.table-head class="px-4">Default</x-ui.table-head>
-                </x-ui.table-row>
-            </x-ui.table-header>
-            <x-ui.table-body>
-                <x-ui.table-row>
-                    <x-ui.table-cell class="px-4">size</x-ui.table-cell>
-                    <x-ui.table-cell class="px-4">"default" | "sm" | "lg"</x-ui.table-cell>
-                    <x-ui.table-cell class="px-4">"default"</x-ui.table-cell>
-                </x-ui.table-row>
-            </x-ui.table-body>
+            <x-ui.table.header>
+                <x-ui.table.row>
+                    <x-ui.table.head class="px-4">Prop</x-ui.table.head>
+                    <x-ui.table.head class="px-4">Type</x-ui.table.head>
+                    <x-ui.table.head class="px-4">Default</x-ui.table.head>
+                </x-ui.table.row>
+            </x-ui.table.header>
+            <x-ui.table.body>
+                <x-ui.table.row>
+                    <x-ui.table.cell class="px-4">size</x-ui.table.cell>
+                    <x-ui.table.cell class="px-4">"default" | "sm" | "lg"</x-ui.table.cell>
+                    <x-ui.table.cell class="px-4">"default"</x-ui.table.cell>
+                </x-ui.table.row>
+            </x-ui.table.body>
         </x-ui.table>
     </div>
 </div>
