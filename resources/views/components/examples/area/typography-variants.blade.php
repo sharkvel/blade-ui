@@ -36,5 +36,9 @@
         <x-ui.blockquote>
             "After all," he said, "everyone enjoys a good joke, so it's only fair that they should pay for the privilege."
         </x-ui.blockquote>
+        <x-ui.hr />
+        <p>
+            This is <x-ui.a>Go to link<i data-lucide="square-arrow-out-up-right" data-icon="inline-end"></i></x-ui.a> ok done
+        </p>
     </div>
 </x-ui.example-area>
