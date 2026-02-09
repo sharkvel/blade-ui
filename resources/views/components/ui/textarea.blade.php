@@ -1,3 +1,8 @@
+@props([
+    "variant" => "default",
+    "size" => "default",
+])
+
 @php
     /**
      * Base classes
