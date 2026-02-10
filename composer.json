@@ -15,7 +15,10 @@
   "autoload": {
     "psr-4": {
       "Sharkvel\\BladeUi\\": "src/"
-    }
+    },
+    "files": [
+      "src/Supports/helpers.php"
+    ]
   },
   "authors": [
     {
