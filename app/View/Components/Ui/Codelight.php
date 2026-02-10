@@ -5,8 +5,6 @@ namespace App\View\Components\Ui;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
-use Torchlight\Block;
-use Torchlight\Torchlight;
 
 class Codelight extends Component
 {
@@ -30,12 +28,12 @@ class Codelight extends Component
      */
     public function render(): View|Closure|string
     {
-        if (!empty($this->example)) {
+        if (! empty($this->example)) {
             $path = resource_path(
-                'views/' .
+                'views/'.
                 (
                     $this->language === 'blade'
-                    ? str_replace('.', '/', $this->example) . '.blade.php'
+                    ? str_replace('.', '/', $this->example).'.blade.php'
                     : $this->example
                 )
             );
@@ -43,10 +41,11 @@ class Codelight extends Component
         }
 
         return function (array $data) {
-            $block = Block::make()->language($this->language)->code($this->example ?? $data['slot']->toHtml());
-            $highlight = Torchlight::highlight($block)[0];
+            $attributes = $data['attributes']->twMerge(
+                $this->baseClasses,
+            );
 
-            return view('components.ui.codelight', compact('highlight'));
+            return view('components.ui.codelight', compact('attributes'));
         };
     }
 }

@@ -1,9 +1,5 @@
-@php
-    $baseClasses = "relative grid rounded-md border border-input bg-neutral-900 dark:bg-input/30";
-@endphp
-
 <div
-    {{ $attributes->merge(["class" => cn($baseClasses, $attributes->get("class"))]) }}
+    {{ $attributes }}
     x-data="{
         isCopied: false,
         async copy(text) {
@@ -24,15 +20,8 @@
         <i data-lucide="copy" class="size-4 text-white/50 group-hover:text-white" x-show="!isCopied"></i>
         <i data-lucide="check" class="size-4 text-white/50 group-hover:text-white" x-cloak x-show="isCopied"></i>
     </button>
-    <input type="hidden" value="{{ $highlight->code }}" />
-    <pre class="grid overflow-x-auto [scrollbar-width:none]">
-        <code
-        data-theme="{{ $highlight->attrs["data-theme"] }}"
-        data-lang="{{ $highlight->attrs["data-lang"] }}"
-        @class(cn($highlight->classes, "bg-transparent! text-sm [&_.line-highlight]:bg-neutral-800/80! [&.torchlight_.line]:px-4 [&.torchlight_.line-number]:mr-4 [.torchlight]:flex [.torchlight]:min-w-max [.torchlight]:flex-col [.torchlight]:py-4"))
-        style="{{ $highlight->styles }}"
-        >
-        {!! $highlight->highlighted !!}
-    </code>
+    <input type="hidden" value="{{ $example ?? $slot }}" />
+    <pre class="grid overflow-x-auto [scrollbar-width:none]" data-code="{{ $example ?? $slot }}">
+        <x-torchlight-code language="{{ $language }}" class="[.torchlight]:block bg-transparent! [.torchlight]:py-4 text-sm [.torchlight]:min-w-max [&.torchlight_.line]:px-4 [&.torchlight_.line-number]:mr-4 [&_.line-highlight]:bg-neutral-800/80!" >@if ($example){!! $example !!}@else{{ $slot }}@endif</x-torchlight-code>
     </pre>
 </div>
