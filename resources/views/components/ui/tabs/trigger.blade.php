@@ -28,7 +28,7 @@
 @endphp
 
 <button
-    {{ $attributes->twMerge($baseClasses, $variantClasses, $sizeClasses) }}
+    {{ $attributes->merge(["class" => cn($baseClasses, $variantClasses, $sizeClasses, $attributes->get("class"))]) }}
     @click="tab='{{ $value }}'"
     data-state="{{ $value === $defaultValue ? "active" : "inactive" }}"
     :data-state="tab === '{{ $value }}' ? 'active' : 'inactive'"

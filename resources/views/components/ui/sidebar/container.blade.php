@@ -5,7 +5,7 @@
     $baseClasses = "flex min-h-svh bg-sidebar";
 @endphp
 
-<div x-data="{ open: window.innerWidth >= 768 }" {{ $attributes->twMerge($baseClasses) }}>
+<div x-data="{ open: window.innerWidth >= 768 }" {{ $attributes->merge(["class" => cn($baseClasses, $attributes->get("class"))]) }}>
     <div class="h-0 md:w-3xs" :class="{'md:w-3xs':open}"></div>
     {{ $slot }}
 </div>

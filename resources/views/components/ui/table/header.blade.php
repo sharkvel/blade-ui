@@ -5,4 +5,4 @@
     $baseClasses = "[&_tr]:border-b";
 @endphp
 
-<thead {{ $attributes->twMerge($baseClasses) }}>{{ $slot }}</thead>
+<thead {{ $attributes->merge(["class" => cn($baseClasses, $attributes->get("class"))]) }}>{{ $slot }}</thead>

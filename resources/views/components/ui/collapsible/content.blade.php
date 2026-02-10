@@ -11,7 +11,7 @@
         x-cloak
     @endif
     x-show="open"
-    {{ $attributes->twMerge($baseClasses) }}
+    {{ $attributes->merge(["class" => cn($baseClasses, $attributes->get("class"))]) }}
 >
     {{ $slot }}
 </div>

@@ -6,4 +6,4 @@
     $baseClasses = "text-base leading-relaxed $notFirst";
 @endphp
 
-<p {{ $attributes->twMerge($baseClasses) }}>{{ $slot }}</p>
+<p {{ $attributes->merge(["class" => cn($baseClasses, $attributes->get("class"))]) }}>{{ $slot }}</p>

@@ -5,7 +5,7 @@
     $baseClasses = "ms-auto";
 @endphp
 
-<div {{ $attributes->twMerge($baseClasses) }}>
+<div {{ $attributes->merge(["class" => cn($baseClasses, $attributes->get("class"))]) }}>
     <div :class="open ? 'rotate-180' : ''">
         @if ($slot->isNotEmpty())
             {{ $slot }}

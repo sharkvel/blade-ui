@@ -11,6 +11,12 @@
 @endphp
 
 <div @disabled($disabled)>
-    <option {{ $attributes->twMerge($baseClasses) }} value="" disabled>{{ $label }}</option>
+    <option
+        {{ $attributes->merge(["class" => cn($baseClasses, $attributes->get("class"))]) }}
+        value=""
+        disabled
+    >
+        {{ $label }}
+    </option>
     {{ $slot }}
 </div>

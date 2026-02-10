@@ -28,7 +28,7 @@
 @endphp
 
 <div class="relative">
-    <select {{ $attributes->twMerge($baseClasses, $variantClasses, $sizeClasses) }}>
+    <select {{ $attributes->merge(["class" => cn($baseClasses, $variantClasses, $sizeClasses, $attributes->get("class"))]) }}>
         @if (! empty($placeholder))
             <option value="" selected disabled hidden>{{ $placeholder }}</option>
         @endif

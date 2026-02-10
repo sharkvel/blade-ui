@@ -5,6 +5,6 @@
     $baseClasses = "contents";
 @endphp
 
-<div @click="open = !open" {{ $attributes->twMerge($baseClasses) }}>
+<div @click="open = !open" {{ $attributes->merge(["class" => cn($baseClasses, $attributes->get("class"))]) }}>
     {{ $slot }}
 </div>

@@ -7,7 +7,7 @@
 @endphp
 
 <aside
-    {{ $attributes->twMerge($baseClasses) }}
+    {{ $attributes->merge(["class" => cn($baseClasses, $attributes->get("class"))]) }}
     :class="{
         '-translate-x-full':!open,
         'md:translate-x-0':open

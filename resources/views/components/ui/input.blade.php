@@ -28,5 +28,5 @@
 @endphp
 
 <input
-    {{ $attributes->twMerge($baseClasses, $variantClasses, $sizeClasses)->merge(["type" => $type]) }}
+    {{ $attributes->merge(["class" => cn($baseClasses, $variantClasses, $sizeClasses, $attributes->get("class")), "type" => $type]) }}
 />

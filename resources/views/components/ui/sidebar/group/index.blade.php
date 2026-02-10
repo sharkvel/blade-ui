@@ -5,4 +5,4 @@
     $baseClasses = "p-2";
 @endphp
 
-<div {{ $attributes->twMerge($baseClasses) }}>{{ $slot }}</div>
+<div {{ $attributes->merge(["class" => cn($baseClasses, $attributes->get("class"))]) }}>{{ $slot }}</div>

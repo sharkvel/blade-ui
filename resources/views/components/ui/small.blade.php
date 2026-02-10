@@ -5,4 +5,4 @@
     $baseClasses = "block text-sm";
 @endphp
 
-<small {{ $attributes->twMerge($baseClasses) }}>{{ $slot }}</small>
+<small {{ $attributes->merge(["class" => cn($baseClasses, $attributes->get("class"))]) }}>{{ $slot }}</small>

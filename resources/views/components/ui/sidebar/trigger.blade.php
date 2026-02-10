@@ -5,6 +5,10 @@
     $baseClasses = "contents";
 @endphp
 
-<div {{ $attributes->twMerge($baseClasses) }} @click="open = !open" data-trigger="sidebar">
+<div
+    {{ $attributes->merge(["class" => cn($baseClasses, $attributes->get("class"))]) }}
+    @click="open = !open"
+    data-trigger="sidebar"
+>
     {{ $slot }}
 </div>

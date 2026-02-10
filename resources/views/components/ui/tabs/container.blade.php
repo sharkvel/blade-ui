@@ -29,6 +29,6 @@
     };
 @endphp
 
-<div {{ $attributes->twMerge($baseClasses, $variantClasses, $sizeClasses) }}>
+<div {{ $attributes->merge(["class" => cn($baseClasses, $variantClasses, $sizeClasses, $attributes->get("class"))]) }}>
     {{ $slot }}
 </div>

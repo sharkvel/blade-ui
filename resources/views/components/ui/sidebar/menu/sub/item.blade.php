@@ -5,4 +5,4 @@
     $baseClasses = "relative";
 @endphp
 
-<li {{ $attributes->twMerge($baseClasses) }}>{{ $slot }}</li>
+<li {{ $attributes->merge(["class" => cn($baseClasses, $attributes->get("class"))]) }}>{{ $slot }}</li>
