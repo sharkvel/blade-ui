@@ -17,6 +17,8 @@
         <link rel="preload" fetchpriority="high" href="/fonts/InstrumentSans.woff2" crossorigin as="font" type="font/woff2" />
         <link rel="preload" fetchpriority="high" href="/fonts/GeistMono.woff2" crossorigin as="font" type="font/woff2" />
 
+        @stack("css")
+
         <!-- Styles / Scripts -->
         @vite(["resources/css/app.css", "resources/js/app.js"])
 
