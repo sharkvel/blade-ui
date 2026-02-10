@@ -1,0 +1,10 @@
+select {
+    &,
+    &::picker(select) {
+        appearance: base-select;
+    }
+}
+select::picker(select) {
+    inset-block-start: calc(anchor(start) - var(--_selected-option-offset, 0));
+    inset-inline-start: calc(anchor(start) + 50px);
+}
