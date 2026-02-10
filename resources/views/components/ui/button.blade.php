@@ -37,4 +37,6 @@
     };
 @endphp
 
-<button {{ $attributes->twMerge($baseClasses, $variantClasses, $sizeClasses)->merge(["type" => $type]) }}>{{ $slot }}</button>
+<button {{ $attributes->merge(["class" => cn($baseClasses, $variantClasses, $sizeClasses, $attributes->get("class")), "type" => $type]) }}>
+    {{ $slot }}
+</button>
