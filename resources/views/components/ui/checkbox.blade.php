@@ -7,8 +7,7 @@
     /**
      * Base classes
      */
-    $checkIcon = "'&#10003;'";
-    $baseClasses = "flex shrink-0 appearance-none items-center justify-center rounded-sm border border-transparent outline-none checked:after:content-[$checkIcon] focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40";
+    $baseClasses = "flex shrink-0 appearance-none items-center justify-center rounded-sm border border-transparent outline-none checked:after:content-['✓'] focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40";
 
     /**
      * Variant classes
