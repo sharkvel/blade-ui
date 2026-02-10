@@ -9,7 +9,7 @@
             </label>
             {{-- Logo --}}
             <a href="{{ route("home") }}">
-                <x-ui.button variant="ghost" size="icon-lg">
+                <x-ui.button variant="ghost" size="icon-lg" class="cursor-pointer">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 258.66" fill="currentColor" class="size-7 fill-foreground">
                         <path
                             class="cls-1"

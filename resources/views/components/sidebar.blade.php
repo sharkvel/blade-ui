@@ -19,9 +19,8 @@
                             </li>
                         </a>
                     @else
-                        <li class="flex h-8 items-center gap-2 pl-4 text-[0.825rem] font-normal text-muted-foreground md:pl-12">
+                        <li class="flex h-8 items-center gap-2 pl-4 text-[0.825rem] font-normal opacity-50 md:pl-12">
                             {{ $menu["name"] }}
-                            <span class="flex items-center rounded-xs bg-muted px-0.5 py-0.5 text-xs leading-none text-muted-foreground">soon</span>
                         </li>
                     @endif
                 @endforeach

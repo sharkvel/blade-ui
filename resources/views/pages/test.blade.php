@@ -4,7 +4,7 @@
     @endphp
 
     @for ($i=0;$i<1000;$i++)
-        <x-ui.button class="shrink">Button {{ $i }}</x-ui.button>
+        <x-ui.button>Button {{ $i }}</x-ui.button>
     @endfor
 
     @php

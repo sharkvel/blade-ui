@@ -33,13 +33,13 @@
         </x-ui.p>
         <div class="mt-8 grid w-full gap-x-3 gap-y-4 md:w-auto md:grid-cols-2">
             <a href="{{ route("docs.installation") }}">
-                <x-ui.button class="w-full">
+                <x-ui.button class="w-full cursor-pointer">
                     Get Started
                     <i data-lucide="arrow-right"></i>
                 </x-ui.button>
             </a>
             <a href="{{ route("component") }}">
-                <x-ui.button variant="outline" class="w-full">View Components</x-ui.button>
+                <x-ui.button variant="outline" class="w-full cursor-pointer">View Components</x-ui.button>
             </a>
         </div>
 

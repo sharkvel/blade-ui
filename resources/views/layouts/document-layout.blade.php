@@ -18,7 +18,7 @@
                     <div class="mt-auto flex pt-12">
                         @if (filled($previousPage))
                             <a href="{{ $previousPage["url"] }}">
-                                <x-ui.button variant="secondary" size="sm">
+                                <x-ui.button variant="secondary" size="sm" class="cursor-pointer">
                                     <i data-lucide="arrow-left"></i>
                                     {{ $previousPage["title"] }}
                                 </x-ui.button>
@@ -27,7 +27,7 @@
 
                         @if (filled($nextPage))
                             <a href="{{ $nextPage["url"] }}" class="ml-auto">
-                                <x-ui.button variant="secondary" size="sm">
+                                <x-ui.button variant="secondary" size="sm" class="cursor-pointer">
                                     {{ $nextPage["title"] }}
                                     <i data-lucide="arrow-right"></i>
                                 </x-ui.button>
