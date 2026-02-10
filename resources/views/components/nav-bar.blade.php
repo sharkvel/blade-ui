@@ -24,7 +24,7 @@
         <ul class="hidden gap-6 text-[0.93rem] lg:flex">
             @foreach ($sidebarItems["Menus"] as $menu)
                 <li>
-                    <x-ui.a href="{{ $menu['url'] }}" variant="simple">
+                    <x-ui.a href="{{ $menu['url'] }}" class="no-underline">
                         {{ $menu["name"] }}
                     </x-ui.a>
                 </li>
