@@ -61,4 +61,14 @@
     [x-cloak] {
         display: none !important;
     }
+
+    i[data-lucide] {
+        @apply size-4 border;
+    }
+}
+
+@layer utilities {
+    .hide-scrollbar {
+        scrollbar-width: none;
+    }
 }
