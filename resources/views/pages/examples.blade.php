@@ -1,18 +1,4 @@
 @php
-    $exampleLinks = [
-        [
-            "url" => route("home"),
-            "title" => "Examples",
-        ],
-        [
-            "url" => route("example", ["tab" => "dashboard"]),
-            "title" => "Dashboard",
-        ],
-        [
-            "url" => route("example", ["tab" => "authentication"]),
-            "title" => "Authentication",
-        ],
-    ];
     $theme = $_GET["theme"] ?? "neutral";
 @endphp
 
@@ -77,33 +63,32 @@
 
         {{-- Previews --}}
         <div
-            class="mt-24 flex w-full flex-col gap-2"
+            class="mt-24 w-full"
             @if (! empty($theme))
                 x-data="{ theme: @js($theme) }"
             @else
                 x-data="{ theme: 'neutral' }"
             @endif
         >
-            <div class="flex h-14 items-center justify-between">
-                <div class="flex items-center gap-6 *:no-underline">
-                    @foreach ($exampleLinks as $item)
-                        <x-ui.a
-                            href="{{ $item['url'] }}"
-                            x-bind:href="() => {
+            <x-ui.tabs defaultValue="{{ $_GET['tab'] ?? 'dashboard' }}" class="w-full">
+                {{-- Tabs container --}}
+                <div class="flex h-14 items-center gap-3">
+                    <x-ui.a
+                        href="{{ route('home') }}"
+                        x-bind:href="() => {
                                 const url = new URL($el.getAttribute('href'));
                                 url.searchParams.set('theme',theme);
                                 return url.toString();
                             }"
-                            @class([
-                                "text-muted-foreground" => request()->url() !== $item["url"],
-                            ])
-                        >
-                            {{ $item["title"] }}
-                        </x-ui.a>
-                    @endforeach
-                </div>
-                <div class="flex">
-                    <div class="flex items-center gap-2">
+                        class="text-muted-foreground no-underline"
+                    >
+                        Examples
+                    </x-ui.a>
+                    <x-ui.tabs.container variant="simple" class="gap-2 *:cursor-pointer *:text-base">
+                        <x-ui.tabs.trigger value="dashboard">Dashboard</x-ui.tabs.trigger>
+                        <x-ui.tabs.trigger value="authentication">Authentication</x-ui.tabs.trigger>
+                    </x-ui.tabs.container>
+                    <div class="ms-auto flex items-center gap-2">
                         <x-ui.label for="theme">Theme</x-ui.label>
                         <x-ui.select defaultValue="{{ $theme }}" size="sm" id="theme" @change="theme = $el.value">
                             <x-ui.select.option value="neutral">Neutral</x-ui.select.option>
@@ -113,12 +98,19 @@
                         <x-ui.button size="icon-sm" variant="outline"><i data-lucide="copy"></i></x-ui.button>
                     </div>
                 </div>
-            </div>
-            <div :class="['theme-' + theme, $store.darkMode.on ? 'dark' : '' ]">
-                <div class="overflow-hidden">
-                    <x-ui.button>Test</x-ui.button>
+
+                {{-- tabs content --}}
+                <div :class="['theme-' + theme, $store.darkMode.on ? 'dark' : '' ]">
+                    <div class="overflow-hidden rounded-lg border">
+                        <x-ui.tabs.content value="authentication">
+                            @include("examples/blocks/authentication-page")
+                        </x-ui.tabs.content>
+                        <x-ui.tabs.content value="dashboard">
+                            <iframe src="{{ route("live.dashboard") }}" class="min-h-screen w-full"></iframe>
+                        </x-ui.tabs.content>
+                    </div>
                 </div>
-            </div>
+            </x-ui.tabs>
         </div>
     </div>
     <x-footer />

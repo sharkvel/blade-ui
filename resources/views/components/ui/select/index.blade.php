@@ -1,6 +1,7 @@
 @props([
     "variant" => "default",
     "size" => "default",
+    "defaultValue" => "",
     "placeholder" => "",
 ])
 

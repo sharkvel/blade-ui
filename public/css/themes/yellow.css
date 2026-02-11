@@ -1,4 +1,4 @@
-:root {
+.theme-yellow {
     --radius: 0.5rem;
     --background: oklch(1 0 0);
     --foreground: oklch(0.141 0.005 285.823);
@@ -36,7 +36,7 @@
     --scrollbar-thumb: oklch(70.5% 0.015 286.067);
 }
 
-.dark {
+.theme-yellow.dark {
     --background: oklch(0.141 0.005 285.823);
     --foreground: oklch(0.985 0 0);
     --card: oklch(0.21 0.006 285.885);

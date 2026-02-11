@@ -14,6 +14,7 @@
     $variantClasses = match ($variant) {
         "default" => "rounded-lg bg-muted",
         "line" => "",
+        "simple" => "",
     };
 
     /**

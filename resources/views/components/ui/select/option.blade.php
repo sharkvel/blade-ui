@@ -1,4 +1,11 @@
-@aware(["disabled" => false])
+@props([
+    "value",
+])
+
+@aware([
+    "defaultValue" => "",
+    "disabled" => false,
+])
 
 @php
     /**
@@ -8,7 +15,9 @@
 @endphp
 
 <option
+    value="{{ $value }}"
     {{ $attributes->merge(["class" => cn($baseClasses, $attributes->get("class"))]) }}
+    @selected($defaultValue === $value)
     @disabled($disabled)
 >
     {{ $slot }}
