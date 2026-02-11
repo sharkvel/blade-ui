@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InstallationController;
 use App\Http\Controllers\IntroductionController;
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\ThemingController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', fn () => view('welcome'));
@@ -21,6 +22,7 @@ Route::get('/examples', ExamplesController::class)->name('example');
  */
 Route::get('/docs', IntroductionController::class)->name('docs');
 Route::get('/docs/installation', InstallationController::class)->name('docs.installation');
+Route::get('/docs/theming', ThemingController::class)->name('docs.theming');
 Route::get('/docs/components/{component?}', ComponentController::class)->name('component');
 
 /**

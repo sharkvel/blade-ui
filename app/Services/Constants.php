@@ -39,7 +39,7 @@ class Constants
                     'available_from' => '2026-01-20',
                 ],
                 [
-                    'url' => '',
+                    'url' => route('docs.theming'),
                     'name' => 'Theming',
                     'available_from' => '2026-01-20',
                 ],
