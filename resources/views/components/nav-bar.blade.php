@@ -1,5 +1,5 @@
 @props(["sidebarItems" => []])
-<nav class="fixed top-0 left-0 z-10 flex h-16 w-full items-center border-b bg-background">
+<nav class="fixed top-0 left-0 z-999 flex h-16 w-full items-center border-b bg-background">
     <div class="section-wrapper mx-auto flex w-full items-center gap-6">
         <div class="flex items-center gap-2">
             <label for="mobile-sidebar-toggle" class="lg:hidden">

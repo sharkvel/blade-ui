@@ -106,7 +106,7 @@
                             @include("examples/blocks/authentication-page")
                         </x-ui.tabs.content>
                         <x-ui.tabs.content value="dashboard">
-                            <iframe src="{{ route("live.dashboard") }}" class="min-h-screen w-full"></iframe>
+                            @include("examples/blocks/dashboard")
                         </x-ui.tabs.content>
                     </div>
                 </div>

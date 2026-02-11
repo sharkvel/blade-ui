@@ -3,7 +3,7 @@
      * Base Classes
      */
     $baseClasses =
-        "fixed top-0 left-0 z-10 flex h-full max-h-svh w-3xs -translate-x-full flex-col border-sidebar-border bg-sidebar text-sidebar-foreground will-change-transform md:translate-x-0";
+        "fixed inset-y-0 top-0 left-0 z-10 flex w-3xs -translate-x-full flex-col border-sidebar-border bg-sidebar text-sidebar-foreground will-change-transform md:translate-x-0";
 @endphp
 
 <aside
