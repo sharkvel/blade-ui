@@ -21,6 +21,7 @@
         <link rel="stylesheet" href="{{ asset("css/themes/blue.css") }}" />
         <link rel="stylesheet" href="{{ asset("css/themes/yellow.css") }}" />
         <link rel="stylesheet" href="{{ asset("css/themes/neutral.css") }}" />
+        <link rel="stylesheet" href="{{ asset("css/themes/green.css") }}" />
     @endpush
 
     <x-nav-bar :sidebar-items="$sidebarItems" />
@@ -108,6 +109,7 @@
                         <x-ui.select defaultValue="{{ $theme }}" size="sm" id="theme" @change="theme = $el.value">
                             <x-ui.select.option value="neutral">Neutral</x-ui.select.option>
                             <x-ui.select.option value="blue">Blue</x-ui.select.option>
+                            <x-ui.select.option value="green">Green</x-ui.select.option>
                             <x-ui.select.option value="yellow">Yellow</x-ui.select.option>
                         </x-ui.select>
                         <x-ui.button size="icon-sm" variant="outline"><i data-lucide="copy"></i></x-ui.button>
