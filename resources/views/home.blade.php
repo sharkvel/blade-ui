@@ -118,12 +118,76 @@
             </div>
             <div :class="['theme-' + theme, $store.darkMode.on ? 'dark' : '' ]">
                 <div class="grid grid-cols-3">
-                    <div>
-                        <x-ui.field>
-                            <x-ui.field.label for="name">Name on card</x-ui.field.label>
-                            <x-ui.input id="name" placeholder="John Doe" />
-                            <x-ui.field.separator></x-ui.field.separator>
-                        </x-ui.field>
+                    <div class="rounded-xl border p-6">
+                        <x-ui.field.group>
+                            {{-- Field set --}}
+                            <x-ui.field.set>
+                                <x-ui.field.legend class="mb-2">Payment Method</x-ui.field.legend>
+                                <x-ui.field.description>All transactions are secure and encrypted</x-ui.field.description>
+                                {{-- Field group --}}
+                                <x-ui.field.group>
+                                    <x-ui.field>
+                                        <x-ui.field.label for="name-on-card">Name on card</x-ui.field.label>
+                                        <x-ui.input id="name-on-card" placeholder="John Doe" />
+                                    </x-ui.field>
+                                    <div class="grid grid-cols-3 gap-5">
+                                        <x-ui.field class="col-span-2">
+                                            <x-ui.field.label for="card-number">Card Number</x-ui.field.label>
+                                            <x-ui.input id="card-number" placeholder="1234 5678 9012 3456" />
+                                            <x-ui.field.description>Enter your 16-digit card number</x-ui.field.description>
+                                        </x-ui.field>
+                                        <x-ui.field>
+                                            <x-ui.field.label for="card-cvv">CVV</x-ui.field.label>
+                                            <x-ui.input id="card-cvv" placeholder="123" />
+                                        </x-ui.field>
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-5">
+                                        <x-ui.field>
+                                            <x-ui.field.label for="card-month">Month</x-ui.field.label>
+                                            <x-ui.select placeholder="MM">
+                                                @for ($month = 1; $month<=12;$month++)
+                                                    <x-ui.select.option value="{{ $month }}">{{ $month }}</x-ui.select.option>
+                                                @endfor
+                                            </x-ui.select>
+                                        </x-ui.field>
+                                        <x-ui.field>
+                                            <x-ui.field.label for="card-year">Year</x-ui.field.label>
+                                            <x-ui.select placeholder="YYYY">
+                                                @for ($year = 2024; $year<=2029;$year++)
+                                                    <x-ui.select.option value="{{ $year }}">{{ $year }}</x-ui.select.option>
+                                                @endfor
+                                            </x-ui.select>
+                                        </x-ui.field>
+                                    </div>
+                                </x-ui.field.group>
+                            </x-ui.field.set>
+                            <x-ui.field.separator />
+                            {{-- Billing --}}
+                            <x-ui.field.set>
+                                <x-ui.field.legend>Billing Address</x-ui.field.legend>
+                                <x-ui.field.description>The billing address associated with your payment method</x-ui.field.description>
+                                <x-ui.field.group>
+                                    <x-ui.field orientation="horizontal">
+                                        <x-ui.checkbox name="same-as-shipping-address" id="sasa" />
+                                        <x-ui.field.label for="sasa">Same as shipping address</x-ui.field.label>
+                                    </x-ui.field>
+                                </x-ui.field.group>
+                            </x-ui.field.set>
+                            {{-- Comment --}}
+                            <x-ui.field.set>
+                                <x-ui.field.group>
+                                    <x-ui.field>
+                                        <x-ui.field.label for="comments">Comments</x-ui.field.label>
+                                        <x-ui.textarea id="comments" placeholder="Add any additional comments" size="sm" />
+                                    </x-ui.field>
+                                </x-ui.field.group>
+                            </x-ui.field.set>
+                            {{-- Action --}}
+                            <x-ui.field orientation="horizontal">
+                                <x-ui.button type="submit">Submit</x-ui.button>
+                                <x-ui.button type="reset" variant="outline">Cancel</x-ui.button>
+                            </x-ui.field>
+                        </x-ui.field.group>
                     </div>
                 </div>
             </div>
