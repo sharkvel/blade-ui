@@ -194,8 +194,8 @@
                         </x-ui.field.group>
                     </div>
                     {{-- Col-2 --}}
-                    <div class="space-y-6">
-                        <div class="flex flex-wrap gap-4">
+                    <div class="flex flex-col gap-6">
+                        <div class="flex flex-wrap gap-4 rounded-xl border border-dashed p-4">
                             <x-ui.avatar.group class="grayscale">
                                 <x-ui.avatar>
                                     <x-ui.avatar.image src="https://untitledui.com/images/avatars/olivia-rhye" />
