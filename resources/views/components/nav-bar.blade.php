@@ -1,4 +1,4 @@
-@props(["sidebarItems" => []])
+@props(['sidebarItems' => []])
 <nav class="fixed top-0 left-0 z-999 flex h-16 w-full items-center border-b bg-background">
     <div class="section-wrapper mx-auto flex w-full items-center gap-6">
         <div class="flex items-center gap-2">
@@ -8,7 +8,7 @@
                 </div>
             </label>
             {{-- Logo --}}
-            <a href="{{ route("home") }}">
+            <a href="{{ route('home') }}">
                 <x-ui.button variant="ghost" size="icon-lg" class="cursor-pointer">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 258.66" fill="currentColor" class="size-7 fill-foreground">
                         <path
@@ -22,19 +22,19 @@
 
         {{-- Nav items --}}
         <ul class="hidden gap-6 text-[0.93rem] lg:flex">
-            @foreach ($sidebarItems["Menus"] as $menu)
+            @foreach ($sidebarItems['Menus'] as $menu)
                 <li>
                     <x-ui.a href="{{ $menu['url'] }}" class="no-underline">
-                        {{ $menu["name"] }}
+                        {{ $menu['name'] }}
                     </x-ui.a>
                 </li>
             @endforeach
         </ul>
         <div class="ml-auto flex items-center">
-            <x-ui.button variant="outline" class="hidden text-muted-foreground shadow-none lg:flex">
-                <i data-lucide="search"></i>
+            <x-ui.button variant="outline" class="hidden pr-1.5 text-muted-foreground shadow-none lg:flex">
+                <i data-lucide="search" data-icon="inline-start"></i>
                 Search docs
-                <x-ui.kbd variant="secondary" size="sm">
+                <x-ui.kbd variant="secondary" size="sm" class="ms-2">
                     <i data-lucide="command" class="size-3"></i>
                     K
                 </x-ui.kbd>
@@ -64,26 +64,26 @@
 >
     @foreach ($sidebarItems as $section => $items)
         @php
-            $allowSidebarFeatures = ! in_array($section, ["Menus"]);
+            $allowSidebarFeatures = ! in_array($section, ['Menus']);
         @endphp
 
         <div class="flex flex-col gap-2">
             <small class="pl-4 text-muted-foreground md:pl-12">{{ $section }}</small>
             <ul class="flex flex-col">
                 @foreach ($items as $menu)
-                    @if ($menu["available_from"])
-                        <a href="{{ $menu["url"] }}">
+                    @if ($menu['available_from'])
+                        <a href="{{ $menu['url'] }}">
                             <li
                                 class="menu-item flex h-10 items-center gap-2 pl-4 text-base font-normal data-[active='true']:font-medium md:pl-12 lg:h-8 lg:text-[0.825rem]"
-                                data-active="{{ request()->url() === $menu["url"] && $allowSidebarFeatures ? "true" : "false" }}"
-                                data-available="{{ $menu["available_from"] ? "true" : "false" }}"
+                                data-active="{{ request()->url() === $menu['url'] && $allowSidebarFeatures ? 'true' : 'false' }}"
+                                data-available="{{ $menu['available_from'] ? 'true' : 'false' }}"
                             >
-                                {{ $menu["name"] }}
+                                {{ $menu['name'] }}
                             </li>
                         </a>
                     @else
                         <li class="flex h-10 items-center gap-2 pl-4 text-base font-normal text-muted-foreground md:pl-12 lg:h-8 lg:text-[0.825rem]">
-                            {{ $menu["name"] }}
+                            {{ $menu['name'] }}
                             <span class="flex items-center rounded-xs bg-muted px-0.5 py-0.5 text-xs leading-none text-muted-foreground">soon</span>
                         </li>
                     @endif
