@@ -117,7 +117,7 @@
                 </div>
             </div>
             <div :class="['theme-' + theme, $store.darkMode.on ? 'dark' : '' ]">
-                <div class="grid grid-cols-3">
+                <div class="grid grid-cols-4">
                     <div class="rounded-xl border p-6">
                         <x-ui.field.group>
                             {{-- Field set --}}
@@ -130,18 +130,18 @@
                                         <x-ui.field.label for="name-on-card">Name on card</x-ui.field.label>
                                         <x-ui.input id="name-on-card" placeholder="John Doe" />
                                     </x-ui.field>
-                                    <div class="grid grid-cols-3 gap-5">
+                                    <div class="grid grid-cols-3 gap-4">
                                         <x-ui.field class="col-span-2">
                                             <x-ui.field.label for="card-number">Card Number</x-ui.field.label>
                                             <x-ui.input id="card-number" placeholder="1234 5678 9012 3456" />
-                                            <x-ui.field.description>Enter your 16-digit card number</x-ui.field.description>
+                                            <x-ui.field.description>Enter your 16-digit number.</x-ui.field.description>
                                         </x-ui.field>
                                         <x-ui.field>
                                             <x-ui.field.label for="card-cvv">CVV</x-ui.field.label>
                                             <x-ui.input id="card-cvv" placeholder="123" />
                                         </x-ui.field>
                                     </div>
-                                    <div class="grid grid-cols-2 gap-5">
+                                    <div class="grid grid-cols-2 gap-4">
                                         <x-ui.field>
                                             <x-ui.field.label for="card-month">Month</x-ui.field.label>
                                             <x-ui.select placeholder="MM">
