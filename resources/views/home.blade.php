@@ -146,7 +146,9 @@
                                             <x-ui.field.label for="card-month">Month</x-ui.field.label>
                                             <x-ui.select placeholder="MM">
                                                 @for ($month = 1; $month<=12;$month++)
-                                                    <x-ui.select.option value="{{ $month }}">{{ $month }}</x-ui.select.option>
+                                                    <x-ui.select.option value="{{ $month }}">
+                                                        {{ str_pad($month, 2, "0", STR_PAD_LEFT) }}
+                                                    </x-ui.select.option>
                                                 @endfor
                                             </x-ui.select>
                                         </x-ui.field>
@@ -173,6 +175,7 @@
                                     </x-ui.field>
                                 </x-ui.field.group>
                             </x-ui.field.set>
+                            <x-ui.field.separator />
                             {{-- Comment --}}
                             <x-ui.field.set>
                                 <x-ui.field.group>

@@ -2,7 +2,7 @@
     /**
      * Base classes
      */
-    $baseClasses = 'relative text-sm min-h-5';
+    $baseClasses = 'relative -my-2 min-h-5 text-sm';
 @endphp
 
 <div
