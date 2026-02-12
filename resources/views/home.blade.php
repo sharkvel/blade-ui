@@ -117,7 +117,8 @@
                 </div>
             </div>
             <div :class="['theme-' + theme, $store.darkMode.on ? 'dark' : '' ]">
-                <div class="grid grid-cols-4 gap-6">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    {{-- Col-1 --}}
                     <div class="rounded-xl border p-6">
                         <x-ui.field.group>
                             {{-- Field set --}}
@@ -192,6 +193,7 @@
                             </x-ui.field>
                         </x-ui.field.group>
                     </div>
+                    {{-- Col-2 --}}
                     <div>
                         <div class="flex gap-2">
                             <x-ui.badge>
