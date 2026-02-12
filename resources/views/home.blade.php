@@ -117,7 +117,7 @@
                 </div>
             </div>
             <div :class="['theme-' + theme, $store.darkMode.on ? 'dark' : '' ]">
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                     {{-- Col-1 --}}
                     <div class="rounded-xl border p-6">
                         <x-ui.field.group>
@@ -194,7 +194,23 @@
                         </x-ui.field.group>
                     </div>
                     {{-- Col-2 --}}
-                    <div>
+                    <div class="space-y-6">
+                        <div class="flex flex-wrap gap-4">
+                            <x-ui.avatar.group class="grayscale">
+                                <x-ui.avatar>
+                                    <x-ui.avatar.image src="https://untitledui.com/images/avatars/olivia-rhye" />
+                                    <x-ui.avatar.fallback>OR</x-ui.avatar.fallback>
+                                </x-ui.avatar>
+                                <x-ui.avatar>
+                                    <x-ui.avatar.image src="https://untitledui.com/images/avatars/phoenix-baker" />
+                                    <x-ui.avatar.fallback>PB</x-ui.avatar.fallback>
+                                </x-ui.avatar>
+                                <x-ui.avatar>
+                                    <x-ui.avatar.image src="https://untitledui.com/images/avatars/ava-wright" />
+                                    <x-ui.avatar.fallback>AW</x-ui.avatar.fallback>
+                                </x-ui.avatar>
+                            </x-ui.avatar.group>
+                        </div>
                         <div class="flex gap-2">
                             <x-ui.badge>
                                 <i data-lucide="loader-circle" data-icon="inline-start" class="animate-spin"></i>
