@@ -117,7 +117,7 @@
                 </div>
             </div>
             <div :class="['theme-' + theme, $store.darkMode.on ? 'dark' : '' ]">
-                <div class="grid grid-cols-4">
+                <div class="grid grid-cols-4 gap-6">
                     <div class="rounded-xl border p-6">
                         <x-ui.field.group>
                             {{-- Field set --}}
@@ -170,7 +170,7 @@
                                 <x-ui.field.description>The billing address associated with your payment method</x-ui.field.description>
                                 <x-ui.field.group>
                                     <x-ui.field orientation="horizontal">
-                                        <x-ui.checkbox name="same-as-shipping-address" id="sasa" />
+                                        <x-ui.checkbox name="same-as-shipping-address" id="sasa" checked />
                                         <x-ui.field.label for="sasa">Same as shipping address</x-ui.field.label>
                                     </x-ui.field>
                                 </x-ui.field.group>
@@ -191,6 +191,22 @@
                                 <x-ui.button type="reset" variant="outline">Cancel</x-ui.button>
                             </x-ui.field>
                         </x-ui.field.group>
+                    </div>
+                    <div>
+                        <div class="flex gap-2">
+                            <x-ui.badge>
+                                <i data-lucide="loader-circle" data-icon="inline-start" class="animate-spin"></i>
+                                Syncing
+                            </x-ui.badge>
+                            <x-ui.badge variant="secondary">
+                                <i data-lucide="loader-circle" data-icon="inline-start" class="animate-spin"></i>
+                                Uploading
+                            </x-ui.badge>
+                            <x-ui.badge variant="outline">
+                                <i data-lucide="loader-circle" data-icon="inline-start" class="animate-spin"></i>
+                                Loading
+                            </x-ui.badge>
+                        </div>
                     </div>
                 </div>
             </div>
