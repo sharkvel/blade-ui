@@ -3,6 +3,8 @@
     "tailwindStylesheet": "./resources/css/app.css",
     "tailwindFunctions": ["clsx", "cn", "tw"],
     "printWidth": 150,
+    "singleQuote": true,
+    "jsxSingleQuote": true,
     "overrides": [
         {
             "files": ["*.blade.php"],

@@ -117,8 +117,14 @@
                 </div>
             </div>
             <div :class="['theme-' + theme, $store.darkMode.on ? 'dark' : '' ]">
-                <div class="overflow-hidden">
-                    <x-ui.button>Test</x-ui.button>
+                <div class="grid grid-cols-3">
+                    <div>
+                        <x-ui.field>
+                            <x-ui.field.label for="name">Name on card</x-ui.field.label>
+                            <x-ui.input id="name" placeholder="John Doe" />
+                            <x-ui.field.separator></x-ui.field.separator>
+                        </x-ui.field>
+                    </div>
                 </div>
             </div>
         </div>
