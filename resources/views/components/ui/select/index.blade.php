@@ -28,7 +28,7 @@
     };
 @endphp
 
-<div class="relative">
+<div class="relative shrink-0">
     <select {{ $attributes->merge(["class" => cn($baseClasses, $variantClasses, $sizeClasses, $attributes->get("class"))]) }}>
         @if (! empty($placeholder))
             <option value="" selected disabled hidden>{{ $placeholder }}</option>

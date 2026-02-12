@@ -85,8 +85,8 @@
                 x-data="{ theme: 'neutral' }"
             @endif
         >
-            <div class="flex h-14 items-center justify-between">
-                <div class="flex items-center gap-6 *:no-underline">
+            <div class="flex h-14 items-center justify-between gap-4">
+                <div class="hide-scrollbar flex items-center gap-6 overflow-x-auto *:no-underline">
                     @foreach ($exampleLinks as $item)
                         <x-ui.a
                             href="{{ $item['url'] }}"
@@ -103,17 +103,17 @@
                         </x-ui.a>
                     @endforeach
                 </div>
-                <div class="flex">
-                    <div class="flex items-center gap-2">
-                        <x-ui.label for="theme">Theme</x-ui.label>
-                        <x-ui.select defaultValue="{{ $theme }}" size="sm" id="theme" @change="theme = $el.value">
+
+                <div class="flex shrink-0 items-center gap-2">
+                    <x-ui.select defaultValue="{{ $theme }}" size="sm" id="theme" @change="theme = $el.value">
+                        <x-ui.select.option-group label="Themes">
                             <x-ui.select.option value="blue">Blue</x-ui.select.option>
                             <x-ui.select.option value="green">Green</x-ui.select.option>
                             <x-ui.select.option value="neutral">Neutral</x-ui.select.option>
                             <x-ui.select.option value="yellow">Yellow</x-ui.select.option>
-                        </x-ui.select>
-                        <x-ui.button size="icon-sm" variant="outline"><i data-lucide="copy"></i></x-ui.button>
-                    </div>
+                        </x-ui.select.option-group>
+                    </x-ui.select>
+                    <x-ui.button size="icon-sm" variant="outline"><i data-lucide="copy"></i></x-ui.button>
                 </div>
             </div>
             <div :class="['theme-' + theme, $store.darkMode.on ? 'dark' : '' ]">
