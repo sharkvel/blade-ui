@@ -13,9 +13,9 @@
      * Variant classes
      */
     $variantClasses = match ($variant) {
-        "default" => "border-input shadow-xs checked:border-primary checked:bg-primary checked:after:bg-primary-foreground dark:bg-input/30 dark:hover:not-checked:bg-input/50",
+        "default" => "border-input checked:border-primary checked:bg-primary checked:after:bg-primary-foreground dark:bg-input/30 dark:hover:not-checked:bg-input/50",
         "secondary" => "bg-secondary checked:after:bg-primary",
-        "outline" => "border-input shadow-xs checked:after:bg-primary dark:bg-input/30 dark:hover:not-checked:bg-input/50",
+        "outline" => "border-input checked:after:bg-primary dark:bg-input/30 dark:hover:not-checked:bg-input/50",
         "ghost" => "bg-transparent checked:after:bg-primary",
     };
 
