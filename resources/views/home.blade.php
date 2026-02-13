@@ -119,7 +119,7 @@
             <div :class="['theme-' + theme, $store.darkMode.on ? 'dark' : '' ]">
                 <div class="grid items-start gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                     {{-- Col-1 --}}
-                    <div class="rounded-lg border p-6">
+                    <div class="rounded-lg border p-8">
                         <x-ui.field.group>
                             {{-- Field set --}}
                             <x-ui.field.set>
@@ -194,7 +194,7 @@
                         </x-ui.field.group>
                     </div>
                     {{-- Col-2 --}}
-                    <div class="flex flex-col gap-6">
+                    <div class="flex flex-col gap-8">
                         {{-- Empty --}}
                         <x-ui.empty class="border">
                             <x-ui.empty.header>
