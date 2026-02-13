@@ -119,7 +119,7 @@
             <div :class="['theme-' + theme, $store.darkMode.on ? 'dark' : '' ]">
                 <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                     {{-- Col-1 --}}
-                    <div class="rounded-xl border p-6">
+                    <div class="rounded-lg border p-6">
                         <x-ui.field.group>
                             {{-- Field set --}}
                             <x-ui.field.set>
@@ -195,22 +195,35 @@
                     </div>
                     {{-- Col-2 --}}
                     <div class="flex flex-col gap-6">
-                        <div class="flex flex-wrap gap-4 rounded-xl border border-dashed p-4">
-                            <x-ui.avatar.group class="grayscale">
-                                <x-ui.avatar>
-                                    <x-ui.avatar.image src="https://untitledui.com/images/avatars/olivia-rhye" />
-                                    <x-ui.avatar.fallback>OR</x-ui.avatar.fallback>
-                                </x-ui.avatar>
-                                <x-ui.avatar>
-                                    <x-ui.avatar.image src="https://untitledui.com/images/avatars/phoenix-baker" />
-                                    <x-ui.avatar.fallback>PB</x-ui.avatar.fallback>
-                                </x-ui.avatar>
-                                <x-ui.avatar>
-                                    <x-ui.avatar.image src="https://untitledui.com/images/avatars/ava-wright" />
-                                    <x-ui.avatar.fallback>AW</x-ui.avatar.fallback>
-                                </x-ui.avatar>
-                            </x-ui.avatar.group>
-                        </div>
+                        <x-ui.empty class="border">
+                            <x-ui.empty.header>
+                                <x-ui.empty.media>
+                                    <x-ui.avatar.group class="grayscale">
+                                        <x-ui.avatar>
+                                            <x-ui.avatar.image src="https://untitledui.com/images/avatars/olivia-rhye" />
+                                            <x-ui.avatar.fallback>OR</x-ui.avatar.fallback>
+                                        </x-ui.avatar>
+                                        <x-ui.avatar>
+                                            <x-ui.avatar.image src="https://untitledui.com/images/avatars/phoenix-baker" />
+                                            <x-ui.avatar.fallback>PB</x-ui.avatar.fallback>
+                                        </x-ui.avatar>
+                                        <x-ui.avatar>
+                                            <x-ui.avatar.image src="https://untitledui.com/images/avatars/ava-wright" />
+                                            <x-ui.avatar.fallback>AW</x-ui.avatar.fallback>
+                                        </x-ui.avatar>
+                                    </x-ui.avatar.group>
+                                </x-ui.empty.media>
+                                <x-ui.empty.title>No Team Members</x-ui.empty.title>
+                                <x-ui.empty.description>Invite your team to collaborate on this project.</x-ui.empty.description>
+                            </x-ui.empty.header>
+                            <x-ui.empty.content>
+                                <x-ui.button size="sm">
+                                    <i data-lucide="plus" data-icon="inline-start"></i>
+                                    Invite Members
+                                </x-ui.button>
+                            </x-ui.empty.content>
+                        </x-ui.empty>
+
                         <div class="flex gap-2">
                             <x-ui.badge>
                                 <i data-lucide="loader-circle" data-icon="inline-start" class="animate-spin"></i>
