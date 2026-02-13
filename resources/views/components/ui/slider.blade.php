@@ -9,7 +9,7 @@
     /**
      * Base classes
      */
-    $baseClasses = 'z-10 w-full appearance-none bg-transparent [grid-area:1/1] [&::-webkit-slider-thumb]:appearance-none';
+    $baseClasses = 'z-10 w-full appearance-none bg-transparent outline-none [grid-area:1/1] [&::-webkit-slider-thumb]:appearance-none';
     $fireFoxClasses = ' [&::-moz-range-thumb]:border-none [&::-moz-range-thumb]:bg-transparent';
 
     $sizeClasses = match ('default') {
@@ -18,7 +18,7 @@
 @endphp
 
 <div
-    class="relative grid grid-cols-1 grid-rows-1 items-center"
+    class="group relative grid grid-cols-1 grid-rows-1 items-center"
     x-data="{
         min: @js($min),
         max: @js($max),
@@ -41,7 +41,15 @@
             ])
         }}
     />
-    <div class="pointer-events-none z-10 size-4 bg-red-500 [grid-area:1/1] hover:bg-blue-300"></div>
-    <div class="z-1 flex h-1 w-(--range,0%) rounded-full bg-primary will-change-[width] [grid-area:1/1]" :style="{'--range': percent+'%'}"></div>
+
+    <div
+        class="relative z-1 flex h-1 w-(--range,0%) items-center justify-end rounded-l-full bg-primary will-change-[width] [grid-area:1/1]"
+        :style="{'--range': percent+'%'}"
+    >
+        <div
+            class="pointer-events-none absolute left-full z-10 block size-4 shrink-0 -translate-x-(--_x) rounded-full border border-ring bg-white ring-ring/50 transition-[color,box-shadow] [grid-area:1/1] group-focus-within:ring-2 group-hover:ring-2"
+            :style="{'--_x': percent+'%'}"
+        ></div>
+    </div>
     <div class="z-0 flex h-1 w-full rounded-full bg-muted [grid-area:1/1]"></div>
 </div>

@@ -240,14 +240,18 @@
                             </x-ui.badge>
                         </div>
                         {{-- Input group --}}
-                        <div class="flex gap-2 items-center">
+                        <div class="flex items-center gap-2">
                             <x-ui.button variant="outline" class="rounded-full" size="icon">
                                 <i data-lucide="plus"></i>
                             </x-ui.button>
                             <x-ui.input class="rounded-full" placeholder="Write your message" />
                         </div>
                         <div>
-                            <x-ui.slider />
+                            <x-ui.field>
+                                <x-ui.field.label>Price start</x-ui.field.label>
+                                <x-ui.field.description>Set your minimum budget</x-ui.field.description>
+                                <x-ui.slider />
+                            </x-ui.field>
                         </div>
                     </div>
                 </div>
