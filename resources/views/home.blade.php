@@ -195,6 +195,7 @@
                     </div>
                     {{-- Col-2 --}}
                     <div class="flex flex-col gap-6">
+                        {{-- Empty --}}
                         <x-ui.empty class="border">
                             <x-ui.empty.header>
                                 <x-ui.empty.media>
@@ -223,7 +224,7 @@
                                 </x-ui.button>
                             </x-ui.empty.content>
                         </x-ui.empty>
-
+                        {{-- Badges --}}
                         <div class="flex gap-2">
                             <x-ui.badge>
                                 <i data-lucide="loader-circle" data-icon="inline-start" class="animate-spin"></i>
@@ -237,6 +238,16 @@
                                 <i data-lucide="loader-circle" data-icon="inline-start" class="animate-spin"></i>
                                 Loading
                             </x-ui.badge>
+                        </div>
+                        {{-- Input group --}}
+                        <div class="flex gap-2 items-center">
+                            <x-ui.button variant="outline" class="rounded-full" size="icon">
+                                <i data-lucide="plus"></i>
+                            </x-ui.button>
+                            <x-ui.input class="rounded-full" placeholder="Write your message" />
+                        </div>
+                        <div>
+                            <x-ui.slider />
                         </div>
                     </div>
                 </div>
