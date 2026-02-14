@@ -14,7 +14,7 @@
      * Variant classes
      */
     $variantClasses = match ($variant) {
-        "default" => "border-input dark:bg-input/30 dark:hover:bg-input/50 dark:[&::-webkit-calendar-picker-indicator]:invert",
+        "default" => "border-input dark:bg-input/30 dark:[&::-webkit-calendar-picker-indicator]:invert",
     };
 
     /**
