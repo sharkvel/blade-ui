@@ -194,7 +194,7 @@
                         </x-ui.field.group>
                     </div>
                     {{-- Col-2 --}}
-                    <div class="flex flex-col gap-8">
+                    <div class="flex flex-col gap-6">
                         {{-- Empty --}}
                         <x-ui.empty class="border md:px-6">
                             <x-ui.empty.header>
@@ -291,6 +291,14 @@
                                     <x-ui.input-group.button size="icon-xs" variant="default" class="rounded-full">
                                         <i data-lucide="arrow-up"></i>
                                     </x-ui.input-group.button>
+                                </x-ui.input-group.addon>
+                            </x-ui.input-group>
+                        </div>
+                        <div>
+                            <x-ui.input-group>
+                                <x-ui.input-group.input placeholder="@sharkvel" />
+                                <x-ui.input-group.addon align="inline-end">
+                                    <i data-lucide="circle-check" class="text-primary"></i>
                                 </x-ui.input-group.addon>
                             </x-ui.input-group>
                         </div>
