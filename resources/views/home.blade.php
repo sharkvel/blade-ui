@@ -303,6 +303,23 @@
                             </x-ui.input-group>
                         </div>
                     </div>
+                    {{-- Col-3 --}}
+                    <div class="flex flex-col gap-7">
+                        <x-ui.input-group class="rounded-full">
+                            <x-ui.input-group.input class="ps-1!" />
+                            <x-ui.input-group.addon>
+                                <x-ui.input-group.button size="icon-xs" class="rounded-full">
+                                    <i data-lucide="info"></i>
+                                </x-ui.input-group.button>
+                            </x-ui.input-group.addon>
+                            <x-ui.input-group.addon class="ps-1!">https://</x-ui.input-group.addon>
+                            <x-ui.input-group.addon align="inline-end">
+                                <x-ui.input-group.button size="icon-xs" class="rounded-full">
+                                    <i data-lucide="star"></i>
+                                </x-ui.input-group.button>
+                            </x-ui.input-group.addon>
+                        </x-ui.input-group>
+                    </div>
                 </div>
             </div>
         </div>
