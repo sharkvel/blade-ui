@@ -244,7 +244,14 @@
                             <x-ui.button variant="outline" class="rounded-full" size="icon">
                                 <i data-lucide="plus"></i>
                             </x-ui.button>
-                            <x-ui.input class="rounded-full" placeholder="Write your message" />
+                            <x-ui.input-group class="rounded-full">
+                                <x-ui.input-group.input placeholder="Write your message" />
+                                <x-ui.input-group.addon align="inline-end">
+                                    <x-ui.input-group.button class="rounded-full" variant="ghost" size="icon-xs">
+                                        <i data-lucide="audio-lines"></i>
+                                    </x-ui.input-group.button>
+                                </x-ui.input-group.addon>
+                            </x-ui.input-group>
                         </div>
                         <div>
                             <x-ui.field>
@@ -252,6 +259,40 @@
                                 <x-ui.field.description>Set your minimum budget</x-ui.field.description>
                                 <x-ui.slider />
                             </x-ui.field>
+                        </div>
+                        <div>
+                            <x-ui.input-group>
+                                <x-ui.input-group.input />
+                                <x-ui.input-group.addon><i data-lucide="search"></i></x-ui.input-group.addon>
+                                <x-ui.input-group.addon align="inline-end">12 results</x-ui.input-group.addon>
+                            </x-ui.input-group>
+                        </div>
+                        <div>
+                            <x-ui.input-group>
+                                <x-ui.input-group.input class="pl-1!" placeholder="example.com" />
+                                <x-ui.input-group.addon>https://</x-ui.input-group.addon>
+                                <x-ui.input-group.addon align="inline-end">
+                                    <x-ui.input-group.button size="icon-xs" class="rounded-full">
+                                        <i data-lucide="circle-alert"></i>
+                                    </x-ui.input-group.button>
+                                </x-ui.input-group.addon>
+                            </x-ui.input-group>
+                        </div>
+                        <div>
+                            <x-ui.input-group>
+                                <x-ui.input-group.textarea placeholder="Ask, Search or Chat..." class="min-h-16" />
+                                <x-ui.input-group.addon align="block-end">
+                                    <x-ui.input-group.button size="icon-xs" variant="outline" class="rounded-full">
+                                        <i data-lucide="plus"></i>
+                                    </x-ui.input-group.button>
+                                    <x-ui.input-group.button>Auto</x-ui.input-group.button>
+                                    <x-ui.input-group.text class="ms-auto">52% used</x-ui.input-group.text>
+                                    <x-ui.separator orientation="vertical" class="h-3" />
+                                    <x-ui.input-group.button size="icon-xs" variant="default" class="rounded-full">
+                                        <i data-lucide="arrow-up"></i>
+                                    </x-ui.input-group.button>
+                                </x-ui.input-group.addon>
+                            </x-ui.input-group>
                         </div>
                     </div>
                 </div>
