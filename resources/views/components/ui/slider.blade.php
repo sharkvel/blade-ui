@@ -41,15 +41,18 @@
             ])
         }}
     />
-
+    {{-- Progress --}}
     <div
         class="relative z-1 flex h-1 w-(--range,0%) items-center justify-end rounded-l-full bg-primary will-change-[width] [grid-area:1/1]"
         :style="{'--range': percent+'%'}"
     >
+        {{-- Thumb --}}
         <div
-            class="pointer-events-none absolute left-full z-10 block size-4 shrink-0 -translate-x-(--_x) rounded-full border border-ring bg-white ring-ring/50 transition-[color,box-shadow] [grid-area:1/1] group-focus-within:ring-2 group-hover:ring-2"
+            class="pointer-events-none absolute left-full z-10 block size-3.5 shrink-0 -translate-x-(--_x) rounded-full border border-ring bg-white ring-ring/50 transition-[color,box-shadow] [grid-area:1/1] group-focus-within:ring-2 group-hover:ring-2"
+            :class="{'ml-[0.5px]':percent>95}"
             :style="{'--_x': percent+'%'}"
         ></div>
     </div>
+    {{-- Track --}}
     <div class="z-0 flex h-1 w-full rounded-full bg-muted [grid-area:1/1]"></div>
 </div>
