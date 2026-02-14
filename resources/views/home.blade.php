@@ -194,7 +194,7 @@
                         </x-ui.field.group>
                     </div>
                     {{-- Col-2 --}}
-                    <div class="flex flex-col gap-6">
+                    <div class="flex flex-col gap-8">
                         {{-- Empty --}}
                         <x-ui.empty class="border md:px-6">
                             <x-ui.empty.header>
