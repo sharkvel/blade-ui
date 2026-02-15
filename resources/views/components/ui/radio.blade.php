@@ -1,6 +1,7 @@
 @props([
     "variant" => "default",
     "size" => "default",
+    "value"
 ])
 
 @php
@@ -31,5 +32,6 @@
 
 <input
     type="radio"
+    value="{{ $value }}"
     {{ $attributes->merge(["class" => cn($baseClasses, $variantClasses, $sizeClasses, $attributes->get("class"))]) }}
 />

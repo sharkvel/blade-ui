@@ -2,7 +2,7 @@
     /**
      * Base classes
      */
-    $baseClasses = 'text-lg font-medium tracking-tight';
+    $baseClasses = 'text-base font-medium tracking-tight';
 @endphp
 
 <div data-slot="empty-title" {{

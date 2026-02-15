@@ -28,7 +28,7 @@
     <div class="h-16"></div>
     <div class="section-wrapper mx-auto flex min-h-[calc(100svh-4rem)] w-full flex-col items-center border-x-0 py-12 md:border-x">
         {{-- Powered by --}}
-        <div class="mx-auto mt-24 flex gap-x-8 text-center text-muted-foreground">
+        <div class="mx-auto mt-16 flex gap-x-8 text-center text-muted-foreground">
             <a href="https://tailwindcss.com/" target="_blank">
                 <div class="flex items-center gap-2 font-medium hover:text-foreground">
                     <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="size-4.5" fill="currentColor">
@@ -49,10 +49,10 @@
             </a>
         </div>
         {{-- Hero Title --}}
-        <x-ui.h1 class="mt-5 max-w-[24ch] text-center leading-[1.2] font-medium text-balance lg:text-6xl">
+        <x-ui.h1 class="mt-5 text-center leading-[1.2] font-medium text-balance lg:text-6xl lg:tracking-tighter">
             Build faster with reusable blade components
         </x-ui.h1>
-        <x-ui.p class="max-w-[60ch] text-center text-pretty">
+        <x-ui.p class="max-w-[60ch] text-center text-pretty lg:text-lg">
             Open-source, production-ready components built to accelerate Laravel development while giving you full control to customize, extend, and
             scale.
         </x-ui.p>
@@ -78,7 +78,7 @@
 
         {{-- Previews --}}
         <div
-            class="mt-24 flex w-full flex-col gap-2"
+            class="mt-18 flex w-full flex-col gap-2"
             @if (! empty($theme))
                 x-data="{ theme: @js($theme) }"
             @else
@@ -305,20 +305,51 @@
                     </div>
                     {{-- Col-3 --}}
                     <div class="flex flex-col gap-7">
-                        <x-ui.input-group class="rounded-full">
-                            <x-ui.input-group.input class="ps-1!" />
-                            <x-ui.input-group.addon>
-                                <x-ui.input-group.button size="icon-xs" class="rounded-full">
-                                    <i data-lucide="info"></i>
-                                </x-ui.input-group.button>
-                            </x-ui.input-group.addon>
-                            <x-ui.input-group.addon class="ps-1!">https://</x-ui.input-group.addon>
-                            <x-ui.input-group.addon align="inline-end">
-                                <x-ui.input-group.button size="icon-xs" class="rounded-full">
-                                    <i data-lucide="star"></i>
-                                </x-ui.input-group.button>
-                            </x-ui.input-group.addon>
-                        </x-ui.input-group>
+                        <div>
+                            <x-ui.input-group class="rounded-full">
+                                <x-ui.input-group.input class="ps-1!" />
+                                <x-ui.input-group.addon>
+                                    <x-ui.input-group.button size="icon-xs" class="rounded-full">
+                                        <i data-lucide="info"></i>
+                                    </x-ui.input-group.button>
+                                </x-ui.input-group.addon>
+                                <x-ui.input-group.addon class="ps-1!">https://</x-ui.input-group.addon>
+                                <x-ui.input-group.addon align="inline-end">
+                                    <x-ui.input-group.button size="icon-xs" class="rounded-full">
+                                        <i data-lucide="star"></i>
+                                    </x-ui.input-group.button>
+                                </x-ui.input-group.addon>
+                            </x-ui.input-group>
+                        </div>
+                        <div>
+                            <x-ui.field.separator>Appearance Settings</x-ui.field.separator>
+                        </div>
+                        <div>
+                            <x-ui.radio-group defaultValue="kubernetes" name="radio">
+                                <x-ui.field.label for="kubernetes">
+                                    <x-ui.field orientation="horizontal">
+                                        <x-ui.field.content>
+                                            <x-ui.field.title>Kubernetes</x-ui.field.title>
+                                            <x-ui.field.description>
+                                                Run GPU workloads on a K8s configured cluster. This is the default.
+                                            </x-ui.field.description>
+                                        </x-ui.field.content>
+                                        <x-ui.radio-group.item value="kubernetes" id="kubernetes" />
+                                    </x-ui.field>
+                                </x-ui.field.label>
+                                <x-ui.field.label for="virtual-machine">
+                                    <x-ui.field orientation="horizontal">
+                                        <x-ui.field.content>
+                                            <x-ui.field.title>Virtual Machine</x-ui.field.title>
+                                            <x-ui.field.description>
+                                                Access a VM configured cluster to run workloads. (Coming soon)
+                                            </x-ui.field.description>
+                                        </x-ui.field.content>
+                                        <x-ui.radio-group.item value="virtual-machine" id="virtual-machine" />
+                                    </x-ui.field>
+                                </x-ui.field.label>
+                            </x-ui.radio-group>
+                        </div>
                     </div>
                 </div>
             </div>

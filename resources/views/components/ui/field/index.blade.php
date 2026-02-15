@@ -18,4 +18,6 @@
     };
 @endphp
 
-<div {{ $attributes->merge(['class' => cn($baseClasses, $orientationClasses, $attributes->get('class'))]) }}>{{ $slot }}</div>
+<div role="group" data-slot="field" {{ $attributes->merge(['class' => cn($baseClasses, $orientationClasses, $attributes->get('class'))]) }}>
+    {{ $slot }}
+</div>
