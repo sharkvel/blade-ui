@@ -464,14 +464,82 @@
                                     <x-ui.button variant="outline" size="icon"><i data-lucide="arrow-left"></i></x-ui.button>
                                     <x-ui.button variant="outline" size="icon"><i data-lucide="arrow-right"></i></x-ui.button>
                                 </x-ui.button-group>
-                                
+
                                 <x-ui.button-group>
-                                    <x-ui.button variant="outline"><i data-lucide="bot" data-icon="inline-start"></i>Copilot</x-ui.button>
+                                    <x-ui.button variant="outline">
+                                        <i data-lucide="bot" data-icon="inline-start"></i>
+                                        Copilot
+                                    </x-ui.button>
                                     <x-ui.button variant="outline" size="icon">
                                         <i data-lucide="chevron-down"></i>
                                     </x-ui.button>
                                 </x-ui.button-group>
                             </x-ui.button-group>
+                        </div>
+                        <div>
+                            <x-ui.card>
+                                <x-ui.card.content>
+                                    <x-ui.field.group>
+                                        <x-ui.field.set>
+                                            <x-ui.field.legend>How did you hear about us?</x-ui.field.legend>
+                                            <x-ui.field.description>
+                                                Select the option that best describes how you heard about us.
+                                            </x-ui.field.description>
+                                            <x-ui.field.group class="flex flex-row flex-wrap gap-2">
+                                                <x-ui.field.label for="social-media" class="w-fit! rounded-full!">
+                                                    <x-ui.field
+                                                        orientation="horizontal"
+                                                        class="pointer-events-none gap-0 px-2! py-1.5! pe-2.25! transition-[gap] has-checked:gap-2"
+                                                    >
+                                                        <x-ui.checkbox
+                                                            id="social-media"
+                                                            checked
+                                                            class="size-0 scale-0 rounded-full bg-primary transition-[width,height,scale] checked:size-4 checked:scale-100 dark:bg-primary!"
+                                                        />
+                                                        <x-ui.field.label>Social media</x-ui.field.label>
+                                                    </x-ui.field>
+                                                </x-ui.field.label>
+                                                <x-ui.field.label for="search-engine" class="w-fit! rounded-full!">
+                                                    <x-ui.field
+                                                        orientation="horizontal"
+                                                        class="pointer-events-none gap-0 px-2! py-1.5! pe-2.25! transition-[gap] has-checked:gap-2"
+                                                    >
+                                                        <x-ui.checkbox
+                                                            id="search-engine"
+                                                            class="size-0 scale-0 rounded-full bg-primary transition-[width,height,scale] checked:size-4 checked:scale-100 dark:bg-primary!"
+                                                        />
+                                                        <x-ui.field.label>Search Engine</x-ui.field.label>
+                                                    </x-ui.field>
+                                                </x-ui.field.label>
+                                                <x-ui.field.label for="referral" class="w-fit! rounded-full!">
+                                                    <x-ui.field
+                                                        orientation="horizontal"
+                                                        class="pointer-events-none gap-0 px-2! py-1.5! pe-2.25! transition-[gap] has-checked:gap-2"
+                                                    >
+                                                        <x-ui.checkbox
+                                                            id="referral"
+                                                            class="size-0 scale-0 rounded-full bg-primary transition-[width,height,scale] checked:size-4 checked:scale-100 dark:bg-primary!"
+                                                        />
+                                                        <x-ui.field.label>Referral</x-ui.field.label>
+                                                    </x-ui.field>
+                                                </x-ui.field.label>
+                                                <x-ui.field.label for="other" class="w-fit! rounded-full!">
+                                                    <x-ui.field
+                                                        orientation="horizontal"
+                                                        class="pointer-events-none gap-0 px-2! py-1.5! pe-2.25! transition-[gap] has-checked:gap-2"
+                                                    >
+                                                        <x-ui.checkbox
+                                                            id="other"
+                                                            class="size-0 scale-0 rounded-full bg-primary transition-[width,height,scale] checked:size-4 checked:scale-100 dark:bg-primary!"
+                                                        />
+                                                        <x-ui.field.label>Other</x-ui.field.label>
+                                                    </x-ui.field>
+                                                </x-ui.field.label>
+                                            </x-ui.field.group>
+                                        </x-ui.field.set>
+                                    </x-ui.field.group>
+                                </x-ui.card.content>
+                            </x-ui.card>
                         </div>
                     </div>
                 </div>
