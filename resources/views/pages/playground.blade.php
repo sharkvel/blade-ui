@@ -1,13 +1,4 @@
 <x-app-layout>
-    <x-ui.input-group>
-                                <x-ui.input-group.input class="pl-5" placeholder="example.com" />
-                                <x-ui.input-group.addon>https://</x-ui.input-group.addon>
-                                <x-ui.input-group.addon align="inline-end">
-                                    <x-ui.input-group.button size="icon-xs" class="rounded-full">
-                                        <i data-lucide="circle-alert"></i>
-                                    </x-ui.input-group.button>
-                                </x-ui.input-group.addon>
-                            </x-ui.input-group>
     <div class="grid grid-cols-2 gap-6 p-4">
         {{-- Button --}}
         @include("components.examples.area.button-variants")
@@ -17,6 +8,8 @@
         @include("components.examples.area.checkbox-variants")
         {{-- Radio --}}
         @include("components.examples.area.radio-variants")
+        {{-- Switch --}}
+        @include("components.examples.area.switch-variants")
         {{-- Select --}}
         @include("components.examples.area.select-variants")
         {{-- Typography --}}
