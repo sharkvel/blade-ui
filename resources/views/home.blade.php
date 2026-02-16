@@ -123,7 +123,7 @@
                         <x-ui.field.group>
                             {{-- Field set --}}
                             <x-ui.field.set>
-                                <x-ui.field.legend class="mb-2">Payment Method</x-ui.field.legend>
+                                <x-ui.field.legend>Payment Method</x-ui.field.legend>
                                 <x-ui.field.description>All transactions are secure and encrypted</x-ui.field.description>
                                 {{-- Field group --}}
                                 <x-ui.field.group>
@@ -325,30 +325,46 @@
                             <x-ui.field.separator>Appearance Settings</x-ui.field.separator>
                         </div>
                         <div>
-                            <x-ui.radio-group defaultValue="kubernetes" name="radio">
-                                <x-ui.field.label for="kubernetes">
+                            <x-ui.field.set>
+                                <x-ui.field.group>
+                                    <x-ui.field.set>
+                                        <x-ui.field.legend>Compute Environment</x-ui.field.legend>
+                                        <x-ui.field.description>Select the compute environment for your cluster.</x-ui.field.description>
+                                        <x-ui.radio-group defaultValue="kubernetes" name="radio">
+                                            <x-ui.field.label for="kubernetes">
+                                                <x-ui.field orientation="horizontal">
+                                                    <x-ui.field.content>
+                                                        <x-ui.field.title>Kubernetes</x-ui.field.title>
+                                                        <x-ui.field.description>
+                                                            Run GPU workloads on a K8s configured cluster. This is the default.
+                                                        </x-ui.field.description>
+                                                    </x-ui.field.content>
+                                                    <x-ui.radio-group.item value="kubernetes" id="kubernetes" />
+                                                </x-ui.field>
+                                            </x-ui.field.label>
+                                            <x-ui.field.label for="virtual-machine">
+                                                <x-ui.field orientation="horizontal">
+                                                    <x-ui.field.content>
+                                                        <x-ui.field.title>Virtual Machine</x-ui.field.title>
+                                                        <x-ui.field.description>
+                                                            Access a VM configured cluster to run workloads. (Coming soon)
+                                                        </x-ui.field.description>
+                                                    </x-ui.field.content>
+                                                    <x-ui.radio-group.item value="virtual-machine" id="virtual-machine" />
+                                                </x-ui.field>
+                                            </x-ui.field.label>
+                                        </x-ui.radio-group>
+                                    </x-ui.field.set>
+                                    <x-ui.field.separator />
                                     <x-ui.field orientation="horizontal">
                                         <x-ui.field.content>
-                                            <x-ui.field.title>Kubernetes</x-ui.field.title>
-                                            <x-ui.field.description>
-                                                Run GPU workloads on a K8s configured cluster. This is the default.
-                                            </x-ui.field.description>
+                                            <x-ui.field.label for="wallpaper-tining">Wallpaper Tinting</x-ui.field.label>
+                                            <x-ui.field.description>Allow the wallpaper to be tinted.</x-ui.field.description>
                                         </x-ui.field.content>
-                                        <x-ui.radio-group.item value="kubernetes" id="kubernetes" />
+                                        <x-ui.switch id="wallpaper-tining" />
                                     </x-ui.field>
-                                </x-ui.field.label>
-                                <x-ui.field.label for="virtual-machine">
-                                    <x-ui.field orientation="horizontal">
-                                        <x-ui.field.content>
-                                            <x-ui.field.title>Virtual Machine</x-ui.field.title>
-                                            <x-ui.field.description>
-                                                Access a VM configured cluster to run workloads. (Coming soon)
-                                            </x-ui.field.description>
-                                        </x-ui.field.content>
-                                        <x-ui.radio-group.item value="virtual-machine" id="virtual-machine" />
-                                    </x-ui.field>
-                                </x-ui.field.label>
-                            </x-ui.radio-group>
+                                </x-ui.field.group>
+                            </x-ui.field.set>
                         </div>
                     </div>
                 </div>

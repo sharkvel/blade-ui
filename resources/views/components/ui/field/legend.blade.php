@@ -6,7 +6,7 @@
     /**
      * Base classes
      */
-    $baseClasses = 'mb-3 font-medium';
+    $baseClasses = 'mb-1.5 font-medium';
 
     /**
      * Variant classes
