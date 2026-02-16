@@ -254,10 +254,16 @@
                             </x-ui.input-group>
                         </div>
                         <div>
-                            <x-ui.field>
+                            <x-ui.field x-data="{range:35}">
                                 <x-ui.field.label>Price start</x-ui.field.label>
-                                <x-ui.field.description>Set your minimum budget</x-ui.field.description>
-                                <x-ui.slider />
+                                <x-ui.field.description>
+                                    Set your minimum budget:
+                                    <span class="inline-flex font-medium">
+                                        $
+                                        <span x-text="range" class="tabular-nums"></span>
+                                    </span>
+                                </x-ui.field.description>
+                                <x-ui.slider x-model="range" value="35" />
                             </x-ui.field>
                         </div>
                         <div>

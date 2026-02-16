@@ -29,7 +29,8 @@
     }"
 >
     <input
-        x-model="value"
+        @input="value = +$el.value"
+        x-modelable="value"
         type="range"
         min="{{ $min }}"
         max="{{ $max }}"

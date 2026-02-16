@@ -1,4 +1,11 @@
 <x-app-layout>
+    <div x-data="{ number: 5 }">
+    <div x-data="{ count: 0 }">
+        <button  x-modelable="count" x-model="number" @click="count++">Increment</button>
+    </div>
+ 
+    Number: <span x-text="number"></span>
+</div>
     <div class="grid grid-cols-2 gap-6 p-4">
         {{-- Button --}}
         @include("components.examples.area.button-variants")
