@@ -364,6 +364,41 @@
                                     <x-ui.field.separator />
                                     <x-ui.field orientation="horizontal">
                                         <x-ui.field.content>
+                                            <x-ui.field.label>Number of GPUs</x-ui.field.label>
+                                            <x-ui.field.description>You can add more later.</x-ui.field.description>
+                                        </x-ui.field.content>
+                                        <x-ui.button-group
+                                            x-data="{
+                                                    min:1,
+                                                    max:32,
+                                                    count:8,
+                                                    update(num){
+                                                        const newValue = +this.count + +num;
+                                                        if(newValue >= this.min && newValue <= this.max) this.count = newValue;
+                                                    }
+                                                }"
+                                        >
+                                            <x-ui.button variant="outline" size="icon-sm" @click="update(-1)" x-bind:disabled="count<=min">
+                                                <i data-lucide="minus"></i>
+                                            </x-ui.button>
+                                            <x-ui.input
+                                                value="8"
+                                                x-model="count"
+                                                x-mask="999"
+                                                x-bind:value="count"
+                                                min="1"
+                                                max="32"
+                                                class="w-14 appearance-none text-center"
+                                                size="sm"
+                                            />
+                                            <x-ui.button variant="outline" size="icon-sm" @click="update(1)" x-bind:disabled="count>=max">
+                                                <i data-lucide="plus"></i>
+                                            </x-ui.button>
+                                        </x-ui.button-group>
+                                    </x-ui.field>
+                                    <x-ui.field.separator />
+                                    <x-ui.field orientation="horizontal">
+                                        <x-ui.field.content>
                                             <x-ui.field.label for="wallpaper-tining">Wallpaper Tinting</x-ui.field.label>
                                             <x-ui.field.description>Allow the wallpaper to be tinted.</x-ui.field.description>
                                         </x-ui.field.content>

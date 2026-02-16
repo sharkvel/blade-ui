@@ -1,4 +1,5 @@
 import Alpine from "alpinejs";
+import mask from '@alpinejs/mask'
 import axios from "axios";
 
 window.axios = axios;
@@ -40,5 +41,5 @@ document.addEventListener("alpine:init", () => {
         },
     }));
 });
-
+Alpine.plugin(mask);
 Alpine.start();
