@@ -408,6 +408,72 @@
                             </x-ui.field.set>
                         </div>
                     </div>
+                    {{-- Col-4 --}}
+                    <div class="flex flex-col gap-7">
+                        <div>
+                            <x-ui.field>
+                                <x-ui.input-group class="rounded-lg">
+                                    <x-ui.input-group.textarea class="min-h-16" placeholder="Ask, search, or make anything..." />
+                                    <x-ui.input-group.addon align="block-start">
+                                        <x-ui.input-group.button variant="outline" size="sm">
+                                            <i data-lucide="at-sign"></i>
+                                            Add context
+                                        </x-ui.input-group.button>
+                                    </x-ui.input-group.addon>
+                                    <x-ui.input-group.addon align="block-end">
+                                        <x-ui.input-group.button size="icon-sm" class="rounded-full">
+                                            <i data-lucide="paperclip"></i>
+                                        </x-ui.input-group.button>
+                                        <x-ui.input-group.button class="rounded-full" size="sm">Auto</x-ui.input-group.button>
+                                        <x-ui.input-group.button class="rounded-full" size="sm">
+                                            <i data-lucide="globe"></i>
+                                            All Sources
+                                        </x-ui.input-group.button>
+                                        <x-ui.input-group.button variant="default" size="icon-sm" class="ms-auto rounded-full">
+                                            <i data-lucide="arrow-up"></i>
+                                        </x-ui.input-group.button>
+                                    </x-ui.input-group.addon>
+                                </x-ui.input-group>
+                            </x-ui.field>
+                        </div>
+                        <div>
+                            <x-ui.button-group>
+                                <x-ui.button-group>
+                                    <x-ui.button variant="outline" size="icon"><i data-lucide="arrow-left"></i></x-ui.button>
+                                </x-ui.button-group>
+                                <x-ui.button-group>
+                                    <x-ui.button variant="outline">Archive</x-ui.button>
+                                    <x-ui.button variant="outline">Report</x-ui.button>
+                                </x-ui.button-group>
+                                <x-ui.button-group>
+                                    <x-ui.button variant="outline">Snooze</x-ui.button>
+                                    <x-ui.button variant="outline" size="icon">
+                                        <i data-lucide="ellipsis"></i>
+                                    </x-ui.button>
+                                </x-ui.button-group>
+                            </x-ui.button-group>
+                        </div>
+                        <div>
+                            <x-ui.button-group>
+                                <x-ui.button-group>
+                                    <x-ui.button variant="outline">1</x-ui.button>
+                                    <x-ui.button variant="outline">2</x-ui.button>
+                                    <x-ui.button variant="outline">3</x-ui.button>
+                                </x-ui.button-group>
+                                <x-ui.button-group>
+                                    <x-ui.button variant="outline" size="icon"><i data-lucide="arrow-left"></i></x-ui.button>
+                                    <x-ui.button variant="outline" size="icon"><i data-lucide="arrow-right"></i></x-ui.button>
+                                </x-ui.button-group>
+                                
+                                <x-ui.button-group>
+                                    <x-ui.button variant="outline"><i data-lucide="bot" data-icon="inline-start"></i>Copilot</x-ui.button>
+                                    <x-ui.button variant="outline" size="icon">
+                                        <i data-lucide="chevron-down"></i>
+                                    </x-ui.button>
+                                </x-ui.button-group>
+                            </x-ui.button-group>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
