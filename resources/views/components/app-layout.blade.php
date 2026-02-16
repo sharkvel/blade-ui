@@ -14,8 +14,8 @@
         <link rel="icon" type="image/png" href="/favicon.png" />
 
         <!-- Fonts -->
-        <link rel="preload" fetchpriority="high" href="/fonts/InstrumentSans.woff2" crossorigin as="font" type="font/woff2" />
-        <link rel="preload" fetchpriority="high" href="/fonts/GeistMono.woff2" crossorigin as="font" type="font/woff2" />
+        {{-- <link rel="preload" fetchpriority="high" href="/fonts/Geist.woff2" crossorigin as="font" type="font/woff2" />
+        <link rel="preload" fetchpriority="high" href="/fonts/GeistMono.woff2" crossorigin as="font" type="font/woff2" /> --}}
 
         @stack("css")
 
