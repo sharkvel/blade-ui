@@ -328,6 +328,32 @@
                             </x-ui.input-group>
                         </div>
                         <div>
+                            <x-ui.item variant="outline">
+                                <x-ui.item.content>
+                                    <x-ui.item.title>Two-factor authentication</x-ui.item.title>
+                                    <x-ui.item.description class="xl:hidden 2xl:block">Verify via email or phone number.</x-ui.item.description>
+                                </x-ui.item.content>
+                                <x-ui.item.action>
+                                    <x-ui.button size="sm">Enable</x-ui.button>
+                                </x-ui.item.action>
+                            </x-ui.item>
+                        </div>
+                        <div>
+                            <a href="#">
+                                <x-ui.item variant="outline">
+                                    <x-ui.item.media>
+                                        <i data-lucide="badge-check" class="size-5"></i>
+                                    </x-ui.item.media>
+                                    <x-ui.item.content>
+                                        <x-ui.item.title>Your profile has been verified.</x-ui.item.title>
+                                    </x-ui.item.content>
+                                    <x-ui.item.action>
+                                        <i data-lucide="chevron-right" class="size-4"></i>
+                                    </x-ui.item.action>
+                                </x-ui.item>
+                            </a>
+                        </div>
+                        <div>
                             <x-ui.field.separator>Appearance Settings</x-ui.field.separator>
                         </div>
                         <div>

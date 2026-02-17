@@ -73,3 +73,19 @@ if (!function_exists('cn')) {
         return $cache[$cacheKey] = $result;
     }
 }
+
+if (!function_exists('slotRoot')) {
+    function slotRoot($slot): string
+    {
+        preg_match('/^<\s*([^\s>]+)/', trim($slot), $matches);
+        return $matches[1];
+    }
+}
+
+if (!function_exists(function: 'slotChild')) {
+    function slotChild($slot, $root): string
+    {
+        $result = preg_replace('/<\/?' . preg_quote($root, '/') . '[^>]*>/i', '', $slot);
+        return trim($result);
+    }
+}
