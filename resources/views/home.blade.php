@@ -454,6 +454,14 @@
                             </x-ui.button-group>
                         </div>
                         <div>
+                            <x-ui.field.label for="i-agreed">
+                                <x-ui.field orientation="horizontal">
+                                    <x-ui.checkbox id="i-agreed" />
+                                    <x-ui.field.label for="i-agreed">I agree to the terms and conditions</x-ui.field.label>
+                                </x-ui.field>
+                            </x-ui.field.label>
+                        </div>
+                        <div>
                             <x-ui.button-group>
                                 <x-ui.button-group>
                                     <x-ui.button variant="outline">1</x-ui.button>
@@ -540,6 +548,22 @@
                                     </x-ui.field.group>
                                 </x-ui.card.content>
                             </x-ui.card>
+                        </div>
+                        <div>
+                            <x-ui.empty class="border md:px-6">
+                                <x-ui.empty.header>
+                                    <x-ui.empty.media variant="icon">
+                                        <i data-lucide="loader-circle" class="animate-spin"></i>
+                                    </x-ui.empty.media>
+                                    <x-ui.empty.title>Processing your request</x-ui.empty.title>
+                                    <x-ui.empty.description>
+                                        Please wait while we process your request. Do not refresh the page.
+                                    </x-ui.empty.description>
+                                </x-ui.empty.header>
+                                <x-ui.empty.content>
+                                    <x-ui.button variant="outline" size="sm">Cancel</x-ui.button>
+                                </x-ui.empty.content>
+                            </x-ui.empty>
                         </div>
                     </div>
                 </div>

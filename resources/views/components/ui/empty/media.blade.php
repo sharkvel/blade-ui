@@ -13,8 +13,8 @@
      */
     $variantClasses = match ($variant) {
         'default' => 'bg-transparent',
-        'icon' => "bg-muted text-foreground flex size-10 shrink-0 items-center justify-center rounded-lg [&_svg:not([class*='size-'])]:size-6",
+        'icon' => "bg-muted text-foreground flex size-9 shrink-0 items-center justify-center rounded-lg [&_svg:not([class*='size-'])]:size-4",
     };
 @endphp
 
-<div data-slot="empty-icon" {{ $attributes->merge(['class' => cn($baseClasses, $attributes->get('class'))]) }}>{{ $slot }}</div>
+<div data-slot="empty-icon" {{ $attributes->merge(['class' => cn($baseClasses, $variantClasses, $attributes->get('class'))]) }}>{{ $slot }}</div>
