@@ -269,7 +269,7 @@
                         <div>
                             <x-ui.input-group>
                                 <x-ui.input-group.input placeholder="Search..." />
-                                <x-ui.input-group.addon><i data-lucide="search"></i></x-ui.input-group.addon>
+                                <x-ui.input-group.addon><i data-lucide="search" data-icon="inline-start"></i></x-ui.input-group.addon>
                                 <x-ui.input-group.addon align="inline-end">12 results</x-ui.input-group.addon>
                             </x-ui.input-group>
                         </div>
