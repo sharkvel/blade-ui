@@ -463,21 +463,23 @@
                             </x-ui.field>
                         </div>
                         <div>
-                            <x-ui.button-group>
+                            <x-ui.scroll-area orientation="horizontal" scrollbar="hidden">
                                 <x-ui.button-group>
-                                    <x-ui.button variant="outline" size="icon"><i data-lucide="arrow-left"></i></x-ui.button>
+                                    <x-ui.button-group>
+                                        <x-ui.button variant="outline" size="icon"><i data-lucide="arrow-left"></i></x-ui.button>
+                                    </x-ui.button-group>
+                                    <x-ui.button-group>
+                                        <x-ui.button variant="outline">Archive</x-ui.button>
+                                        <x-ui.button variant="outline">Report</x-ui.button>
+                                    </x-ui.button-group>
+                                    <x-ui.button-group>
+                                        <x-ui.button variant="outline">Snooze</x-ui.button>
+                                        <x-ui.button variant="outline" size="icon">
+                                            <i data-lucide="ellipsis"></i>
+                                        </x-ui.button>
+                                    </x-ui.button-group>
                                 </x-ui.button-group>
-                                <x-ui.button-group>
-                                    <x-ui.button variant="outline">Archive</x-ui.button>
-                                    <x-ui.button variant="outline">Report</x-ui.button>
-                                </x-ui.button-group>
-                                <x-ui.button-group>
-                                    <x-ui.button variant="outline">Snooze</x-ui.button>
-                                    <x-ui.button variant="outline" size="icon">
-                                        <i data-lucide="ellipsis"></i>
-                                    </x-ui.button>
-                                </x-ui.button-group>
-                            </x-ui.button-group>
+                            </x-ui.scroll-area>
                         </div>
                         <div>
                             <x-ui.field.label for="i-agreed">
@@ -488,27 +490,29 @@
                             </x-ui.field.label>
                         </div>
                         <div>
-                            <x-ui.button-group>
+                            <x-ui.scroll-area orientation="horizontal" scrollbar="hidden">
                                 <x-ui.button-group>
-                                    <x-ui.button variant="outline">1</x-ui.button>
-                                    <x-ui.button variant="outline">2</x-ui.button>
-                                    <x-ui.button variant="outline">3</x-ui.button>
-                                </x-ui.button-group>
-                                <x-ui.button-group>
-                                    <x-ui.button variant="outline" size="icon"><i data-lucide="arrow-left"></i></x-ui.button>
-                                    <x-ui.button variant="outline" size="icon"><i data-lucide="arrow-right"></i></x-ui.button>
-                                </x-ui.button-group>
+                                    <x-ui.button-group>
+                                        <x-ui.button variant="outline">1</x-ui.button>
+                                        <x-ui.button variant="outline">2</x-ui.button>
+                                        <x-ui.button variant="outline">3</x-ui.button>
+                                    </x-ui.button-group>
+                                    <x-ui.button-group>
+                                        <x-ui.button variant="outline" size="icon"><i data-lucide="arrow-left"></i></x-ui.button>
+                                        <x-ui.button variant="outline" size="icon"><i data-lucide="arrow-right"></i></x-ui.button>
+                                    </x-ui.button-group>
 
-                                <x-ui.button-group>
-                                    <x-ui.button variant="outline">
-                                        <i data-lucide="bot" data-icon="inline-start"></i>
-                                        Copilot
-                                    </x-ui.button>
-                                    <x-ui.button variant="outline" size="icon">
-                                        <i data-lucide="chevron-down"></i>
-                                    </x-ui.button>
+                                    <x-ui.button-group>
+                                        <x-ui.button variant="outline">
+                                            <i data-lucide="bot" data-icon="inline-start"></i>
+                                            Copilot
+                                        </x-ui.button>
+                                        <x-ui.button variant="outline" size="icon">
+                                            <i data-lucide="chevron-down"></i>
+                                        </x-ui.button>
+                                    </x-ui.button-group>
                                 </x-ui.button-group>
-                            </x-ui.button-group>
+                            </x-ui.scroll-area>
                         </div>
                         <div>
                             <x-ui.card>
