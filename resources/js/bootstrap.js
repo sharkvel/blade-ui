@@ -47,6 +47,8 @@ document.addEventListener("alpine:init", () => {
         tx: 0, tw: 40,   // left, width   (horizontal)
         pctx: 0, // Percentage of x scroll
         pcty: 0, // Percentage of y scroll
+        haveScrollOnX: false,
+        haveScrollOnY: false,
 
         // drag state
         drag: null,  // 'y' | 'x' | null
@@ -70,6 +72,7 @@ document.addEventListener("alpine:init", () => {
             this.ty = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * (ty.clientHeight - this.th) || 0;
 
             this.pcty = maxScrollY > 0 ? (h.scrollTop / maxScrollY) * 100 : 0;
+            this.haveScrollOnY = ratioY !== 1;
 
 
             // horizontal
@@ -79,6 +82,7 @@ document.addEventListener("alpine:init", () => {
             this.tx = (h.scrollLeft / (h.scrollWidth - h.clientWidth)) * (tx.clientWidth - this.tw) || 0;
 
             this.pctx = maxScrollX > 0 ? (h.scrollLeft / maxScrollX) * 100 : 0;
+            this.haveScrollOnX = ratioX !== 1;
         },
 
         // native scroll → move thumbs
