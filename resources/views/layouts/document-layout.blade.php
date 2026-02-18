@@ -5,7 +5,6 @@
 <x-app-layout>
     {{-- Nav bar --}}
     <x-nav-bar :sidebar-items="$sidebarItems" />
-    <div class="h-16"></div>
     <div class="section-wrapper mx-auto flex min-h-[calc(100svh-4rem)] w-full border-x-0 px-0 md:border-x">
         {{-- Sidebar --}}
         <x-sidebar :sidebar-items="$sidebarItems" />

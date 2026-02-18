@@ -7,6 +7,6 @@
             <x-ui.a href="https://sharkvel.com" target="_blank" class="text-inherit">Sharkvel</x-ui.a>
             for Developers.
         </x-ui.p>
-        <x-ui.small class="mt-2 text-center text-muted-foreground">v0.6.0-Beta</x-ui.small>
+        <x-ui.small class="mt-2 text-center text-muted-foreground">{{ config('app.version') }}</x-ui.small>
     </div>
 </footer>
