@@ -20,9 +20,9 @@ class CachingTorchlight extends RenderTorchlight
 
         $response = parent::handle($request, $next);
 
-        $content = $response->getContent();
-
-        $this->saveHighlightedBlocks($content, $request);
+        defer(function () use ($response, $request) {
+            $this->saveHighlightedBlocks($response->getContent(), $request);
+        });
 
         return $response;
     }
