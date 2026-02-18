@@ -1,6 +1,6 @@
 @props([
-    "variant" => "default",
-    "size" => "default",
+    'variant' => 'default',
+    'size' => 'default',
 ])
 
 @php
@@ -13,24 +13,24 @@
      * Variant classes
      */
     $variantClasses = match ($variant) {
-        "default" => "border-input checked:border-primary checked:bg-primary checked:text-primary-foreground dark:bg-input/30 dark:hover:not-checked:bg-input/50",
-        "secondary" => "bg-secondary",
-        "outline" => "border-input dark:bg-input/30 dark:hover:not-checked:bg-input/50",
-        "ghost" => "bg-transparent",
+        'default' => 'border-input checked:border-primary checked:bg-primary checked:text-primary-foreground dark:bg-input/30 dark:hover:not-checked:bg-input/50',
+        'secondary' => 'bg-secondary',
+        'outline' => 'border-input dark:bg-input/30 dark:hover:not-checked:bg-input/50',
+        'ghost' => 'bg-transparent',
     };
 
     /**
      * Size classes
      */
     $sizeClasses = match ($size) {
-        "sm" => "size-3 after:text-[0.5rem]",
-        "default" => "size-4 after:text-xs",
-        "lg" => "size-5 after:text-base",
+        'sm' => 'size-3 after:text-[0.5rem]',
+        'default' => 'size-4 after:text-xs',
+        'lg' => 'size-5 after:text-base',
     };
 @endphp
 
 <input
     data-slot="checkbox"
     type="checkbox"
-    {{ $attributes->merge(["class" => cn($baseClasses, $variantClasses, $sizeClasses, $attributes->get("class"))]) }}
+    {{ $attributes->merge(['class' => cn($baseClasses, $variantClasses, $sizeClasses, $attributes->get('class'))]) }}
 />

@@ -1,10 +1,11 @@
 <?php
+
 // app/helpers.php
 
-use TailwindMerge\TailwindMerge;
 use TailwindMerge\Laravel\Facades\TailwindMerge as TailwindMergeFacade;
+use TailwindMerge\TailwindMerge;
 
-if (!function_exists('cn')) {
+if (! function_exists('cn')) {
     function cn(...$classes): string
     {
         static $tw;
@@ -16,31 +17,36 @@ if (!function_exists('cn')) {
         // Build normalized parts array
         $parts = [];
         foreach ($classes as $class) {
-            if (empty($class))
+            if (empty($class)) {
                 continue;
+            }
 
             if (is_array($class)) {
                 foreach ($class as $c) {
-                    if (!empty($c)) {
-                        foreach (preg_split('/\s+/', trim($c)) as $segment) {
-                            if ($segment !== '')
+                    if (! empty($c)) {
+                        foreach (preg_split('/\s+/', trim((string) $c)) as $segment) {
+                            if ($segment !== '') {
                                 $parts[] = $segment;
+                            }
                         }
                     }
                 }
             } elseif (is_string($class)) {
                 foreach (preg_split('/\s+/', trim($class)) as $segment) {
-                    if ($segment !== '')
+                    if ($segment !== '') {
                         $parts[] = $segment;
+                    }
                 }
             }
         }
 
         // Fast paths
-        if (!$parts)
+        if (! $parts) {
             return '';
-        if (count($parts) === 1)
+        }
+        if (count($parts) === 1) {
             return $parts[0];
+        }
 
         // Create cache key
         $cacheKey = implode(' ', $parts);
@@ -74,18 +80,20 @@ if (!function_exists('cn')) {
     }
 }
 
-if (!function_exists('slotRoot')) {
+if (! function_exists('slotRoot')) {
     function slotRoot($slot): string
     {
-        preg_match('/^<\s*([^\s>]+)/', trim($slot), $matches);
+        preg_match('/^<\s*([^\s>]+)/', trim((string) $slot), $matches);
+
         return $matches[1];
     }
 }
 
-if (!function_exists(function: 'slotChild')) {
+if (! function_exists(function: 'slotChild')) {
     function slotChild($slot, $root): string
     {
-        $result = preg_replace('/<\/?' . preg_quote($root, '/') . '[^>]*>/i', '', $slot);
+        $result = preg_replace('/<\/?'.preg_quote((string) $root, '/').'[^>]*>/i', '', (string) $slot);
+
         return trim($result);
     }
 }

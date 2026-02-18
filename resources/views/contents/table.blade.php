@@ -1,17 +1,17 @@
 @php
     use Illuminate\Support\Uri;
-    $contentUri = Uri::route("component", "table");
+    $contentUri = Uri::route('component', 'table');
 
     $onThisPage = [
         [
-            "url" => $contentUri->withFragment("installation")->value(),
-            "name" => "Installation",
-            "available_from" => "2026-01-20",
+            'url' => $contentUri->withFragment('installation')->value(),
+            'name' => 'Installation',
+            'available_from' => '2026-01-20',
         ],
         [
-            "url" => $contentUri->withFragment("usage")->value(),
-            "name" => "Usage",
-            "available_from" => "2026-01-20",
+            'url' => $contentUri->withFragment('usage')->value(),
+            'name' => 'Usage',
+            'available_from' => '2026-01-20',
         ],
     ];
 @endphp

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html
-    lang="{{ str_replace("_", "-", app()->getLocale()) }}"
+    lang="{{ str_replace('_', '-', app()->getLocale()) }}"
     x-data
     :class="{'dark': $store.darkMode.on}"
     class="max-lg:has-[#mobile-sidebar-toggle:checked]:overflow-hidden"
@@ -9,18 +9,20 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <title>{{ config("app.name", "Laravel") }}</title>
+        <title>{{ config('app.name', 'Laravel') }}</title>
 
         <link rel="icon" type="image/png" href="/favicon.png" />
 
         <!-- Fonts -->
-        {{-- <link rel="preload" fetchpriority="high" href="/fonts/Geist.woff2" crossorigin as="font" type="font/woff2" />
-        <link rel="preload" fetchpriority="high" href="/fonts/GeistMono.woff2" crossorigin as="font" type="font/woff2" /> --}}
+        {{--
+            <link rel="preload" fetchpriority="high" href="/fonts/Geist.woff2" crossorigin as="font" type="font/woff2" />
+            <link rel="preload" fetchpriority="high" href="/fonts/GeistMono.woff2" crossorigin as="font" type="font/woff2" />
+        --}}
 
-        @stack("css")
+        @stack('css')
 
         <!-- Styles / Scripts -->
-        @vite(["resources/css/app.css", "resources/js/app.js"])
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
 
         {{-- Change favicon --}}
         <script>
@@ -48,7 +50,7 @@
                 {{ $slot }}
             </main>
         </div>
-        @env("local")
+        @env('local')
             {{-- Indicator --}}
             <div
                 class="fixed right-0 bottom-0 z-9999999999999 m-3 flex items-center justify-center overflow-hidden rounded-md border border-neutral-600 bg-black px-1.5 text-sm text-white opacity-30 select-none *:hidden hover:opacity-100"
@@ -71,6 +73,6 @@
                 },
             });
         </script>
-        @stack("js")
+        @stack('js')
     </body>
 </html>

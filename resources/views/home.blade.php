@@ -23,6 +23,7 @@
         <link rel="stylesheet" href="{{ asset("css/themes/neutral.css") }}" />
         <link rel="stylesheet" href="{{ asset("css/themes/green.css") }}" />
     @endpush
+
     <x-nav-bar :sidebar-items="$sidebarItems" />
     <div class="section-wrapper mx-auto flex min-h-[calc(100svh-4rem)] w-full flex-col items-center border-x-0 py-12 md:border-x">
         {{-- Powered by --}}

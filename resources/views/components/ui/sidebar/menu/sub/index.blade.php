@@ -2,9 +2,9 @@
     /**
      * Base Classes
      */
-    $baseClasses = "mx-3.5 flex flex-col gap-1 border-l border-sidebar-border px-2.5 py-0.5";
+    $baseClasses = 'mx-3.5 flex flex-col gap-1 border-l border-sidebar-border px-2.5 py-0.5';
 @endphp
 
-<ul {{ $attributes->merge(["class" => cn($baseClasses, $attributes->get("class"))]) }}>
+<ul {{ $attributes->merge(['class' => cn($baseClasses, $attributes->get('class'))]) }}>
     {{ $slot }}
 </ul>

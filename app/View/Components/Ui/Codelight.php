@@ -23,12 +23,12 @@ class Codelight extends Component
      */
     public function render(): View|Closure|string
     {
-        if (!empty($this->example)) {
+        if (! empty($this->example)) {
             $path = resource_path(
-                'views/' .
+                'views/'.
                 (
                     $this->language === 'blade'
-                    ? str_replace('.', '/', $this->example) . '.blade.php'
+                    ? str_replace('.', '/', $this->example).'.blade.php'
                     : $this->example
                 )
             );

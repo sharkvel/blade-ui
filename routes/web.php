@@ -28,7 +28,7 @@ Route::get('/docs/components/{component?}', ComponentController::class)->name('c
 /**
  * For testing
  */
-Route::get('/playground', fn() => view('pages.playground'));
-Route::get('/live-example/sidebar', fn() => view('examples.components.sidebar.hero'))->name('live.sidebar');
-Route::get('/live-example/dashboard', fn() => view('examples.blocks.dashboard'))->name('live.dashboard');
+Route::get('/playground', fn () => view('pages.playground'));
+Route::get('/live-example/sidebar', fn () => view('examples.components.sidebar.hero'))->name('live.sidebar');
+Route::get('/live-example/dashboard', fn () => view('examples.blocks.dashboard'))->name('live.dashboard');
 Route::get('/test', TestController::class);

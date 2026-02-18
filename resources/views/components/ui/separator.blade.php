@@ -1,25 +1,25 @@
 @props([
-    "orientation" => "horizontal",
+    'orientation' => 'horizontal',
 ])
 
-@if ($orientation === "vertical")
+@if ($orientation === 'vertical')
     @php
         /**
          * Vertical
          * Base Classes
          */
-        $baseClasses = "h-full shrink-0 border-r";
+        $baseClasses = 'h-full shrink-0 border-r';
     @endphp
 
-    <vr {{ $attributes->merge(["class" => cn($baseClasses, $attributes->get("class"))]) }}></vr>
+    <vr {{ $attributes->merge(['class' => cn($baseClasses, $attributes->get('class'))]) }}></vr>
 @else
     @php
         /**
          * Horizontal
          * Base Classes
          */
-        $baseClasses = "w-full shrink-0";
+        $baseClasses = 'w-full shrink-0';
     @endphp
 
-    <hr {{ $attributes->merge(["class" => cn($baseClasses, $attributes->get("class"))]) }} />
+    <hr {{ $attributes->merge(['class' => cn($baseClasses, $attributes->get('class'))]) }} />
 @endif

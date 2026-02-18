@@ -1,8 +1,8 @@
 @props([
-    "value",
+    'value',
 ])
 
-@aware(["defaultValue"])
+@aware(['defaultValue'])
 
 @if ($defaultValue === $value)
     <div {{ $attributes }} x-show="tab === '{{ $value }}'">

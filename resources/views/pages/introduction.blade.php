@@ -1,27 +1,27 @@
 @php
     use Illuminate\Support\Uri;
-    $contentUri = Uri::route("docs");
+    $contentUri = Uri::route('docs');
 
     $onThisPage = [
         [
-            "url" => $contentUri->withFragment("open-code")->value(),
-            "name" => "Open code",
-            "available_from" => "2026-01-20",
+            'url' => $contentUri->withFragment('open-code')->value(),
+            'name' => 'Open code',
+            'available_from' => '2026-01-20',
         ],
         [
-            "url" => $contentUri->withFragment("consistency")->value(),
-            "name" => "Consistency",
-            "available_from" => "2026-01-20",
+            'url' => $contentUri->withFragment('consistency')->value(),
+            'name' => 'Consistency',
+            'available_from' => '2026-01-20',
         ],
         [
-            "url" => $contentUri->withFragment("beautiful-defaults")->value(),
-            "name" => "Beautiful Defaults",
-            "available_from" => "2026-01-20",
+            'url' => $contentUri->withFragment('beautiful-defaults')->value(),
+            'name' => 'Beautiful Defaults',
+            'available_from' => '2026-01-20',
         ],
         [
-            "url" => $contentUri->withFragment("well-structured")->value(),
-            "name" => "Well Structured",
-            "available_from" => "2026-01-20",
+            'url' => $contentUri->withFragment('well-structured')->value(),
+            'name' => 'Well Structured',
+            'available_from' => '2026-01-20',
         ],
     ];
 @endphp

@@ -2,11 +2,11 @@
     /**
      * Base Classes
      */
-    $baseClasses = "contents";
+    $baseClasses = 'contents';
 @endphp
 
 <div
-    {{ $attributes->merge(["class" => cn($baseClasses, $attributes->get("class"))]) }}
+    {{ $attributes->merge(['class' => cn($baseClasses, $attributes->get('class'))]) }}
     @click="open = !open"
     data-trigger="sidebar"
 >

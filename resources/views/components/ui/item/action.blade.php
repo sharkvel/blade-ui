@@ -3,7 +3,7 @@
 @endphp
 
 <div
-   data-slot="item-actions"
+    data-slot="item-actions"
     {{
         $attributes->merge([
             'class' => cn($baseClasses, $attributes->get('class')),

@@ -1,37 +1,37 @@
 @php
     use Illuminate\Support\Uri;
-    $contentUri = Uri::route("docs.installation");
+    $contentUri = Uri::route('docs.installation');
 
     $onThisPage = [
         [
-            "url" => $contentUri->withFragment("create-project")->value(),
-            "name" => "Create project",
-            "available_from" => "2026-01-20",
+            'url' => $contentUri->withFragment('create-project')->value(),
+            'name' => 'Create project',
+            'available_from' => '2026-01-20',
         ],
         [
-            "url" => $contentUri->withFragment("add-tailwind-css")->value(),
-            "name" => "Add Tailwind CSS",
-            "available_from" => "2026-01-20",
+            'url' => $contentUri->withFragment('add-tailwind-css')->value(),
+            'name' => 'Add Tailwind CSS',
+            'available_from' => '2026-01-20',
         ],
         [
-            "url" => $contentUri->withFragment("add-alpinejs")->value(),
-            "name" => "Add AlpineJs",
-            "available_from" => "2026-01-20",
+            'url' => $contentUri->withFragment('add-alpinejs')->value(),
+            'name' => 'Add AlpineJs',
+            'available_from' => '2026-01-20',
         ],
         [
-            "url" => $contentUri->withFragment("install-library")->value(),
-            "name" => "Install library",
-            "available_from" => "2026-01-20",
+            'url' => $contentUri->withFragment('install-library')->value(),
+            'name' => 'Install library',
+            'available_from' => '2026-01-20',
         ],
         [
-            "url" => $contentUri->withFragment("initialize")->value(),
-            "name" => "Initialize",
-            "available_from" => "2026-01-20",
+            'url' => $contentUri->withFragment('initialize')->value(),
+            'name' => 'Initialize',
+            'available_from' => '2026-01-20',
         ],
         [
-            "url" => $contentUri->withFragment("add-component")->value(),
-            "name" => "Add component",
-            "available_from" => "2026-01-20",
+            'url' => $contentUri->withFragment('add-component')->value(),
+            'name' => 'Add component',
+            'available_from' => '2026-01-20',
         ],
     ];
 @endphp
@@ -68,7 +68,10 @@
         official site for more information:
     </x-ui.p>
     <div class="mt-6 rounded-lg border p-1">
-        <x-ui.codelight language="shell">npm install tailwindcss @tailwindcss/vite</x-ui.codelight>
+        <!-- prettier-ignore -->
+        <x-ui.codelight language="shell" >
+            npm install tailwindcss @tailwindcss/vite
+        </x-ui.codelight>
     </div>
     <x-ui.p>
         Add the

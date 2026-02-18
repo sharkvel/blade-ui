@@ -2,10 +2,10 @@
     /**
      * Base Classes
      */
-    $baseClasses = "ms-auto";
+    $baseClasses = 'ms-auto';
 @endphp
 
-<div {{ $attributes->merge(["class" => cn($baseClasses, $attributes->get("class"))]) }}>
+<div {{ $attributes->merge(['class' => cn($baseClasses, $attributes->get('class'))]) }}>
     <div :class="open ? 'rotate-180' : ''">
         @if ($slot->isNotEmpty())
             {{ $slot }}

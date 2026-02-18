@@ -1,5 +1,5 @@
 @php
-    $onThisPage = $componentMeta->attributes["onThisPage"] ?? [];
+    $onThisPage = $componentMeta->attributes['onThisPage'] ?? [];
 @endphp
 
 <x-app-layout>
@@ -16,18 +16,18 @@
                     {{-- Next/Previous page footer --}}
                     <div class="mt-auto flex pt-12">
                         @if (filled($previousPage))
-                            <a href="{{ $previousPage["url"] }}">
+                            <a href="{{ $previousPage['url'] }}">
                                 <x-ui.button variant="secondary" size="sm" class="cursor-pointer">
                                     <i data-lucide="arrow-left"></i>
-                                    {{ $previousPage["title"] }}
+                                    {{ $previousPage['title'] }}
                                 </x-ui.button>
                             </a>
                         @endif
 
                         @if (filled($nextPage))
-                            <a href="{{ $nextPage["url"] }}" class="ml-auto">
+                            <a href="{{ $nextPage['url'] }}" class="ml-auto">
                                 <x-ui.button variant="secondary" size="sm" class="cursor-pointer">
-                                    {{ $nextPage["title"] }}
+                                    {{ $nextPage['title'] }}
                                     <i data-lucide="arrow-right"></i>
                                 </x-ui.button>
                             </a>

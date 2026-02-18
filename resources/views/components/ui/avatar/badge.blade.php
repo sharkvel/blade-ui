@@ -12,10 +12,10 @@
     };
 @endphp
 
-<span 
-data-slot="avatar-badge"
-{{
+<span data-slot="avatar-badge" {{
     $attributes->merge([
         'class' => cn($baseClasses, $sizeClasses, $attributes->get('class')),
     ])
-}}>{{ $slot }}</span>
+}}>
+    {{ $slot }}
+</span>

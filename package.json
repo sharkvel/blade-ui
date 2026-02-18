@@ -5,8 +5,8 @@
     "scripts": {
         "build": "vite build",
         "dev": "vite",
-        "format": "prettier --write resources/",
-        "format:check": "prettier --check resources/"
+        "format": "prettier --write resources/ --ignore-path .prettierignore-cli",
+        "format:check": "prettier --check resources/ --ignore-path .prettierignore-cli"
     },
     "devDependencies": {
         "@prettier/plugin-php": "^0.24.0",

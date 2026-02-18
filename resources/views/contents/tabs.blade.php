@@ -1,22 +1,22 @@
 @php
     use Illuminate\Support\Uri;
-    $contentUri = Uri::route("component", "tabs");
+    $contentUri = Uri::route('component', 'tabs');
 
     $onThisPage = [
         [
-            "url" => $contentUri->withFragment("installation")->value(),
-            "name" => "Installation",
-            "available_from" => "2026-01-20",
+            'url' => $contentUri->withFragment('installation')->value(),
+            'name' => 'Installation',
+            'available_from' => '2026-01-20',
         ],
         [
-            "url" => $contentUri->withFragment("usage")->value(),
-            "name" => "Usage",
-            "available_from" => "2026-01-20",
+            'url' => $contentUri->withFragment('usage')->value(),
+            'name' => 'Usage',
+            'available_from' => '2026-01-20',
         ],
         [
-            "url" => $contentUri->withFragment("reference")->value(),
-            "name" => "Reference",
-            "available_from" => "2026-01-20",
+            'url' => $contentUri->withFragment('reference')->value(),
+            'name' => 'Reference',
+            'available_from' => '2026-01-20',
         ],
     ];
 @endphp

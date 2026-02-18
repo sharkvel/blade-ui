@@ -3,24 +3,24 @@
     id="sidebar"
 >
     @foreach ($sidebarItems as $section => $items)
-        @continue(in_array($section, ["Menus"]))
+        @continue(in_array($section, ['Menus']))
         <div class="flex flex-col gap-2">
             <small class="pl-4 text-muted-foreground md:pl-12">{{ $section }}</small>
             <ul class="flex flex-col">
                 @foreach ($items as $menu)
-                    @if ($menu["available_from"])
-                        <a href="{{ $menu["url"] }}">
+                    @if ($menu['available_from'])
+                        <a href="{{ $menu['url'] }}">
                             <li
                                 class="menu-item flex h-8 items-center gap-2 pl-4 text-[0.825rem] font-normal data-[active='true']:font-medium md:pl-12"
-                                data-active="{{ request()->url() === $menu["url"] ? "true" : "false" }}"
-                                data-available="{{ $menu["available_from"] ? "true" : "false" }}"
+                                data-active="{{ request()->url() === $menu['url'] ? 'true' : 'false' }}"
+                                data-available="{{ $menu['available_from'] ? 'true' : 'false' }}"
                             >
-                                {{ $menu["name"] }}
+                                {{ $menu['name'] }}
                             </li>
                         </a>
                     @else
                         <li class="flex h-8 items-center gap-2 pl-4 text-[0.825rem] font-normal opacity-50 md:pl-12">
-                            {{ $menu["name"] }}
+                            {{ $menu['name'] }}
                         </li>
                     @endif
                 @endforeach
@@ -29,7 +29,7 @@
     @endforeach
 </aside>
 
-@push("js")
+@push('js')
     <script>
         // Init
         const sidebar = document.querySelector(`#sidebar`);

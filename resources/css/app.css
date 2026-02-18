@@ -1,38 +1,37 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-@source "../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php";
-@source "../../storage/framework/views/*.php";
-@source "../**/*.blade.php";
-@source "../**/*.js";
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @font-face {
-    font-family: "Geist";
+    font-family: 'Geist';
     font-style: normal;
     font-weight: 100 900;
     font-display: swap;
-    src: url("/fonts/Geist.woff2") format("woff2");
+    src: url('/fonts/Geist.woff2') format('woff2');
     unicode-range:
         U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
         U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 @font-face {
-    font-family: "Geist Mono";
+    font-family: 'Geist Mono';
     font-style: normal;
     font-weight: 100 900;
     font-display: swap;
-    src: url("/fonts/GeistMono.woff2") format("woff2");
+    src: url('/fonts/GeistMono.woff2') format('woff2');
     unicode-range:
         U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
         U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 @theme inline {
-    --font-sans:
-        "Geist", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    --font-mono: "Geist Mono", monospace;
+    --font-sans: 'Geist', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-mono: 'Geist Mono', monospace;
 
     /* Colors */
     --radius-sm: calc(var(--radius) - 4px);
@@ -123,7 +122,7 @@
     .torchlight .line-highlight {
         position: relative;
         &::before {
-            content: "";
+            content: '';
             position: absolute;
             left: 0;
             top: 0;
@@ -141,7 +140,7 @@
         @apply relative;
     }
     .menu-item::after {
-        content: "";
+        content: '';
         position: absolute;
         width: 3px;
         height: 100%;
@@ -151,14 +150,14 @@
     .menu-item:hover::after {
         @apply opacity-20;
     }
-    .menu-item[data-active="true"]::after {
+    .menu-item[data-active='true']::after {
         @apply opacity-100;
     }
     .hash-link {
         @apply relative flex;
     }
     .hash-link::before {
-        content: "#";
+        content: '#';
         position: absolute;
         @apply -left-1 -translate-x-full text-primary opacity-0 transition-opacity;
     }
