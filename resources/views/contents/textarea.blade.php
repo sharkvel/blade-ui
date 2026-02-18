@@ -27,7 +27,7 @@
     {{-- Base --}}
     <x-ui.h1 class="text-4xl font-medium">Textarea</x-ui.h1>
     <x-ui.p class="mt-4 max-w-[55ch] text-muted-foreground">Displays a form textarea or a component that looks like a textarea.</x-ui.p>
-    <x-playground class="mt-12" example="examples.components.textarea.hero" />
+    <x-playground class="mt-12" path="examples/components/textarea/hero.blade.php" />
 
     {{-- Installation --}}
     <x-ui.h6 class="mt-16 max-w-fit font-medium">
@@ -48,7 +48,7 @@
         <a href="#usage" class="hash-link">Usage</a>
     </x-ui.h6>
     <div class="mt-6 rounded-lg border p-1">
-        <x-ui.codelight example="examples.components.textarea.usage" />
+        <x-ui.codelight path="examples/components/textarea/usage.blade.php" />
     </div>
 
     {{-- Reference --}}

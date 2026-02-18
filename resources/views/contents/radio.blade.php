@@ -29,7 +29,7 @@
     <x-ui.p class="mt-4 max-w-[55ch] text-muted-foreground">
         A set of checkable buttons—known as radio buttons—where no more than one of the buttons can be checked at a time.
     </x-ui.p>
-    <x-playground class="mt-12" example="examples.components.radio.hero" />
+    <x-playground class="mt-12" path="examples/components/radio/hero.blade.php" />
 
     {{-- Installation --}}
     <x-ui.h6 class="mt-16 max-w-fit font-medium">
@@ -50,7 +50,7 @@
         <a href="#usage" class="hash-link">Usage</a>
     </x-ui.h6>
     <div class="mt-6 rounded-lg border p-1">
-        <x-ui.codelight example="examples.components.radio.usage" />
+        <x-ui.codelight path="examples/components/radio/usage.blade.php" />
     </div>
 
     {{-- Reference --}}

@@ -29,7 +29,7 @@
     <x-ui.p class="mt-4 max-w-[55ch] text-muted-foreground">
         A set of layered sections of content—known as tab panels—that are displayed one at a time.
     </x-ui.p>
-    <x-playground class="mt-12" example="examples.components.tabs.hero" />
+    <x-playground class="mt-12" path="examples/components/tabs/hero.blade.php" />
 
     {{-- Installation --}}
     <x-ui.h6 class="mt-16 max-w-fit font-medium">
@@ -50,7 +50,7 @@
         <a href="#usage" class="hash-link">Usage</a>
     </x-ui.h6>
     <div class="mt-6 rounded-lg border p-1">
-        <x-ui.codelight example="examples.components.tabs.usage" />
+        <x-ui.codelight path="examples/components/tabs/usage.blade.php" />
     </div>
 
     {{-- Reference --}}

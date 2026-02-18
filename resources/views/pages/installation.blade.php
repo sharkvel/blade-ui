@@ -84,7 +84,7 @@
         vite configuration file.
     </x-ui.p>
     <div class="mt-6 rounded-lg border p-1">
-        <x-ui.codelight language="js" example="examples/others/tailwind-vite.config.js" />
+        <x-ui.codelight language="js" path="examples/others/tailwind-vite.config.js" />
     </div>
     <x-ui.p>
         Add an
@@ -115,7 +115,7 @@
         bundle and initialize it like so
     </x-ui.p>
     <div class="mt-6 rounded-lg border p-1">
-        <x-ui.codelight language="js" example="examples/others/alpinejs-bootstrap.js" />
+        <x-ui.codelight language="js" path="examples/others/alpinejs-bootstrap.js" />
     </div>
 
     {{-- Install library --}}
@@ -157,6 +157,6 @@
         . You can then use it like this:
     </x-ui.p>
     <div class="mt-6 rounded-lg border p-1">
-        <x-ui.codelight example="examples.components.button.installed" />
+        <x-ui.codelight path="examples/components/button/installed.blade.php" />
     </div>
 </x-document-layout>

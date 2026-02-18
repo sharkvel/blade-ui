@@ -26,7 +26,7 @@
 <div class="flex flex-col">
     <x-ui.h1 class="text-4xl font-medium">Input</x-ui.h1>
     <x-ui.p class="mt-4 max-w-[55ch] text-muted-foreground">Displays a form input field or a component that looks like an input field.</x-ui.p>
-    <x-playground class="mt-12 [&_input]:max-w-xs" example="examples.components.input.hero" />
+    <x-playground class="mt-12 [&_input]:max-w-xs" path="examples/components/input/hero.blade.php" />
     {{-- Installation --}}
     <x-ui.h6 class="mt-16 max-w-fit font-medium">
         <a href="#installation" class="hash-link">Installation</a>
@@ -45,7 +45,7 @@
         <a href="#usage" class="hash-link">Usage</a>
     </x-ui.h6>
     <div class="mt-6 rounded-lg border p-1">
-        <x-ui.codelight example="examples.components.input.usage" />
+        <x-ui.codelight path="examples/components/input/usage/blade.php" />
     </div>
     {{-- Reference --}}
     <x-ui.h6 class="mt-16 max-w-fit font-medium">

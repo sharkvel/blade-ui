@@ -24,11 +24,17 @@
         <i data-lucide="copy" class="size-4 text-white/50 group-hover:text-white" x-show="!isCopied"></i>
         <i data-lucide="check" class="size-4 text-white/50 group-hover:text-white" x-cloak x-show="isCopied"></i>
     </button>
-    <input type="hidden" value="{{ $example ?? $slot }}" />
-    <pre class="grid overflow-x-auto [scrollbar-width:none]">
-        <x-torchlight-code language="{{ $language }}" class="[.torchlight]:block bg-transparent! [.torchlight]:py-4 text-sm [.torchlight]:min-w-max [&.torchlight_.line]:px-4 [&.torchlight_.line-number]:mr-4 [&_.line-highlight]:bg-neutral-800/80!" >@if ($example)
-{!! $example !!}@else{{ $slot }}@endif
+    
+    <input type="hidden" value="{{ $content ?? $slot }}" />
 
-</x-torchlight-code>
+
+    <!-- prettier-ignore-start -->
+    <pre class="grid overflow-x-auto [scrollbar-width:none]">
+        @if ($contentCache)
+            {!! $contentCache !!}
+        @else
+            <x-torchlight-code language="{{ $language }}" data-torchlight-cache-key="{{ $cacheKey }}" class="[.torchlight]:block bg-transparent! [.torchlight]:py-4 text-sm [.torchlight]:min-w-max [&.torchlight_.line]:px-4 [&.torchlight_.line-number]:mr-4 [&_.line-highlight]:bg-neutral-800/80!" >@if ($content){!! $content !!}@else{{ $slot }}@endif</x-torchlight-code>
+        @endif
     </pre>
+    <!-- prettier-ignore-end -->
 </div>

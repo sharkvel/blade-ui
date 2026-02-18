@@ -27,7 +27,7 @@
     {{-- Base --}}
     <x-ui.h1 class="text-4xl font-medium">Button</x-ui.h1>
     <x-ui.p class="mt-4 max-w-[55ch] text-muted-foreground">Displays a button or a component that looks like a button</x-ui.p>
-    <x-playground class="mt-12" example="examples.components.button.hero" />
+    <x-playground class="mt-12" path="examples/components/button/hero.blade.php" />
 
     {{-- Installation --}}
     <x-ui.h6 class="mt-16 max-w-fit font-medium">
@@ -48,7 +48,7 @@
         <a href="#usage" class="hash-link">Usage</a>
     </x-ui.h6>
     <div class="mt-6 rounded-lg border p-1">
-        <x-ui.codelight example="examples.components.button.usage" />
+        <x-ui.codelight path="examples/components/button/usage.blade.php" />
     </div>
 
     {{-- Reference --}}

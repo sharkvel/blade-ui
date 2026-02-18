@@ -61,7 +61,7 @@
         {{-- Table --}}
         @include('components.examples.area.table-variants')
         <x-ui.example-area title="Code light">
-            <x-ui.codelight view="components.examples.area.plain-code" />
+            <x-ui.codelight path="components/examples/area/plain-code.blade.php" />
         </x-ui.example-area>
         <x-ui.example-area title="Sidebar">
             <iframe src="{{ route('live.sidebar') }}" class="h-96 w-full overflow-hidden rounded-md border"></iframe>

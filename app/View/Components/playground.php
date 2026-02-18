@@ -17,7 +17,7 @@ class playground extends Component
      * Create a new component instance.
      */
     public function __construct(
-        public string $example
+        public string $path
     ) {
         //
     }
