@@ -463,7 +463,7 @@
                             </x-ui.field>
                         </div>
                         <div>
-                            <x-ui.scroll-area orientation="horizontal" scrollbar="hidden">
+                            <x-ui.scroll-area orientation="horizontal" gutter="null" scrollbar="hidden">
                                 <x-ui.button-group>
                                     <x-ui.button-group>
                                         <x-ui.button variant="outline" size="icon"><i data-lucide="arrow-left"></i></x-ui.button>
@@ -490,7 +490,7 @@
                             </x-ui.field.label>
                         </div>
                         <div>
-                            <x-ui.scroll-area orientation="horizontal" scrollbar="hidden">
+                            <x-ui.scroll-area orientation="horizontal" scrollbar="hidden" gutter="null">
                                 <x-ui.button-group>
                                     <x-ui.button-group>
                                         <x-ui.button variant="outline">1</x-ui.button>

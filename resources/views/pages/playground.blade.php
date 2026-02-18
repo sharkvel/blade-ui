@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="grid grid-cols-2 gap-6 p-4">
         <x-ui.example-area title="Scroll Area">
-            <x-ui.scroll-area class="h-96 border border-red-500 bg-gray-200">
+            <x-ui.scroll-area class="h-96 border rounded-lg" gutter="null">
                 <div>
                     @for ($i=0;$i<20;$i++)
                         <div class="h-9 odd:bg-muted"></div>
