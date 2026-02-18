@@ -20,15 +20,17 @@ class CachingTorchlight extends RenderTorchlight
 
         $response = parent::handle($request, $next);
 
-        defer(function () use ($response, $request) {
-            $this->saveHighlightedBlocks($response->getContent(), $request);
+        $content = $response->getContent();
+
+        defer(function () use ($content) {
+            $this->saveHighlightedBlocks($content);
         });
 
         return $response;
     }
 
 
-    protected function saveHighlightedBlocks(string $html, Request $request): void
+    protected function saveHighlightedBlocks(string $html): void
     {
         $cacheDir = storage_path('torchlight/cache');
         File::ensureDirectoryExists($cacheDir);
