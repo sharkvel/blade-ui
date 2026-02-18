@@ -57,3 +57,104 @@
     </div>
     <x-ui.scroll-area.scrollbar :orientation="$orientation" :scrollbar="$scrollbar" />
 </div>
+
+@pushOnce("js")
+<script>
+    document.addEventListener(
+        'alpine:init',
+        () => {
+            Alpine.data('scrollbar', () => ({
+                // thumb geometry
+                ty: 0,
+                th: 40, // top,  height  (vertical)
+                tx: 0,
+                tw: 40, // left, width   (horizontal)
+                pctx: 0, // Percentage of x scroll
+                pcty: 0, // Percentage of y scroll
+                haveScrollOnX: false,
+                haveScrollOnY: false,
+
+                // drag state
+                drag: null, // 'y' | 'x' | null
+                startMouse: 0,
+                startScroll: 0,
+
+                init() {
+                    this.$nextTick(() => this.update());
+                    new ResizeObserver(() => this.update()).observe(this.$refs.host);
+                    window.addEventListener('mousemove', (e) => this.onMove(e));
+                    window.addEventListener('mouseup', () => (this.drag = null));
+                },
+
+                update() {
+                    const h = this.$refs.host;
+                    const ty = this.$refs.trackY,
+                        tx = this.$refs.trackX;
+
+                    // vertical
+                    const ratioY = h.clientHeight / h.scrollHeight;
+                    const maxScrollY = h.scrollHeight - h.clientHeight;
+                    this.th = Math.max(24, ratioY * ty.clientHeight);
+                    this.ty = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * (ty.clientHeight - this.th) || 0;
+
+                    this.pcty = maxScrollY > 0 ? (h.scrollTop / maxScrollY) * 100 : 0;
+                    this.haveScrollOnY = ratioY !== 1;
+
+                    // horizontal
+                    const ratioX = h.clientWidth / h.scrollWidth;
+                    const maxScrollX = h.scrollWidth - h.clientWidth;
+                    this.tw = Math.max(24, ratioX * tx.clientWidth);
+                    this.tx = (h.scrollLeft / (h.scrollWidth - h.clientWidth)) * (tx.clientWidth - this.tw) || 0;
+
+                    this.pctx = maxScrollX > 0 ? (h.scrollLeft / maxScrollX) * 100 : 0;
+                    this.haveScrollOnX = ratioX !== 1;
+                },
+
+                // native scroll → move thumbs
+                onScroll() {
+                    this.update();
+                },
+
+                // thumb drag start
+                startDrag(axis, e) {
+                    this.drag = axis;
+                    this.startMouse = axis === 'y' ? e.clientY : e.clientX;
+                    this.startScroll = axis === 'y' ? this.$refs.host.scrollTop : this.$refs.host.scrollLeft;
+                    e.preventDefault();
+                },
+
+                // thumb drag move
+                onMove(e) {
+                    if (!this.drag) return;
+                    const h = this.$refs.host;
+                    const axis = this.drag;
+                    const track = axis === 'y' ? this.$refs.trackY : this.$refs.trackX;
+                    const thumb = axis === 'y' ? this.th : this.tw;
+                    const delta = (axis === 'y' ? e.clientY : e.clientX) - this.startMouse;
+                    const maxTrack = (axis === 'y' ? track.clientHeight : track.clientWidth) - thumb;
+                    const maxScroll = axis === 'y' ? h.scrollHeight - h.clientHeight : h.scrollWidth - h.clientWidth;
+                    const newScroll = this.startScroll + (delta / maxTrack) * maxScroll;
+                    if (axis === 'y') h.scrollTop = Math.max(0, Math.min(maxScroll, newScroll));
+                    else h.scrollLeft = Math.max(0, Math.min(maxScroll, newScroll));
+                    e.preventDefault();
+                },
+
+                // track click → jump
+                jumpY(e) {
+                    const h = this.$refs.host,
+                        t = this.$refs.trackY;
+                    const ratio = (e.clientY - t.getBoundingClientRect().top - this.th / 2) / (t.clientHeight - this.th);
+                    h.scrollTop = Math.max(0, Math.min(1, ratio)) * (h.scrollHeight - h.clientHeight);
+                },
+                jumpX(e) {
+                    const h = this.$refs.host,
+                        t = this.$refs.trackX;
+                    const ratio = (e.clientX - t.getBoundingClientRect().left - this.tw / 2) / (t.clientWidth - this.tw);
+                    h.scrollLeft = Math.max(0, Math.min(1, ratio)) * (h.scrollWidth - h.clientWidth);
+                },
+            }));
+        },
+        { once: true },
+    );
+</script>
+@endPushOnce
