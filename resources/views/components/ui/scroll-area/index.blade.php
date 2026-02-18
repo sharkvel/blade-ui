@@ -1,11 +1,10 @@
 @props([
-    "variant" => "default",
     "orientation" => "vertical",
     "scrollbar" => "auto",
     "gutter" => "x",
     //x|y|both|null,
     "mask" => false,
-    "maskShowThreshold" => 1,
+    "maskThreshold" => 1,
     "maskSize" => "80%",
     //1to100,
 ])
@@ -13,10 +12,6 @@
 @php
     $baseClasses = "group/scrollbar relative overflow-hidden overscroll-contain transition-[color,box-shadow] outline-none has-focus-visible:ring-[3px] has-focus-visible:ring-ring/50";
     $thumbClasses = "absolute rounded-full bg-border";
-
-    $variant = match ($variant) {
-        "default" => "",
-    };
 
     $orientationClasses = match ($orientation) {
         "vertical" => "overflow-y-scroll",
@@ -48,7 +43,7 @@
         x-ref="host"
         class="{{ cn("relative size-full [scrollbar-width:none] [&::-webkit-scrollbar]:hidden outline-none", $orientationClasses, $gutterClasses) }}"
         @if ($mask)
-            :class="{'mask-l-from-(--mask-size)':pctx > @js($maskShowThreshold) && @js($orientation) === 'horizontal','mask-r-from-(--mask-size)':pctx < 100-@js($maskShowThreshold) && @js($orientation) === 'horizontal','mask-t-from-(--mask-size)':pcty > @js($maskShowThreshold) && @js($orientation) === 'vertical','mask-b-from-(--mask-size)':pcty < 100-@js($maskShowThreshold) && @js($orientation) === 'vertical',}"
+            :class="{'mask-l-from-(--mask-size)':pctx > @js($maskThreshold) && @js($orientation) === 'horizontal','mask-r-from-(--mask-size)':pctx < 100-@js($maskThreshold) && @js($orientation) === 'horizontal','mask-t-from-(--mask-size)':pcty > @js($maskThreshold) && @js($orientation) === 'vertical','mask-b-from-(--mask-size)':pcty < 100-@js($maskThreshold) && @js($orientation) === 'vertical',}"
         @endif
         style="--mask-size: {{ $maskSize }}"
         @scroll="onScroll()"
