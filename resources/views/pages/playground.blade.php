@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="grid grid-cols-2 gap-6 p-4">
         <x-ui.example-area title="Scroll Area">
-            <x-ui.scroll-area class="h-screen rounded-lg border" gutter="null" :mask="true" maskSize="90%">
+            <x-ui.scroll-area class="h-96 rounded-lg border" gutter="null" :mask="true" maskSize="90%">
                 <div>
                     @for ($i=0;$i<4;$i++)
                             Where does it come from? Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
