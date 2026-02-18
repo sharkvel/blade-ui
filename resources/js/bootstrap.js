@@ -45,6 +45,8 @@ document.addEventListener("alpine:init", () => {
         // thumb geometry
         ty: 0, th: 40,   // top,  height  (vertical)
         tx: 0, tw: 40,   // left, width   (horizontal)
+        pctx: 0, // Percentage of x scroll
+        pcty: 0, // Percentage of y scroll
 
         // drag state
         drag: null,  // 'y' | 'x' | null
@@ -63,13 +65,20 @@ document.addEventListener("alpine:init", () => {
 
             // vertical
             const ratioY = h.clientHeight / h.scrollHeight;
+            const maxScrollY = h.scrollHeight - h.clientHeight;
             this.th = Math.max(24, ratioY * ty.clientHeight);
             this.ty = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * (ty.clientHeight - this.th) || 0;
 
+            this.pcty = maxScrollY > 0 ? (h.scrollTop / maxScrollY) * 100 : 0;
+
+
             // horizontal
             const ratioX = h.clientWidth / h.scrollWidth;
+            const maxScrollX = h.scrollWidth - h.clientWidth;
             this.tw = Math.max(24, ratioX * tx.clientWidth);
             this.tx = (h.scrollLeft / (h.scrollWidth - h.clientWidth)) * (tx.clientWidth - this.tw) || 0;
+
+            this.pctx = maxScrollX > 0 ? (h.scrollLeft / maxScrollX) * 100 : 0;
         },
 
         // native scroll → move thumbs
