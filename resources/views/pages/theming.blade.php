@@ -38,7 +38,7 @@
     <x-ui.h6 class="mt-12 font-medium">List of variables</x-ui.h6>
     <x-ui.p class="mt-2">Here's the list of variables available for customization:</x-ui.p>
     <div class="mt-6 rounded-lg border p-1">
-        <x-ui.codelight language="css" example="examples/others/list-of-variables.css" />
+        <x-ui.codelight language="css" path="examples/others/list-of-variables.css" />
     </div>
 
     {{-- Add new custom variables --}}
@@ -56,7 +56,7 @@
         directive to make the colors available as CSS variables.
     </x-ui.p>
     <div class="mt-6 rounded-lg border p-1">
-        <x-ui.codelight language="css" example="examples/others/add-custom-variables.css" />
+        <x-ui.codelight language="css" path="examples/others/add-custom-variables.css" />
     </div>
     <x-ui.p>
         You can now use the
