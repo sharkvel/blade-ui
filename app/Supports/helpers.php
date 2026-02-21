@@ -94,6 +94,6 @@ if (! function_exists(function: 'slotChild')) {
     {
         $result = preg_replace('/<\/?'.preg_quote((string) $root, '/').'[^>]*>/i', '', (string) $slot);
 
-        return trim($result);
+        return trim((string) $result);
     }
 }

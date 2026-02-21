@@ -22,7 +22,7 @@ class CachingTorchlight extends RenderTorchlight
 
         $content = $response->getContent();
 
-        defer(function () use ($content) {
+        defer(function () use ($content): void {
             $this->saveHighlightedBlocks($content);
         });
 

@@ -24,7 +24,7 @@ class Codelight extends Component
     public function render(): View|Closure|string
     {
         return function ($data) {
-            $content = $this->getContent() ?? trim($data['slot']->toHtml());
+            $content = $this->getContent() ?? trim((string) $data['slot']->toHtml());
             $cacheKey = md5($this->language . ($content ?? ''));
             $contentCache = $this->getCache($cacheKey);
 
