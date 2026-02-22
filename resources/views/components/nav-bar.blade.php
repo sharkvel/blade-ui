@@ -10,7 +10,12 @@
             {{-- Logo --}}
             <a href="{{ route('home') }}">
                 <x-ui.button variant="ghost" size="icon-lg" class="cursor-pointer">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 258.66" fill="currentColor" class="size-7 fill-foreground">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 256 258.66"
+                        fill="currentColor"
+                        class="size-7 fill-foreground"
+                    >
                         <path
                             class="cls-1"
                             d="M192,110.86V36.95L128,0l-64,36.95v73.91L0,147.81v73.9l64,36.95,64-36.95,64,36.95,64-36.95v-73.9l-64-36.95ZM20,147.81l44-25.41,44,25.41-44,25.4-44-25.4ZM118,215.93l-44,25.41v-50.81l44-25.4v50.8ZM84,36.95l44-25.4,44,25.4-44,25.41-44-25.41ZM138,79.68l44-25.41v50.81l-44,25.41v-50.81ZM148,147.81l44-25.41,44,25.41-44,25.4-44-25.4ZM246,215.93l-44,25.41v-50.81l44-25.4v50.8Z"
@@ -82,9 +87,15 @@
                             </li>
                         </a>
                     @else
-                        <li class="flex h-10 items-center gap-2 pl-4 text-base font-normal text-muted-foreground md:pl-12 lg:h-8 lg:text-[0.825rem]">
+                        <li
+                            class="flex h-10 items-center gap-2 pl-4 text-base font-normal text-muted-foreground md:pl-12 lg:h-8 lg:text-[0.825rem]"
+                        >
                             {{ $menu['name'] }}
-                            <span class="flex items-center rounded-xs bg-muted px-0.5 py-0.5 text-xs leading-none text-muted-foreground">soon</span>
+                            <span
+                                class="flex items-center rounded-xs bg-muted px-0.5 py-0.5 text-xs leading-none text-muted-foreground"
+                            >
+                                soon
+                            </span>
                         </li>
                     @endif
                 @endforeach

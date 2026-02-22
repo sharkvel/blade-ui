@@ -29,7 +29,9 @@ document.addEventListener('alpine:init', () => {
             const fragments = [...document.querySelectorAll(`a[href^='#']`)].reverse();
             const triggerAt = 250; // Percentage
             function getActiveFragment() {
-                return fragments.find((fragment) => fragment.getBoundingClientRect().top <= triggerAt)?.getAttribute('href');
+                return fragments
+                    .find((fragment) => fragment.getBoundingClientRect().top <= triggerAt)
+                    ?.getAttribute('href');
             }
             this.update(getActiveFragment());
             window.addEventListener('scroll', (e) => {

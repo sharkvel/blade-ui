@@ -25,12 +25,20 @@
     @endpush
 
     <x-nav-bar :sidebar-items="$sidebarItems" />
-    <div class="section-wrapper mx-auto flex min-h-[calc(100svh-4rem)] w-full flex-col items-center border-x-0 py-12 md:border-x">
+    <div
+        class="section-wrapper mx-auto flex min-h-[calc(100svh-4rem)] w-full flex-col items-center border-x-0 py-12 md:border-x"
+    >
         {{-- Powered by --}}
         <div class="mx-auto mt-16 flex gap-x-8 text-center text-muted-foreground">
             <a href="https://tailwindcss.com/" target="_blank">
                 <div class="flex items-center gap-2 font-medium hover:text-foreground">
-                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="size-4.5" fill="currentColor">
+                    <svg
+                        role="img"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="size-4.5"
+                        fill="currentColor"
+                    >
                         <path
                             d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z"
                         />
@@ -40,8 +48,16 @@
             </a>
             <a href="https://alpinejs.dev/" target="_blank">
                 <div class="flex items-center gap-2 font-medium hover:text-foreground">
-                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="size-4.5" fill="currentColor">
-                        <path d="m24 12-5.72 5.746-5.724-5.741 5.724-5.75L24 12zM5.72 6.254 0 12l5.72 5.746h11.44L5.72 6.254z" />
+                    <svg
+                        role="img"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="size-4.5"
+                        fill="currentColor"
+                    >
+                        <path
+                            d="m24 12-5.72 5.746-5.724-5.741 5.724-5.75L24 12zM5.72 6.254 0 12l5.72 5.746h11.44L5.72 6.254z"
+                        />
                     </svg>
                     <p class="text-sm">Alpine.js</p>
                 </div>
@@ -52,8 +68,8 @@
             Build faster with reusable blade components
         </x-ui.h1>
         <x-ui.p class="max-w-[60ch] text-center text-pretty lg:text-lg">
-            Open-source, production-ready components built to accelerate Laravel development while giving you full control to customize, extend, and
-            scale.
+            Open-source, production-ready components built to accelerate Laravel development while giving you full
+            control to customize, extend, and scale.
         </x-ui.p>
         <div class="mt-8 grid w-full gap-x-3 gap-y-4 md:w-auto md:grid-cols-2">
             <a href="{{ route("docs.installation") }}">
@@ -123,7 +139,9 @@
                             {{-- Field set --}}
                             <x-ui.field.set>
                                 <x-ui.field.legend>Payment Method</x-ui.field.legend>
-                                <x-ui.field.description>All transactions are secure and encrypted</x-ui.field.description>
+                                <x-ui.field.description>
+                                    All transactions are secure and encrypted
+                                </x-ui.field.description>
                                 {{-- Field group --}}
                                 <x-ui.field.group>
                                     <x-ui.field>
@@ -156,7 +174,9 @@
                                             <x-ui.field.label for="card-year">Year</x-ui.field.label>
                                             <x-ui.select placeholder="YYYY">
                                                 @for ($year = 2024; $year<=2029;$year++)
-                                                    <x-ui.select.option value="{{ $year }}">{{ $year }}</x-ui.select.option>
+                                                    <x-ui.select.option value="{{ $year }}">
+                                                        {{ $year }}
+                                                    </x-ui.select.option>
                                                 @endfor
                                             </x-ui.select>
                                         </x-ui.field>
@@ -167,7 +187,9 @@
                             {{-- Billing --}}
                             <x-ui.field.set>
                                 <x-ui.field.legend>Billing Address</x-ui.field.legend>
-                                <x-ui.field.description>The billing address associated with your payment method</x-ui.field.description>
+                                <x-ui.field.description>
+                                    The billing address associated with your payment method
+                                </x-ui.field.description>
                                 <x-ui.field.group>
                                     <x-ui.field orientation="horizontal">
                                         <x-ui.checkbox name="same-as-shipping-address" id="sasa" checked />
@@ -181,7 +203,11 @@
                                 <x-ui.field.group>
                                     <x-ui.field>
                                         <x-ui.field.label for="comments">Comments</x-ui.field.label>
-                                        <x-ui.textarea id="comments" placeholder="Add any additional comments" size="sm" />
+                                        <x-ui.textarea
+                                            id="comments"
+                                            placeholder="Add any additional comments"
+                                            size="sm"
+                                        />
                                     </x-ui.field>
                                 </x-ui.field.group>
                             </x-ui.field.set>
@@ -200,11 +226,15 @@
                                 <x-ui.empty.media>
                                     <x-ui.avatar.group class="grayscale">
                                         <x-ui.avatar>
-                                            <x-ui.avatar.image src="https://untitledui.com/images/avatars/olivia-rhye" />
+                                            <x-ui.avatar.image
+                                                src="https://untitledui.com/images/avatars/olivia-rhye"
+                                            />
                                             <x-ui.avatar.fallback>OR</x-ui.avatar.fallback>
                                         </x-ui.avatar>
                                         <x-ui.avatar>
-                                            <x-ui.avatar.image src="https://untitledui.com/images/avatars/phoenix-baker" />
+                                            <x-ui.avatar.image
+                                                src="https://untitledui.com/images/avatars/phoenix-baker"
+                                            />
                                             <x-ui.avatar.fallback>PB</x-ui.avatar.fallback>
                                         </x-ui.avatar>
                                         <x-ui.avatar>
@@ -214,7 +244,9 @@
                                     </x-ui.avatar.group>
                                 </x-ui.empty.media>
                                 <x-ui.empty.title>No Team Members</x-ui.empty.title>
-                                <x-ui.empty.description>Invite your team to collaborate on this project.</x-ui.empty.description>
+                                <x-ui.empty.description>
+                                    Invite your team to collaborate on this project.
+                                </x-ui.empty.description>
                             </x-ui.empty.header>
                             <x-ui.empty.content>
                                 <x-ui.button size="sm">
@@ -268,7 +300,9 @@
                         <div>
                             <x-ui.input-group>
                                 <x-ui.input-group.input placeholder="Search..." />
-                                <x-ui.input-group.addon><i data-lucide="search" data-icon="inline-start"></i></x-ui.input-group.addon>
+                                <x-ui.input-group.addon>
+                                    <i data-lucide="search" data-icon="inline-start"></i>
+                                </x-ui.input-group.addon>
                                 <x-ui.input-group.addon align="inline-end">12 results</x-ui.input-group.addon>
                             </x-ui.input-group>
                         </div>
@@ -330,7 +364,9 @@
                             <x-ui.item variant="outline">
                                 <x-ui.item.content>
                                     <x-ui.item.title>Two-factor authentication</x-ui.item.title>
-                                    <x-ui.item.description class="xl:hidden 2xl:block">Verify via email or phone number.</x-ui.item.description>
+                                    <x-ui.item.description class="xl:hidden 2xl:block">
+                                        Verify via email or phone number.
+                                    </x-ui.item.description>
                                 </x-ui.item.content>
                                 <x-ui.item.action>
                                     <x-ui.button size="sm">Enable</x-ui.button>
@@ -360,14 +396,17 @@
                                 <x-ui.field.group>
                                     <x-ui.field.set>
                                         <x-ui.field.legend>Compute Environment</x-ui.field.legend>
-                                        <x-ui.field.description>Select the compute environment for your cluster.</x-ui.field.description>
+                                        <x-ui.field.description>
+                                            Select the compute environment for your cluster.
+                                        </x-ui.field.description>
                                         <x-ui.radio-group defaultValue="kubernetes" name="radio">
                                             <x-ui.field.label for="kubernetes">
                                                 <x-ui.field orientation="horizontal">
                                                     <x-ui.field.content>
                                                         <x-ui.field.title>Kubernetes</x-ui.field.title>
                                                         <x-ui.field.description>
-                                                            Run GPU workloads on a K8s configured cluster. This is the default.
+                                                            Run GPU workloads on a K8s configured cluster. This is the
+                                                            default.
                                                         </x-ui.field.description>
                                                     </x-ui.field.content>
                                                     <x-ui.radio-group.item value="kubernetes" id="kubernetes" />
@@ -378,10 +417,14 @@
                                                     <x-ui.field.content>
                                                         <x-ui.field.title>Virtual Machine</x-ui.field.title>
                                                         <x-ui.field.description>
-                                                            Access a VM configured cluster to run workloads. (Coming soon)
+                                                            Access a VM configured cluster to run workloads. (Coming
+                                                            soon)
                                                         </x-ui.field.description>
                                                     </x-ui.field.content>
-                                                    <x-ui.radio-group.item value="virtual-machine" id="virtual-machine" />
+                                                    <x-ui.radio-group.item
+                                                        value="virtual-machine"
+                                                        id="virtual-machine"
+                                                    />
                                                 </x-ui.field>
                                             </x-ui.field.label>
                                         </x-ui.radio-group>
@@ -403,7 +446,12 @@
                                                     }
                                                 }"
                                         >
-                                            <x-ui.button variant="outline" size="icon-sm" @click="update(-1)" x-bind:disabled="count<=min">
+                                            <x-ui.button
+                                                variant="outline"
+                                                size="icon-sm"
+                                                @click="update(-1)"
+                                                x-bind:disabled="count<=min"
+                                            >
                                                 <i data-lucide="minus"></i>
                                             </x-ui.button>
                                             <x-ui.input
@@ -416,7 +464,12 @@
                                                 class="w-14 appearance-none text-center"
                                                 size="sm"
                                             />
-                                            <x-ui.button variant="outline" size="icon-sm" @click="update(1)" x-bind:disabled="count>=max">
+                                            <x-ui.button
+                                                variant="outline"
+                                                size="icon-sm"
+                                                @click="update(1)"
+                                                x-bind:disabled="count>=max"
+                                            >
                                                 <i data-lucide="plus"></i>
                                             </x-ui.button>
                                         </x-ui.button-group>
@@ -424,8 +477,12 @@
                                     <x-ui.field.separator />
                                     <x-ui.field orientation="horizontal">
                                         <x-ui.field.content>
-                                            <x-ui.field.label for="wallpaper-tining">Wallpaper Tinting</x-ui.field.label>
-                                            <x-ui.field.description>Allow the wallpaper to be tinted.</x-ui.field.description>
+                                            <x-ui.field.label for="wallpaper-tining">
+                                                Wallpaper Tinting
+                                            </x-ui.field.label>
+                                            <x-ui.field.description>
+                                                Allow the wallpaper to be tinted.
+                                            </x-ui.field.description>
                                         </x-ui.field.content>
                                         <x-ui.switch id="wallpaper-tining" />
                                     </x-ui.field>
@@ -438,7 +495,10 @@
                         <div>
                             <x-ui.field>
                                 <x-ui.input-group class="rounded-lg">
-                                    <x-ui.input-group.textarea class="min-h-16" placeholder="Ask, search, or make anything..." />
+                                    <x-ui.input-group.textarea
+                                        class="min-h-16"
+                                        placeholder="Ask, search, or make anything..."
+                                    />
                                     <x-ui.input-group.addon align="block-start">
                                         <x-ui.input-group.button variant="outline" size="sm">
                                             <i data-lucide="at-sign"></i>
@@ -449,12 +509,18 @@
                                         <x-ui.input-group.button size="icon-sm" class="rounded-full">
                                             <i data-lucide="paperclip"></i>
                                         </x-ui.input-group.button>
-                                        <x-ui.input-group.button class="rounded-full" size="sm">Auto</x-ui.input-group.button>
+                                        <x-ui.input-group.button class="rounded-full" size="sm">
+                                            Auto
+                                        </x-ui.input-group.button>
                                         <x-ui.input-group.button class="rounded-full" size="sm">
                                             <i data-lucide="globe"></i>
                                             All Sources
                                         </x-ui.input-group.button>
-                                        <x-ui.input-group.button variant="default" size="icon-sm" class="ms-auto rounded-full">
+                                        <x-ui.input-group.button
+                                            variant="default"
+                                            size="icon-sm"
+                                            class="ms-auto rounded-full"
+                                        >
                                             <i data-lucide="arrow-up"></i>
                                         </x-ui.input-group.button>
                                     </x-ui.input-group.addon>
@@ -465,7 +531,9 @@
                             <x-ui.scroll-area orientation="horizontal" gutter="null" scrollbar="hidden">
                                 <x-ui.button-group>
                                     <x-ui.button-group>
-                                        <x-ui.button variant="outline" size="icon"><i data-lucide="arrow-left"></i></x-ui.button>
+                                        <x-ui.button variant="outline" size="icon">
+                                            <i data-lucide="arrow-left"></i>
+                                        </x-ui.button>
                                     </x-ui.button-group>
                                     <x-ui.button-group>
                                         <x-ui.button variant="outline">Archive</x-ui.button>
@@ -484,7 +552,9 @@
                             <x-ui.field.label for="i-agreed">
                                 <x-ui.field orientation="horizontal">
                                     <x-ui.checkbox id="i-agreed" />
-                                    <x-ui.field.label for="i-agreed">I agree to the terms and conditions</x-ui.field.label>
+                                    <x-ui.field.label for="i-agreed">
+                                        I agree to the terms and conditions
+                                    </x-ui.field.label>
                                 </x-ui.field>
                             </x-ui.field.label>
                         </div>
@@ -497,8 +567,12 @@
                                         <x-ui.button variant="outline">3</x-ui.button>
                                     </x-ui.button-group>
                                     <x-ui.button-group>
-                                        <x-ui.button variant="outline" size="icon"><i data-lucide="arrow-left"></i></x-ui.button>
-                                        <x-ui.button variant="outline" size="icon"><i data-lucide="arrow-right"></i></x-ui.button>
+                                        <x-ui.button variant="outline" size="icon">
+                                            <i data-lucide="arrow-left"></i>
+                                        </x-ui.button>
+                                        <x-ui.button variant="outline" size="icon">
+                                            <i data-lucide="arrow-right"></i>
+                                        </x-ui.button>
                                     </x-ui.button-group>
 
                                     <x-ui.button-group>

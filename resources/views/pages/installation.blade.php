@@ -50,7 +50,8 @@
         <a href="#create-project" class="hash-link">1. Create project</a>
     </x-ui.h6>
     <x-ui.p class="mt-2">
-        Start by creating a new Laravel project with No-starter kit using the laravel installer laravel new my-app or visit the
+        Start by creating a new Laravel project with No-starter kit using the laravel installer laravel new my-app or
+        visit the
         <x-ui.a href="https://laravel.com/docs">Laravel</x-ui.a>
         official site for creation guidance for new Laravel project:
     </x-ui.p>
@@ -131,7 +132,9 @@
     <x-ui.h6 class="mt-12 max-w-fit font-medium">
         <a href="#initialize" class="hash-link">5. Initialize</a>
     </x-ui.h6>
-    <x-ui.p class="mt-2">Initialize library in your application. This check and install required files and configs.</x-ui.p>
+    <x-ui.p class="mt-2">
+        Initialize library in your application. This check and install required files and configs.
+    </x-ui.p>
     <div class="mt-6 rounded-lg border p-1">
         <x-ui.codelight language="shell">php artisan ui:init</x-ui.codelight>
     </div>

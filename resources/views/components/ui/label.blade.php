@@ -23,4 +23,8 @@
     };
 @endphp
 
-<label {{ $attributes->merge(['class' => cn($baseClasses, $variantClasses, $sizeClasses, $attributes->get('class'))]) }}>{{ $slot }}</label>
+<label
+    {{ $attributes->merge(['class' => cn($baseClasses, $variantClasses, $sizeClasses, $attributes->get('class'))]) }}
+>
+    {{ $slot }}
+</label>

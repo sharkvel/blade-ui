@@ -15,10 +15,13 @@
     };
 @endphp
 
-<div data-slot="avatar-group-count" {{
-    $attributes->merge([
-        'class' => cn($baseClasses, $sizeClasses, $attributes->get('class')),
-    ])
-}}>
+<div
+    data-slot="avatar-group-count"
+    {{
+        $attributes->merge([
+            'class' => cn($baseClasses, $sizeClasses, $attributes->get('class')),
+        ])
+    }}
+>
     {{ $slot }}
 </div>

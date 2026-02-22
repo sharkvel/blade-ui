@@ -27,7 +27,8 @@
     {{-- Base --}}
     <x-ui.h1 class="text-4xl font-medium">Radio</x-ui.h1>
     <x-ui.p class="mt-4 max-w-[55ch] text-muted-foreground">
-        A set of checkable buttons—known as radio buttons—where no more than one of the buttons can be checked at a time.
+        A set of checkable buttons—known as radio buttons—where no more than one of the buttons can be checked at a
+        time.
     </x-ui.p>
     <x-playground class="mt-12" path="examples/components/radio/hero.blade.php" />
 

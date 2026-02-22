@@ -17,10 +17,13 @@
     };
 @endphp
 
-<legend data-slot="field-legend" {{
-    $attributes->merge([
-        'class' => cn($baseClasses, $variantClasses, $attributes->get('class')),
-    ])
-}}>
+<legend
+    data-slot="field-legend"
+    {{
+        $attributes->merge([
+            'class' => cn($baseClasses, $variantClasses, $attributes->get('class')),
+        ])
+    }}
+>
     {{ $slot }}
 </legend>

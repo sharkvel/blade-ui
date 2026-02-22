@@ -1,4 +1,7 @@
-<aside class="hide-scrollbar sticky top-16 hidden h-[calc(100svh-4rem)] w-3xs flex-col gap-10 overflow-auto py-12 xl:flex" x-data='fragment'>
+<aside
+    class="hide-scrollbar sticky top-16 hidden h-[calc(100svh-4rem)] w-3xs flex-col gap-10 overflow-auto py-12 xl:flex"
+    x-data='fragment'
+>
     @if (! empty($onThisPage))
         <div class="flex flex-col gap-2">
             <small class="text-muted-foreground">On this page</small>
@@ -21,9 +24,15 @@
                             </li>
                         </a>
                     @else
-                        <li class="flex h-6 items-center gap-2 pl-2 text-[0.8rem] font-normal text-muted-foreground md:pl-8">
+                        <li
+                            class="flex h-6 items-center gap-2 pl-2 text-[0.8rem] font-normal text-muted-foreground md:pl-8"
+                        >
                             {{ $menu['name'] }}
-                            <span class="flex items-center rounded-xs bg-muted px-0.5 py-0.5 text-xs leading-none text-muted-foreground">soon</span>
+                            <span
+                                class="flex items-center rounded-xs bg-muted px-0.5 py-0.5 text-xs leading-none text-muted-foreground"
+                            >
+                                soon
+                            </span>
                         </li>
                     @endif
                 @endforeach

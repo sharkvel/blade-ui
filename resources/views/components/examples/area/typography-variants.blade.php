@@ -15,26 +15,29 @@
         <x-ui.small class="text-muted-foreground">This is subtext</x-ui.small>
 
         <x-ui.p>
-            So I started to walk into the water. I won't lie to you boys, I was terrified. But I pressed on, and as I made my way past the breakers a
-            strange calm came over me. I don't know if it was divine intervention or the kinship of all living things but I tell you Jerry at that
-            moment, I was a marine biologist.
+            So I started to walk into the water. I won't lie to you boys, I was terrified. But I pressed on, and as I
+            made my way past the breakers a strange calm came over me. I don't know if it was divine intervention or the
+            kinship of all living things but I tell you Jerry at that moment, I was a marine biologist.
         </x-ui.p>
         <x-ui.p>
-            So I started to walk into the water. I won't lie to you boys, I was terrified. But I pressed on, and as I made my way past the breakers a
-            strange calm came over me. I don't know if it was divine intervention or the kinship of all living things but I tell you Jerry at that
-            moment, I was a marine biologist.
+            So I started to walk into the water. I won't lie to you boys, I was terrified. But I pressed on, and as I
+            made my way past the breakers a strange calm came over me. I don't know if it was divine intervention or the
+            kinship of all living things but I tell you Jerry at that moment, I was a marine biologist.
         </x-ui.p>
         <x-ui.p>
-            So I started to walk into the water. I won't lie to you boys, I was terrified. But I pressed on, and as I made my way past the breakers a
-            strange calm came over me. I don't know if it was divine intervention or the kinship of all living things but I tell you Jerry at that
-            moment, I was a marine biologist.
+            So I started to walk into the water. I won't lie to you boys, I was terrified. But I pressed on, and as I
+            made my way past the breakers a strange calm came over me. I don't know if it was divine intervention or the
+            kinship of all living things but I tell you Jerry at that moment, I was a marine biologist.
         </x-ui.p>
 
         <x-ui.separator class="my-6" />
-        <x-ui.code>$sizeClasses = match ($size) { "sm" => "h-8 px-ui.3", "default" => "h-9 px-ui.3", "lg" => "h-10 px-ui.3", };</x-ui.code>
+        <x-ui.code>
+            $sizeClasses = match ($size) { "sm" => "h-8 px-ui.3", "default" => "h-9 px-ui.3", "lg" => "h-10 px-ui.3", };
+        </x-ui.code>
         <x-ui.separator class="my-6" />
         <x-ui.blockquote>
-            "After all," he said, "everyone enjoys a good joke, so it's only fair that they should pay for the privilege."
+            "After all," he said, "everyone enjoys a good joke, so it's only fair that they should pay for the
+            privilege."
         </x-ui.blockquote>
         <x-ui.separator class="my-6" />
         <p>

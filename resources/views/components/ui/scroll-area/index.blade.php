@@ -143,13 +143,15 @@
                 jumpY(e) {
                     const h = this.$refs.host,
                         t = this.$refs.trackY;
-                    const ratio = (e.clientY - t.getBoundingClientRect().top - this.th / 2) / (t.clientHeight - this.th);
+                    const ratio =
+                        (e.clientY - t.getBoundingClientRect().top - this.th / 2) / (t.clientHeight - this.th);
                     h.scrollTop = Math.max(0, Math.min(1, ratio)) * (h.scrollHeight - h.clientHeight);
                 },
                 jumpX(e) {
                     const h = this.$refs.host,
                         t = this.$refs.trackX;
-                    const ratio = (e.clientX - t.getBoundingClientRect().left - this.tw / 2) / (t.clientWidth - this.tw);
+                    const ratio =
+                        (e.clientX - t.getBoundingClientRect().left - this.tw / 2) / (t.clientWidth - this.tw);
                     h.scrollLeft = Math.max(0, Math.min(1, ratio)) * (h.scrollWidth - h.clientWidth);
                 },
             }));

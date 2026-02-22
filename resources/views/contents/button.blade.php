@@ -26,7 +26,9 @@
 <div class="flex flex-col">
     {{-- Base --}}
     <x-ui.h1 class="text-4xl font-medium">Button</x-ui.h1>
-    <x-ui.p class="mt-4 max-w-[55ch] text-muted-foreground">Displays a button or a component that looks like a button</x-ui.p>
+    <x-ui.p class="mt-4 max-w-[55ch] text-muted-foreground">
+        Displays a button or a component that looks like a button
+    </x-ui.p>
     <x-playground class="mt-12" path="examples/components/button/hero.blade.php" />
 
     {{-- Installation --}}
@@ -76,7 +78,9 @@
             <x-ui.table.body>
                 <x-ui.table.row>
                     <x-ui.table.cell>variant</x-ui.table.cell>
-                    <x-ui.table.cell>"default" | "outline" | "ghost" | "destructive" | "secondary" | "link" | "simple"</x-ui.table.cell>
+                    <x-ui.table.cell>
+                        "default" | "outline" | "ghost" | "destructive" | "secondary" | "link" | "simple"
+                    </x-ui.table.cell>
                     <x-ui.table.cell>"default"</x-ui.table.cell>
                 </x-ui.table.row>
                 <x-ui.table.row>

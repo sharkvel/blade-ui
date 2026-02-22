@@ -28,7 +28,8 @@
         <script>
             // Init dark mode preference
             (function () {
-                const isDark = localStorage.getItem('darkMode') || window.matchMedia('(prefers-color-scheme: dark)').matches;
+                const isDark =
+                    localStorage.getItem('darkMode') || window.matchMedia('(prefers-color-scheme: dark)').matches;
                 if (isDark === 'dark' || isDark === true) document.documentElement.classList.add('dark');
             })();
 

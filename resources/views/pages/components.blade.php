@@ -1,4 +1,7 @@
-<x-document-layout :sidebar-items="$sidebarItems" :nextPage="['url' => route('component','button'),'title' => 'Button']">
+<x-document-layout
+    :sidebar-items="$sidebarItems"
+    :nextPage="['url' => route('component','button'),'title' => 'Button']"
+>
     @if (filled($componentName))
         @include("contents.{$componentName}")
     @else

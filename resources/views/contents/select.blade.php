@@ -26,7 +26,9 @@
 <div class="flex flex-col">
     {{-- Base --}}
     <x-ui.h1 class="text-4xl font-medium">Select</x-ui.h1>
-    <x-ui.p class="mt-4 max-w-[55ch] text-muted-foreground">Displays a list of options for the user to pick from—triggered by a button.</x-ui.p>
+    <x-ui.p class="mt-4 max-w-[55ch] text-muted-foreground">
+        Displays a list of options for the user to pick from—triggered by a button.
+    </x-ui.p>
     <x-playground class="mt-12" path="examples/components/select/hero.blade.php" />
 
     {{-- Installation --}}

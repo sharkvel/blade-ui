@@ -21,7 +21,9 @@
 <div class="flex flex-col">
     {{-- Base --}}
     <x-ui.h1 class="text-4xl font-medium">Checkbox</x-ui.h1>
-    <x-ui.p class="mt-4 max-w-[55ch] text-muted-foreground">A control that allows the user to toggle between checked and not checked.</x-ui.p>
+    <x-ui.p class="mt-4 max-w-[55ch] text-muted-foreground">
+        A control that allows the user to toggle between checked and not checked.
+    </x-ui.p>
     <x-playground class="mt-12" path="examples/components/checkbox/hero.blade.php" />
 
     {{-- Installation --}}

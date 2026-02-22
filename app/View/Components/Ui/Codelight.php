@@ -25,14 +25,14 @@ class Codelight extends Component
     {
         return function ($data) {
             $content = $this->getContent() ?? trim((string) $data['slot']->toHtml());
-            $cacheKey = md5($this->language . ($content ?? ''));
+            $cacheKey = md5($this->language.($content ?? ''));
             $contentCache = $this->getCache($cacheKey);
 
             return view('components.ui.codelight', compact('content', 'contentCache', 'cacheKey'));
         };
     }
 
-    protected function getCache($key): string|null
+    protected function getCache($key): ?string
     {
         // We can't know the final rendered hash at this point,
         // so use a content-based key you control
@@ -41,10 +41,11 @@ class Codelight extends Component
         return file_exists($path) ? file_get_contents($path) : null;
     }
 
-    protected function getContent(): string|null
+    protected function getContent(): ?string
     {
         if (filled($this->path)) {
-            $path = resource_path('views/' . $this->path);
+            $path = resource_path('views/'.$this->path);
+
             return file_exists($path) ? trim(file_get_contents($path)) : null;
         }
 

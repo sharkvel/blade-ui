@@ -6,8 +6,9 @@
                 <x-ui.collapsible.indicator />
             </x-ui.collapsible.trigger>
             <x-ui.collapsible.content>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis nihil sapiente quidem officiis eaque suscipit, veritatis cumque
-                facere, tenetur tempora veniam quaerat magni in fuga. Iusto dolorum in vero. Eligendi!
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis nihil sapiente quidem officiis
+                eaque suscipit, veritatis cumque facere, tenetur tempora veniam quaerat magni in fuga. Iusto dolorum in
+                vero. Eligendi!
             </x-ui.collapsible.content>
         </x-ui.collapsible>
     </div>

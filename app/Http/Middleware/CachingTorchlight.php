@@ -29,7 +29,6 @@ class CachingTorchlight extends RenderTorchlight
         return $response;
     }
 
-
     protected function saveHighlightedBlocks(string $html): void
     {
         $cacheDir = storage_path('torchlight/cache');
@@ -49,11 +48,10 @@ class CachingTorchlight extends RenderTorchlight
 
             $path = "{$cacheDir}/{$key}.html";
 
-            if (!File::exists($path)) {
+            if (! File::exists($path)) {
                 File::put($path, $block);
             }
         }
-
 
     }
 }

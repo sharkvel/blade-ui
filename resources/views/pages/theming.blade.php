@@ -4,7 +4,9 @@
     :nextPage="['url' => route('component'), 'title' => 'Components']"
 >
     <x-ui.h1 class="text-4xl font-medium">Theming</x-ui.h1>
-    <x-ui.p class="mt-4 max-w-[55ch] text-muted-foreground">Using CSS Variables and color utilities for theming.</x-ui.p>
+    <x-ui.p class="mt-4 max-w-[55ch] text-muted-foreground">
+        Using CSS Variables and color utilities for theming.
+    </x-ui.p>
 
     <x-ui.p>You can choose between using CSS variables (recommended) or utility classes for theming.</x-ui.p>
 

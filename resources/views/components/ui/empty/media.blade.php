@@ -17,4 +17,9 @@
     };
 @endphp
 
-<div data-slot="empty-icon" {{ $attributes->merge(['class' => cn($baseClasses, $variantClasses, $attributes->get('class'))]) }}>{{ $slot }}</div>
+<div
+    data-slot="empty-icon"
+    {{ $attributes->merge(['class' => cn($baseClasses, $variantClasses, $attributes->get('class'))]) }}
+>
+    {{ $slot }}
+</div>

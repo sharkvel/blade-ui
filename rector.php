@@ -4,25 +4,20 @@ declare(strict_types=1);
 
 use Rector\Config\RectorConfig;
 use RectorLaravel\Rector\MethodCall\AssertStatusToAssertMethodRector;
-use RectorLaravel\Rector\MethodCall\AvoidNegatedCollectionFilterOrRejectRector;
 use RectorLaravel\Rector\MethodCall\EloquentOrderByToLatestOrOldestRector;
-use RectorLaravel\Rector\MethodCall\RedirectBackToBackHelperRector;
-use RectorLaravel\Rector\MethodCall\RedirectRouteToToRouteHelperRector;
-use RectorLaravel\Rector\MethodCall\ValidationRuleArrayStringValueToArrayRector;
-use RectorLaravel\Rector\StaticCall\CarbonToDateFacadeRector;
 use RectorLaravel\Set\LaravelSetList;
 
 return RectorConfig::configure()
     ->withPaths([
-        __DIR__ . '/app',
-        __DIR__ . '/bootstrap',
-        __DIR__ . '/config',
-        __DIR__ . '/public',
-        __DIR__ . '/resources',
-        __DIR__ . '/routes',
-        __DIR__ . '/tests',
+        __DIR__.'/app',
+        __DIR__.'/bootstrap',
+        __DIR__.'/config',
+        __DIR__.'/public',
+        __DIR__.'/resources',
+        __DIR__.'/routes',
+        __DIR__.'/tests',
     ])
-    ->withSkip([__DIR__ . '/bootstrap/cache'])
+    ->withSkip([__DIR__.'/bootstrap/cache'])
     // uncomment to reach your current PHP version
     ->withPhpSets()
     ->withPreparedSets(

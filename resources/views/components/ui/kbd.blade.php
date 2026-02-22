@@ -29,4 +29,6 @@
     };
 @endphp
 
-<kbd {{ $attributes->merge(['class' => cn($baseClasses, $variantClasses, $sizeClasses, $attributes->get('class'))]) }}>{{ $slot }}</kbd>
+<kbd {{ $attributes->merge(['class' => cn($baseClasses, $variantClasses, $sizeClasses, $attributes->get('class'))]) }}>
+    {{ $slot }}
+</kbd>

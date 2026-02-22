@@ -26,7 +26,9 @@
 <div class="flex flex-col">
     {{-- Base --}}
     <x-ui.h1 class="text-4xl font-medium">Textarea</x-ui.h1>
-    <x-ui.p class="mt-4 max-w-[55ch] text-muted-foreground">Displays a form textarea or a component that looks like a textarea.</x-ui.p>
+    <x-ui.p class="mt-4 max-w-[55ch] text-muted-foreground">
+        Displays a form textarea or a component that looks like a textarea.
+    </x-ui.p>
     <x-playground class="mt-12" path="examples/components/textarea/hero.blade.php" />
 
     {{-- Installation --}}
