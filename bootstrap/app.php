@@ -1,5 +1,6 @@
 <?php
 
+use App\Console\Commands\ExtendsBaseCacheClear;
 use App\Http\Middleware\CachingTorchlight;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
@@ -17,6 +18,9 @@ return Application::configure(basePath: dirname(__DIR__))
             CachingTorchlight::class,
         ]);
     })
+    ->withCommands([
+        ExtendsBaseCacheClear::class
+    ])
     ->withExceptions(function (Exceptions $exceptions): void {
         //
     })->create();
