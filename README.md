@@ -1,7 +1,7 @@
 <a href="https://jaypalsapara.in">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="images/art/header-dark.png">
-    <img alt="Logo for blade-ui" src="images/art/header-light.png">
+    <source media="(prefers-color-scheme: dark)" srcset="public/images/art/header-dark.png">
+    <img alt="Logo for blade-ui" src="public/images/art/header-light.png">
   </picture>
 </a>
 
