@@ -5,31 +5,18 @@
   </picture>
 </a>
 
-# Blade-UI
+# sharkvel/blade-ui
 
-.vscode/settings.json
+Open-source, production-ready components built to accelerate Laravel development while giving you full control to customize, extend, and scale.
 
-```json
-{
-    "editor.wordWrap": "wordWrapColumn",
-    "editor.wordWrapColumn": 120,
-    "tailwindCSS.experimental.classRegex": [
-        // Variable ending with 'Classes' assigned a plain string
-        ["[a-zA-Z]+Classes\\s*=\\s*[`'\"]([^`'\"]*)[`'\"]"],
-        // Variable ending with 'Classes' assigned an array
-        ["[a-zA-Z]+Classes\\s*=\\s*\\[([^\\]]*)\\]", "[`'\"]([^`'\"]*)[`'\"]"],
-        // Variable ending with 'Classes' = match() — string values after =>
-        ["[a-zA-Z]+Classes\\s*=\\s*match\\s*\\([^)]*\\)\\s*\\{([^}]*)\\}", "=>\\s*[`'\"]([^`'\"]*)[`'\"]"],
-        [
-            "[a-zA-Z]+Classes\\s*=\\s*match\\s*\\([^)]*\\)\\s*\\{([^}]*)\\}",
-            "=>\\s*\\[[^\\]]*\\]",
-            "[`'\"]([^`'\"]*)[`'\"]"
-        ],
-        // Variable ending with 'Classes' = match() — array values after =>
-        [
-            "[a-zA-Z]+Classes\\s*=\\s*match\\s*\\([^)]*\\)\\s*\\{(?:[^}]*=>\\s*\\[([^\\]]*)\\])+\\s*\\}",
-            "[`'\"]([^`'\"]+)[`'\"]"
-        ]
-    ]
-}
-```
+## Documentation
+
+Visit [https://blade-ui.sharkvel.com/docs](https://blade-ui.sharkvel.com/docs)
+
+## Contributing
+
+Please read the [contributing guide](/CONTRIBUTING.md)
+
+## License
+
+Licensed under the [MIT license](/LICENSE.md).

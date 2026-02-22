@@ -9,7 +9,8 @@ If you need any help, feel free to reach out to [@\_sharkvel](https://x.com/_sha
 ## About this repository
 
 - We use [npm](https://npmjs.com) package manager
-- We use [lucide](https://lucide.dev/) icons
+- We use [Lucide](https://lucide.dev/) icons
+- We use [Prettier](https://prettier.io/) code formatter
 
 ## Structure
 
@@ -49,24 +50,55 @@ You can fork this repo by clicking the fork button in the top right corner of th
 
 #### Clone on your local machine
 
-```
+```shell
 git clone https://github.com/your-username/blade-ui.git
 ```
 
 #### Navigate to project directory
 
-```
+```shell
 cd blade-ui
 ```
 
 #### Create a new Branch
 
-```
+```shell
 git checkout -b my-new-branch
 ```
 
 #### Install dependencies
 
-```
+```shell
 composer setup-dev
 ```
+
+### Vscode setup
+
+.vscode/settings.json on project root folder
+
+```json
+{
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 120,
+    "tailwindCSS.experimental.classRegex": [
+        // Variable ending with 'Classes' assigned a plain string
+        ["[a-zA-Z]+Classes\\s*=\\s*[`'\"]([^`'\"]*)[`'\"]"],
+        // Variable ending with 'Classes' assigned an array
+        ["[a-zA-Z]+Classes\\s*=\\s*\\[([^\\]]*)\\]", "[`'\"]([^`'\"]*)[`'\"]"],
+        // Variable ending with 'Classes' = match() — string values after =>
+        ["[a-zA-Z]+Classes\\s*=\\s*match\\s*\\([^)]*\\)\\s*\\{([^}]*)\\}", "=>\\s*[`'\"]([^`'\"]*)[`'\"]"],
+        [
+            "[a-zA-Z]+Classes\\s*=\\s*match\\s*\\([^)]*\\)\\s*\\{([^}]*)\\}",
+            "=>\\s*\\[[^\\]]*\\]",
+            "[`'\"]([^`'\"]*)[`'\"]"
+        ],
+        // Variable ending with 'Classes' = match() — array values after =>
+        [
+            "[a-zA-Z]+Classes\\s*=\\s*match\\s*\\([^)]*\\)\\s*\\{(?:[^}]*=>\\s*\\[([^\\]]*)\\])+\\s*\\}",
+            "[`'\"]([^`'\"]+)[`'\"]"
+        ]
+    ]
+}
+```
+
+`tailwindCSS.experimental.classRegex` use for get Tailwind CSS IntelliSense on specific condition.
