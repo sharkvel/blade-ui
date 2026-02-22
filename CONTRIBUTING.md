@@ -8,6 +8,9 @@ If you need any help, feel free to reach out to [@\_sharkvel](https://x.com/_sha
 
 ## About this repository
 
+- We use [npm](https://npmjs.com) package manager
+- We use [lucide](https://lucide.dev/) icons
+
 ## Structure
 
 This repository is structured as follows:
@@ -44,25 +47,25 @@ resources
 
 You can fork this repo by clicking the fork button in the top right corner of this page.
 
-### Clone on your local machine
+#### Clone on your local machine
 
 ```
 git clone https://github.com/your-username/blade-ui.git
 ```
 
-### Navigate to project directory
+#### Navigate to project directory
 
 ```
 cd blade-ui
 ```
 
-### Create a new Branch
+#### Create a new Branch
 
 ```
 git checkout -b my-new-branch
 ```
 
-### Install dependencies
+#### Install dependencies
 
 ```
 composer setup-dev
