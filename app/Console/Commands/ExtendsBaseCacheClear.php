@@ -34,6 +34,8 @@ class ExtendsBaseCacheClear extends ClearCommand
 
         // Extended logic
         $this->clearCacheTorchlight();
+
+        return 1;
     }
 
     /**
