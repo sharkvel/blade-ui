@@ -97,12 +97,11 @@ the following categories:
 - `chore`: all changes to the repository that do not fit into any of the above
   categories
 
-  e.g. `feat(components): add new prop to the avatar component`
+    e.g. `feat(components): add new prop to the avatar component`
 
 If you are interested in the detailed specification you can visit
 https://www.conventionalcommits.org/ or check out the
 [Angular Commit Message Guidelines](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines).
-
 
 ## Vscode setup
 
@@ -170,3 +169,10 @@ https://www.conventionalcommits.org/ or check out the
     ],
 ];
 ```
+
+Recommended extensions:
+
+- [Alpine.js IntelliSense](https://marketplace.visualstudio.com/items?itemName=adrianwilczynski.alpine-js-intellisense)
+- [PHP By DevSense](https://marketplace.visualstudio.com/items?itemName=DEVSENSE.phptools-vscode)
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+- [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
