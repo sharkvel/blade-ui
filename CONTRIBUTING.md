@@ -81,24 +81,60 @@ composer setup-dev
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 120,
     "tailwindCSS.experimental.classRegex": [
-        // Variable ending with 'Classes' assigned a plain string
         ["[a-zA-Z]+Classes\\s*=\\s*[`'\"]([^`'\"]*)[`'\"]"],
-        // Variable ending with 'Classes' assigned an array
         ["[a-zA-Z]+Classes\\s*=\\s*\\[([^\\]]*)\\]", "[`'\"]([^`'\"]*)[`'\"]"],
-        // Variable ending with 'Classes' = match() — string values after =>
         ["[a-zA-Z]+Classes\\s*=\\s*match\\s*\\([^)]*\\)\\s*\\{([^}]*)\\}", "=>\\s*[`'\"]([^`'\"]*)[`'\"]"],
         [
-            "[a-zA-Z]+Classes\\s*=\\s*match\\s*\\([^)]*\\)\\s*\\{([^}]*)\\}",
-            "=>\\s*\\[[^\\]]*\\]",
-            "[`'\"]([^`'\"]*)[`'\"]"
+            "[a-zA-Z]+Classes\\s*=\\s*match\\s*\\([^)]*\\)\\s*\\{([\\s\\S]*?)\\}(?=\\s*;)",
+            "=>\\s*\\[\\s*[`'\"]([^`'\"]+)[`'\"]"
         ],
-        // Variable ending with 'Classes' = match() — array values after =>
         [
-            "[a-zA-Z]+Classes\\s*=\\s*match\\s*\\([^)]*\\)\\s*\\{(?:[^}]*=>\\s*\\[([^\\]]*)\\])+\\s*\\}",
-            "[`'\"]([^`'\"]+)[`'\"]"
+            "[a-zA-Z]+Classes\\s*=\\s*match\\s*\\([^)]*\\)\\s*\\{([\\s\\S]*?)\\}(?=\\s*;)",
+            ",\\s*[`'\"]([^`'\"]+)[`'\"](?!\\s*=>)"
         ]
-    ]
+    ],
+    "php.version": "8.4"
 }
 ```
 
 `tailwindCSS.experimental.classRegex` use for get Tailwind CSS IntelliSense on specific condition.
+
+```js
+// Explanation of tailwindCSS.experimental.classRegex patterns
+[
+    /*
+     * 1. Variable ending with 'Classes' assigned a plain string
+     *    Example: $buttonClasses = 'hidden'
+     */
+    ['[a-zA-Z]+Classes\\s*=\\s*[`\'"]([^`\'"]*)[`\'"]'],
+
+    /*
+     * 2. Variable ending with 'Classes' assigned an array
+     *    Example: $buttonClasses = ['hidden','bg-red-500']
+     */
+    ['[a-zA-Z]+Classes\\s*=\\s*\\[([^\\]]*)\\]', '[`\'"]([^`\'"]*)[`\'"]'],
+
+    /*
+     * 3. Variable ending with 'Classes' = match() — string values after =>
+     *    Example: $buttonClasses = match($variant) {
+     *                  'primary' => 'bg-primary text-primary-foreground'
+     *              }
+     */
+    ['[a-zA-Z]+Classes\\s*=\\s*match\\s*\\([^)]*\\)\\s*\\{([^}]*)\\}', '=>\\s*[`\'"]([^`\'"]*)[`\'"]'],
+
+    /*
+     * 4. Variable ending with 'Classes' = match() — array values after =>
+     *    Example: $buttonClasses = match($variant) {
+     *                  'primary' => ['bg-primary', 'text-primary-foreground']
+     *              }
+     */
+    [
+        '[a-zA-Z]+Classes\\s*=\\s*match\\s*\\([^)]*\\)\\s*\\{([\\s\\S]*?)\\}(?=\\s*;)',
+        '=>\\s*\\[\\s*[`\'"]([^`\'"]+)[`\'"]',
+    ],
+    [
+        '[a-zA-Z]+Classes\\s*=\\s*match\\s*\\([^)]*\\)\\s*\\{([\\s\\S]*?)\\}(?=\\s*;)',
+        ',\\s*[`\'"]([^`\'"]+)[`\'"](?!\\s*=>)',
+    ],
+];
+```
