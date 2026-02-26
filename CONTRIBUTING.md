@@ -104,7 +104,7 @@ https://www.conventionalcommits.org/ or check out the
 [Angular Commit Message Guidelines](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines).
 
 
-### Vscode setup
+## Vscode setup
 
 .vscode/settings.json on project root folder
 
