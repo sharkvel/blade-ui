@@ -32,6 +32,7 @@
 @push('js')
     <script>
         // Init
+        let sidebarScrollTimer = null;
         const sidebar = document.querySelector(`#sidebar`);
         const previousURL = new URL(document.referrer);
         const scroll = localStorage.getItem('sidebar-scroll') ?? 0;
@@ -45,8 +46,11 @@
 
         // Event
         sidebar.addEventListener('scroll', function () {
+            clearTimeout(sidebarScrollTimer);
             // Store current scroll state
-            localStorage.setItem('sidebar-scroll', this.scrollTop);
+            sidebarScrollTimer = setTimeout(() => {
+                localStorage.setItem('sidebar-scroll', this.scrollTop);
+            }, 150);
         });
     </script>
 @endpush

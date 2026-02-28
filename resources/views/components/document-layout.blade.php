@@ -1,5 +1,4 @@
 @props([
-    'sidebarItems',
     'nextPage' => null,
     'previousPage' => null,
 ])
@@ -10,10 +9,10 @@
 
 <x-app-layout>
     {{-- Nav bar --}}
-    <x-nav-bar :sidebar-items="$sidebarItems" />
+    <x-nav-bar />
     <div class="section-wrapper mx-auto flex min-h-[calc(100svh-4rem)] w-full border-x-0 px-0 md:border-x">
         {{-- Sidebar --}}
-        <x-sidebar :sidebar-items="$sidebarItems" />
+        <x-sidebar />
         {{-- Content --}}
         <div class="section-wrapper grow py-12">
             <div class="mx-auto flex min-h-full max-w-3xl flex-col">
