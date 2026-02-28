@@ -40,7 +40,7 @@
                 <x-ui.label class="font-mono leading-none font-normal text-muted-foreground">Terminal</x-ui.label>
             </div>
         </div>
-        <x-ui.codelight language="shell">php artisan ui:add separator</x-ui.codelight>
+        <x-codelight language="shell">php artisan ui:add separator</x-codelight>
     </div>
 
     {{-- Usage --}}
@@ -48,7 +48,7 @@
         <a href="#usage" class="hash-link">Usage</a>
     </x-ui.h6>
     <div class="mt-6 rounded-lg border p-1">
-        <x-ui.codelight path="examples/components/separator/usage.blade.php" />
+        <x-codelight path="examples/components/separator/usage.blade.php" />
     </div>
 
     {{-- Reference --}}

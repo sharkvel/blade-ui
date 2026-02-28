@@ -1,3 +1,9 @@
+@props([
+    'sidebarItems',
+    'nextPage' => null,
+    'previousPage' => null,
+])
+
 @php
     $onThisPage = $componentMeta->attributes['onThisPage'] ?? [];
 @endphp

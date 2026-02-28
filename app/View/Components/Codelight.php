@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\Ui;
+namespace App\View\Components;
 
 use Closure;
 use Illuminate\Contracts\View\View;
@@ -26,7 +26,7 @@ class Codelight extends Component
             $cacheKey = md5($this->language.$content);
             $contentCache = $this->getCache($cacheKey);
 
-            return view('components.ui.codelight', compact('content', 'contentCache', 'cacheKey'));
+            return view('components.codelight', compact('content', 'contentCache', 'cacheKey'));
         };
     }
 

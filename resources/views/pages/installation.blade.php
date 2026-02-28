@@ -56,7 +56,7 @@
         official site for creation guidance for new Laravel project:
     </x-ui.p>
     <div class="mt-6 rounded-lg border p-1">
-        <x-ui.codelight language="shell">laravel new example-app</x-ui.codelight>
+        <x-codelight language="shell">laravel new example-app</x-codelight>
     </div>
 
     {{-- Install Tailwind CSS --}}
@@ -70,9 +70,9 @@
     </x-ui.p>
     <div class="mt-6 rounded-lg border p-1">
         <!-- prettier-ignore -->
-        <x-ui.codelight language="shell" >
+        <x-codelight language="shell" >
             npm install tailwindcss @tailwindcss/vite
-        </x-ui.codelight>
+        </x-codelight>
     </div>
     <x-ui.p>
         Add the
@@ -85,7 +85,7 @@
         vite configuration file.
     </x-ui.p>
     <div class="mt-6 rounded-lg border p-1">
-        <x-ui.codelight language="js" path="examples/others/tailwind-vite.config.js" />
+        <x-codelight language="js" path="examples/others/tailwind-vite.config.js" />
     </div>
     <x-ui.p>
         Add an
@@ -95,7 +95,7 @@
         file that imports Tailwind CSS.
     </x-ui.p>
     <div class="mt-6 rounded-lg border p-1">
-        <x-ui.codelight language="css">@import "tailwindcss";</x-ui.codelight>
+        <x-codelight language="css">@import "tailwindcss";</x-codelight>
     </div>
 
     {{-- Install Alpine JS --}}
@@ -108,7 +108,7 @@
         official site for more information:
     </x-ui.p>
     <div class="mt-6 rounded-lg border p-1">
-        <x-ui.codelight language="shell">npm install alpinejs</x-ui.codelight>
+        <x-codelight language="shell">npm install alpinejs</x-codelight>
     </div>
     <x-ui.p>
         Now import Alpine into your
@@ -116,7 +116,7 @@
         bundle and initialize it like so
     </x-ui.p>
     <div class="mt-6 rounded-lg border p-1">
-        <x-ui.codelight language="js" path="examples/others/alpinejs-bootstrap.js" />
+        <x-codelight language="js" path="examples/others/alpinejs-bootstrap.js" />
     </div>
 
     {{-- Install library --}}
@@ -125,7 +125,7 @@
     </x-ui.h6>
     <x-ui.p class="mt-2">Add library using composer package manager to your project.</x-ui.p>
     <div class="mt-6 rounded-lg border p-1">
-        <x-ui.codelight language="shell">composer require sharkvel/blade-ui</x-ui.codelight>
+        <x-codelight language="shell">composer require sharkvel/blade-ui</x-codelight>
     </div>
 
     {{-- Initialize library --}}
@@ -136,7 +136,7 @@
         Initialize library in your application. This check and install required files and configs.
     </x-ui.p>
     <div class="mt-6 rounded-lg border p-1">
-        <x-ui.codelight language="shell">php artisan ui:init</x-ui.codelight>
+        <x-codelight language="shell">php artisan ui:init</x-codelight>
     </div>
 
     {{-- Add component --}}
@@ -148,7 +148,7 @@
         <x-ui.code>php artisan ui:add {component}</x-ui.code>
     </x-ui.p>
     <div class="mt-6 rounded-lg border p-1">
-        <x-ui.codelight language="shell">php artisan ui:add button</x-ui.codelight>
+        <x-codelight language="shell">php artisan ui:add button</x-codelight>
     </div>
     <x-ui.p>
         The command above will add the
@@ -160,6 +160,6 @@
         . You can then use it like this:
     </x-ui.p>
     <div class="mt-6 rounded-lg border p-1">
-        <x-ui.codelight path="examples/components/button/installed.blade.php" />
+        <x-codelight path="examples/components/button/installed.blade.php" />
     </div>
 </x-document-layout>

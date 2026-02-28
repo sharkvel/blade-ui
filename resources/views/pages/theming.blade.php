@@ -47,10 +47,10 @@
         , and many more.
     </x-ui.p>
     <div class="mt-6 rounded-lg border p-1">
-        <x-ui.codelight>
+        <x-codelight>
             @verbatim<div class='bg-background text-foreground'></div>@endverbatim
 
-        </x-ui.codelight>
+        </x-codelight>
     </div>
 
     {{-- Utility classes --}}
@@ -59,10 +59,10 @@
     </x-ui.h6>
     <x-ui.p class="mt-2">Tailwind CSS pre-build utility classes</x-ui.p>
     <div class="mt-6 rounded-lg border p-1">
-        <x-ui.codelight>
+        <x-codelight>
             @verbatim<div class='bg-zinc-950 dark:bg-white'></div>@endverbatim
 
-        </x-ui.codelight>
+        </x-codelight>
     </div>
 
     {{-- List of variables --}}
@@ -71,7 +71,7 @@
     </x-ui.h6>
     <x-ui.p class="mt-2">Here's the list of variables available for customization:</x-ui.p>
     <div class="mt-6 rounded-lg border p-1">
-        <x-ui.codelight language="css" path="examples/others/list-of-variables.css" />
+        <x-codelight language="css" path="examples/others/list-of-variables.css" />
     </div>
 
     {{-- Add new custom variables --}}
@@ -92,7 +92,7 @@
         directive to make the colors available as CSS variables.
     </x-ui.p>
     <div class="mt-6 rounded-lg border p-1">
-        <x-ui.codelight language="css" path="examples/others/add-custom-variables.css" />
+        <x-codelight language="css" path="examples/others/add-custom-variables.css" />
     </div>
     <x-ui.p>
         You can now use the
@@ -100,9 +100,9 @@
         utility class in your components.
     </x-ui.p>
     <div class="mt-6 rounded-lg border p-1">
-        <x-ui.codelight>
+        <x-codelight>
             @verbatim<div class='bg-warning text-warning-foreground'></div>@endverbatim
 
-        </x-ui.codelight>
+        </x-codelight>
     </div>
 </x-document-layout>

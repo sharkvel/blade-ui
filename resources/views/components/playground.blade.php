@@ -1,4 +1,11 @@
-<x-ui.tabs {{ $attributes }} defaultValue="preview">
+@props([
+    'path',
+])
+<x-ui.tabs {{
+    $attributes->merge([
+        'class' => cn('min-h-96 flex flex-col'),
+    ])
+}} defaultValue="preview">
     {{-- Tabs --}}
     <x-ui.tabs.container class="max-w-max">
         <x-ui.tabs.trigger value="preview">Preview</x-ui.tabs.trigger>
@@ -10,7 +17,7 @@
             @include(rtrim($path, '.blade.php'))
         </x-ui.tabs.content>
         <x-ui.tabs.content value="code" class="flex w-full overflow-hidden rounded-md">
-            <x-ui.codelight path="{{ $path }}" class="h-112.5 w-full" />
+            <x-codelight path="{{ $path }}" class="h-112.5 w-full" />
         </x-ui.tabs.content>
     </div>
 </x-ui.tabs>
