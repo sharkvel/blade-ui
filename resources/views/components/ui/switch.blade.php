@@ -6,7 +6,8 @@
 ])
 
 @php
-    $baseClasses = 'group/switch relative flex rounded-full border bg-input transition-colors ease-out will-change-[color] has-checked:border-primary has-checked:bg-primary has-disabled:opacity-50 dark:border-transparent dark:bg-input/35';
+    $baseClasses = 'group/switch relative flex rounded-full border border-input bg-input transition-colors ease-out will-change-[color] has-checked:border-primary has-checked:bg-primary has-disabled:opacity-50 dark:border-input/30 dark:bg-input/35';
+
     $sizeClasses = match ($size) {
         'sm' => 'w-6 *:data-[slot=switch-thumb]:size-3',
         'default' => 'w-8 *:data-[slot=switch-thumb]:size-4',

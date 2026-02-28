@@ -335,7 +335,7 @@
                         </div>
                         <div>
                             <x-ui.input-group>
-                                <x-ui.input-group.input placeholder="@sharkvel" />
+                                <x-ui.input-group.input placeholder="@_sharkvel" />
                                 <x-ui.input-group.addon align="inline-end">
                                     <i data-lucide="circle-check" class="text-primary"></i>
                                 </x-ui.input-group.addon>
