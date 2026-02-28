@@ -2,9 +2,11 @@
 
 namespace App\Providers;
 
+use App\Services\Constants;
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -27,5 +29,10 @@ class AppServiceProvider extends ServiceProvider
 
         // For Dates
         Date::use(CarbonImmutable::class);
+
+        // For Views
+        View::composer(['components.sidebar', 'components.nav-bar'], function ($view) {
+            $view->with('sidebarItems', Constants::sidebarItems());
+        });
     }
 }
