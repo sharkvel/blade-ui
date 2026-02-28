@@ -23,6 +23,7 @@
     },
     "dependencies": {
         "@alpinejs/mask": "^3.15.8",
+        "@imacrayon/alpine-ajax": "^0.12.6",
         "alpinejs": "^3.15.8",
         "lucide": "^0.575.0"
     }

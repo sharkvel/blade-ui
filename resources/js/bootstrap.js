@@ -1,11 +1,24 @@
 import Alpine from 'alpinejs';
 import mask from '@alpinejs/mask';
+import ajax from '@imacrayon/alpine-ajax'
 import axios from 'axios';
 
+/**
+ * Register in window object for global access
+ */
 window.axios = axios;
 window.Alpine = Alpine;
 
+/**
+ * Config Axios
+ */
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
+/**
+ * Config Alpine
+ */
+Alpine.plugin(mask);
+Alpine.plugin(ajax);
 
 document.addEventListener('alpine:init', () => {
     Alpine.store('darkMode', {
@@ -27,7 +40,7 @@ document.addEventListener('alpine:init', () => {
         fragment: null,
         init() {
             const fragments = [...document.querySelectorAll(`a[href^='#']`)].reverse();
-            const triggerAt = 250; // Percentage
+            const triggerAt = 250; // PX
             function getActiveFragment() {
                 return fragments
                     .find((fragment) => fragment.getBoundingClientRect().top <= triggerAt)
@@ -43,5 +56,5 @@ document.addEventListener('alpine:init', () => {
         },
     }));
 });
-Alpine.plugin(mask);
+
 Alpine.start();
