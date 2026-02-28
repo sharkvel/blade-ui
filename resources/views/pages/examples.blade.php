@@ -11,12 +11,11 @@
     @endpush
 
     <x-nav-bar :sidebar-items="$sidebarItems" />
-    <div class="h-16"></div>
     <div
         class="section-wrapper mx-auto flex min-h-[calc(100svh-4rem)] w-full flex-col items-center border-x-0 py-12 md:border-x"
     >
         {{-- Powered by --}}
-        <div class="mx-auto mt-24 flex gap-x-8 text-center text-muted-foreground">
+        <div class="mx-auto mt-16 flex gap-x-8 text-center text-muted-foreground">
             <a href="https://tailwindcss.com/" target="_blank">
                 <div class="flex items-center gap-2 font-medium hover:text-foreground">
                     <svg
@@ -51,10 +50,10 @@
             </a>
         </div>
         {{-- Hero Title --}}
-        <x-ui.h1 class="mt-5 max-w-[24ch] text-center leading-[1.2] font-medium text-balance lg:text-6xl">
+        <x-ui.h1 class="mt-5 text-center leading-[1.2] font-medium text-balance lg:text-6xl lg:tracking-tighter">
             Build faster with reusable blade components
         </x-ui.h1>
-        <x-ui.p class="max-w-[60ch] text-center text-pretty">
+        <x-ui.p class="max-w-[60ch] text-center text-pretty lg:text-lg">
             Open-source, production-ready components built to accelerate Laravel development while giving you full
             control to customize, extend, and scale.
         </x-ui.p>
@@ -80,7 +79,7 @@
 
         {{-- Previews --}}
         <div
-            class="mt-24 w-full"
+            class="mt-18 w-full"
             @if (! empty($theme))
                 x-data="{ theme: @js($theme) }"
             @else
