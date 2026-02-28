@@ -3,7 +3,6 @@
 namespace App\Console\Commands;
 
 use Illuminate\Cache\Console\ClearCommand;
-use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
 use Symfony\Component\Console\Attribute\AsCommand;
 
@@ -50,7 +49,7 @@ class ExtendsBaseCacheClear extends ClearCommand
             // Keep some files
             $backups = [];
             foreach ($keep as $file) {
-                $filePath = (string) $path . '/' . $file;
+                $filePath = (string) $path.'/'.$file;
                 if (File::exists($filePath)) {
                     $backups[$file] = File::get($filePath);
                 }
@@ -61,7 +60,7 @@ class ExtendsBaseCacheClear extends ClearCommand
 
             // Restore kept files
             foreach ($backups as $file => $content) {
-                $filePath = (string) $path . '/' . $file;
+                $filePath = (string) $path.'/'.$file;
                 File::put($filePath, $content);
             }
 

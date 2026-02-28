@@ -5,7 +5,7 @@
 use TailwindMerge\Laravel\Facades\TailwindMerge as TailwindMergeFacade;
 use TailwindMerge\TailwindMerge;
 
-if (!function_exists('cn')) {
+if (! function_exists('cn')) {
     function cn(...$classes): string
     {
         static $tw;
@@ -20,7 +20,7 @@ if (!function_exists('cn')) {
 
             if (is_array($class)) {
                 foreach ($class as $c) {
-                    if (!empty($c)) {
+                    if (! empty($c)) {
                         foreach (preg_split('/\s+/', trim((string) $c)) as $segment) {
                             if ($segment !== '') {
                                 $parts[] = $segment;
@@ -38,7 +38,7 @@ if (!function_exists('cn')) {
         }
 
         // Fast paths
-        if (!$parts) {
+        if (! $parts) {
             return '';
         }
         if (count($parts) === 1) {
@@ -77,7 +77,7 @@ if (!function_exists('cn')) {
     }
 }
 
-if (!function_exists('slotRoot')) {
+if (! function_exists('slotRoot')) {
     function slotRoot($slot): string
     {
         preg_match('/^<\s*([^\s>]+)/', trim((string) $slot), $matches);
@@ -86,10 +86,10 @@ if (!function_exists('slotRoot')) {
     }
 }
 
-if (!function_exists(function: 'slotChild')) {
+if (! function_exists(function: 'slotChild')) {
     function slotChild($slot, $root): string
     {
-        $result = preg_replace('/<\/?' . preg_quote((string) $root, '/') . '[^>]*>/i', '', (string) $slot);
+        $result = preg_replace('/<\/?'.preg_quote((string) $root, '/').'[^>]*>/i', '', (string) $slot);
 
         return trim((string) $result);
     }

@@ -19,7 +19,7 @@ return Application::configure(basePath: dirname(__DIR__))
         ]);
     })
     ->withCommands([
-        ExtendsBaseCacheClear::class
+        ExtendsBaseCacheClear::class,
     ])
     ->withExceptions(function (Exceptions $exceptions): void {
         //
