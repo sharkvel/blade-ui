@@ -26,7 +26,10 @@
     ];
 @endphp
 
-<x-document-layout :sidebar-items="$sidebarItems" :previousPage="['url' => route('docs.installation'), 'title' => 'Installation']" :nextPage="['url' => route('component'), 'title' => 'Components']">
+<x-document-layout
+    :previousPage="['url' => route('docs.installation'), 'title' => 'Installation']"
+    :nextPage="['url' => route('component'), 'title' => 'Components']"
+>
     <x-slot name="componentMeta" :onThisPage="$onThisPage"></x-slot>
     <x-ui.h1 class="text-4xl font-medium">Theming</x-ui.h1>
     <x-ui.p class="mt-4 max-w-[55ch] text-muted-foreground">
@@ -49,7 +52,7 @@
     <div class="mt-6 rounded-lg border p-1">
         <x-codelight>
             @verbatim<div class='bg-background text-foreground'></div>@endverbatim
-
+                
         </x-codelight>
     </div>
 
@@ -61,7 +64,7 @@
     <div class="mt-6 rounded-lg border p-1">
         <x-codelight>
             @verbatim<div class='bg-zinc-950 dark:bg-white'></div>@endverbatim
-
+                
         </x-codelight>
     </div>
 
@@ -77,7 +80,6 @@
     {{-- Add new custom variables --}}
     <x-ui.h6 class="mt-12 font-medium">
         <a href="#adding-new-colors" class="hash-link">Adding new colors</a>
-
     </x-ui.h6>
     <x-ui.p class="mt-2">
         To add new colors, you need to add them to your CSS file under the
@@ -102,7 +104,7 @@
     <div class="mt-6 rounded-lg border p-1">
         <x-codelight>
             @verbatim<div class='bg-warning text-warning-foreground'></div>@endverbatim
-
+                
         </x-codelight>
     </div>
 </x-document-layout>

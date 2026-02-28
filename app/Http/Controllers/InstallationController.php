@@ -12,8 +12,6 @@ class InstallationController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return view('pages.installation', [
-            'sidebarItems' => Constants::sidebarItems(),
-        ]);
+        return view('pages.installation');
     }
 }

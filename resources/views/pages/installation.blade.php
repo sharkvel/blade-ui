@@ -37,7 +37,6 @@
 @endphp
 
 <x-document-layout
-    :sidebar-items="$sidebarItems"
     :previousPage="['url' => route('docs'), 'title' => 'Introduction']"
     :nextPage="['url' => route('docs.theming'), 'title' => 'Theming']"
 >

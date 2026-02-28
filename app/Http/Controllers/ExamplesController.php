@@ -12,9 +12,6 @@ class ExamplesController extends Controller
      */
     public function __invoke(Request $request)
     {
-
-        return view('pages.examples', [
-            'sidebarItems' => Constants::sidebarItems(),
-        ]);
+        return view('pages.examples');
     }
 }

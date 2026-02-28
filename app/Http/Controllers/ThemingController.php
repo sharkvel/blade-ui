@@ -12,8 +12,6 @@ class ThemingController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return view('pages.theming', [
-            'sidebarItems' => Constants::sidebarItems(),
-        ]);
+        return view('pages.theming');
     }
 }

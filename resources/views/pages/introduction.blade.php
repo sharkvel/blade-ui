@@ -27,7 +27,6 @@
 @endphp
 
 <x-document-layout
-    :sidebar-items="$sidebarItems"
     :nextPage="['url' => route('docs.installation'), 'title' => 'Installation']"
 >
     <x-slot name="componentMeta" :onThisPage="$onThisPage"></x-slot>

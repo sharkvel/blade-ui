@@ -12,8 +12,6 @@ class IntroductionController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return view('pages.introduction', [
-            'sidebarItems' => Constants::sidebarItems(),
-        ]);
+        return view('pages.introduction');
     }
 }

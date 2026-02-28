@@ -12,10 +12,8 @@ class ComponentController extends Controller
      */
     public function __invoke(Request $request, ?string $component = null)
     {
-
         return view('pages.components', [
             'componentName' => $component,
-            'sidebarItems' => Constants::sidebarItems(),
         ]);
     }
 }
