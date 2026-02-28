@@ -1,14 +1,7 @@
-<x-document-layout
-    :sidebar-items="$sidebarItems"
-    :nextPage="['url' => route('component','button'),'title' => 'Button']"
->
+<x-document-layout :sidebar-items="$sidebarItems" :nextPage="['url' => route('component', 'button'), 'title' => 'Button']">
     @if (filled($componentName))
         @include("contents.{$componentName}")
     @else
-        @php
-            $components = [];
-        @endphp
-
         <x-ui.h1 class="text-4xl font-medium">Components</x-ui.h1>
         <x-ui.p class="mt-4 max-w-[55ch] text-muted-foreground">
             Here you can find all the components available in the library. We are working on adding more components.
