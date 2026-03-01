@@ -1,1 +1,1 @@
-<div data-slot="dialog-close" @click="open = false;" {{ $attributes }}>{{ $slot }}</div>
+<div {{ $attributes }} data-slot="dialog-close" @click="open = false;">{{ $slot }}</div>

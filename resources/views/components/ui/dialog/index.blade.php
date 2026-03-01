@@ -4,14 +4,11 @@
 <div
     x-data="{
         open: @js($open),
+        closing: false,
     }"
     :open="open"
     data-slot="dialog"
-    x-init="
-        $watch('open', (value) =>
-            value ? $store.scrollbar.lock() : $store.scrollbar.unlock(),
-        )
-    "
+    x-effect="open ? $store.scrollbar.lock() : ! open && ! closing && $store.scrollbar.unlock()"
     {{ $attributes }}
 >
     {{ $slot }}
