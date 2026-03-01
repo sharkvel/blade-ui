@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@import 'tw-animate-css';
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -92,7 +93,6 @@
 
     html {
         scrollbar-width: thin;
-        scrollbar-gutter: stable;
     }
     body {
         @apply bg-background text-foreground;
@@ -131,6 +131,19 @@
             height: 100%;
             border-right: 3px solid white;
         }
+    }
+
+    body[data-scrollbar-lock] {
+        --removed-body-scroll-bar-size: 15px;
+        overflow: hidden !important;
+        overscroll-behavior: contain;
+        position: relative !important;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-left: 0;
+        margin-top: 0;
+        margin-right: var(--removed-body-scroll-bar-size) !important;
     }
 }
 

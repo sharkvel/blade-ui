@@ -21,6 +21,7 @@ Alpine.plugin(mask);
 Alpine.plugin(ajax);
 
 document.addEventListener('alpine:init', () => {
+    // Dark mode
     Alpine.store('darkMode', {
         on: false,
         init() {
@@ -36,6 +37,22 @@ document.addEventListener('alpine:init', () => {
             localStorage.setItem('darkMode', this.on ? 'dark' : 'light');
         },
     });
+
+    // Scrollbar
+    Alpine.store('scrollbar', {
+        get scrollbarWidth() {
+            return window.innerWidth - document.documentElement.clientWidth;
+        },
+        lock() {
+            document.body.style.setProperty('--removed-body-scroll-bar-size', this.scrollbarWidth + 'px');
+            document.body.setAttribute('data-scrollbar-lock', true);
+        },
+        unlock() {
+            document.body.removeAttribute('data-scrollbar-lock');
+        }
+    });
+
+    // Scroll to fragment
     Alpine.data('fragment', () => ({
         fragment: null,
         init() {

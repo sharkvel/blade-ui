@@ -128,7 +128,12 @@
                             <x-ui.select.option value="yellow">Yellow</x-ui.select.option>
                         </x-ui.select.option-group>
                     </x-ui.select>
-                    <x-ui.button size="icon-sm" variant="outline"><i data-lucide="copy"></i></x-ui.button>
+                    <x-ui.dialog>
+                        <x-ui.dialog.trigger>
+                            <x-ui.button size="icon-sm" variant="outline"><i data-lucide="copy"></i></x-ui.button>
+                        </x-ui.dialog.trigger>
+                        <x-ui.dialog.content>ddd</x-ui.dialog.content>
+                    </x-ui.dialog>
                 </div>
             </div>
             <div :class="['theme-' + theme, $store.darkMode.on ? 'dark' : '' ]">
