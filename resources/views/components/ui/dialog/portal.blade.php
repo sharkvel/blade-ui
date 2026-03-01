@@ -1,3 +1,3 @@
-<template x-teleport="body">
+<template x-teleport="body" x-init="$nextTick(() => lucide.createIcons())">
     {{ $slot }}
 </template>
