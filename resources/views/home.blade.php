@@ -132,7 +132,19 @@
                         <x-ui.dialog.trigger>
                             <x-ui.button size="icon-sm" variant="outline"><i data-lucide="copy"></i></x-ui.button>
                         </x-ui.dialog.trigger>
-                        <x-ui.dialog.content>ddd</x-ui.dialog.content>
+                        <x-ui.dialog.content>
+                            <x-ui.dialog.header>
+                                <x-ui.dialog.title>Edit profile</x-ui.dialog.title>
+                                <x-ui.dialog.description>
+                                    Make changes to your profile here. Click save when you're done.
+                                </x-ui.dialog.description>
+                            </x-ui.dialog.header>
+
+                            <x-ui.dialog.footer>
+                                <x-ui.button variant="outline">Cancel</x-ui.button>
+                                <x-ui.button>Save Changes</x-ui.button>
+                            </x-ui.dialog.footer>
+                        </x-ui.dialog.content>
                     </x-ui.dialog>
                 </div>
             </div>

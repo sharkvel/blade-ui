@@ -1,6 +1,6 @@
 <div class="grid items-start gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
     {{-- Col-1 --}}
-    <div class="rounded-lg border p-8">
+    <div class="rounded-lg border p-6">
         <x-ui.field.group>
             {{-- Field set --}}
             <x-ui.field.set>
