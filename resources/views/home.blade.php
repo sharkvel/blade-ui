@@ -135,6 +135,7 @@
                             id:'theme-codelight',
                             lang:'css',
                             path:`../stubs/themes/${theme}.css`,
+                            v:0
                         },
                         target:'theme-codelight'
                         }))"
