@@ -5,7 +5,9 @@
             <x-ui.a href="https://jaypalsapara.in" target="_blank" class="text-inherit">Jaypal Sapara</x-ui.a>
             at
             <x-ui.a href="https://sharkvel.com" target="_blank" class="text-inherit">Sharkvel</x-ui.a>
-            for Developers.
+            . The source code is available on
+            <x-ui.a href="{{ REPO_URL }}" target="_blank" class="text-inherit">GitHub</x-ui.a>
+            .
         </x-ui.p>
         <x-ui.small class="mt-2 text-center text-muted-foreground">{{ config('app.version') }}</x-ui.small>
     </div>
