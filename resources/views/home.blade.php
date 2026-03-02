@@ -138,8 +138,7 @@
                         },
                         target:'theme-codelight'
                         }))"
-
-                        @ajax:after="lucide.createIcons()"
+                        x-on:ajax:after="lucide.createIcons()"
                     >
                         <x-ui.dialog.trigger>
                             <x-ui.button size="icon-sm" variant="outline"><i data-lucide="copy"></i></x-ui.button>
