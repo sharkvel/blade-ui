@@ -18,15 +18,26 @@
     }"
 >
     <button
-        class="group absolute top-0 right-0 mt-3.5 mr-4 grid size-6 cursor-pointer place-content-center rounded-sm bg-neutral-900"
+        @class([
+            'group absolute top-0 right-0 mr-3 grid size-6 cursor-pointer place-content-center rounded-sm bg-neutral-900',
+            'mt-3.5' => blank($title),
+            'mt-2' => filled($title),
+        ])
         @click="copy($el.nextElementSibling.value)"
     >
         <i data-lucide="copy" class="size-4 text-white/50 group-hover:text-white" x-show="!isCopied"></i>
         <i data-lucide="check" class="size-4 text-white/50 group-hover:text-white" x-cloak x-show="isCopied"></i>
     </button>
-    
+
     <input type="hidden" value="{{ $content ?? $slot }}" />
 
+    @if ($title)
+        <div
+            class="flex h-10 items-center border-b border-input/10 px-4 font-mono text-sm font-normal text-white/50 dark:border-input/50"
+        >
+            <span>{{ $title }}</span>
+        </div>
+    @endif
 
     <!-- prettier-ignore-start -->
     <pre class="grid overflow-x-auto [scrollbar-width:none]">

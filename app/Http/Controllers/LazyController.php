@@ -14,8 +14,9 @@ class LazyController extends Controller
         $lang = $req->string('lang');
         $path = $req->string('path');
         $id = $req->string('id', 'code-light');
+        $title = $req->string('title');
 
-        $html = view('lazy.theme-codelight', compact('lang', 'path', 'id'))->render();
+        $html = view('lazy.theme-codelight', compact('lang', 'path', 'id', 'title'))->render();
 
         return response($html)->header('Cache-Control', 'max-age=31536000');
     }

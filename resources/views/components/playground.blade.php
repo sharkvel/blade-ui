@@ -1,5 +1,6 @@
 @props([
     'path',
+    'title' => null,
 ])
 <x-ui.tabs {{
     $attributes->merge([
@@ -17,7 +18,7 @@
             @include(rtrim($path, '.blade.php'))
         </x-ui.tabs.content>
         <x-ui.tabs.content value="code" class="flex w-full overflow-hidden rounded-md">
-            <x-codelight path="{{ $path }}" class="h-112.5 w-full" />
+            <x-codelight title="{{ $title }}" path="{{ $path }}" class="h-112.5 w-full" />
         </x-ui.tabs.content>
     </div>
 </x-ui.tabs>
