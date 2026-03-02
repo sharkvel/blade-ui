@@ -128,22 +128,40 @@
                             <x-ui.select.option value="yellow">Yellow</x-ui.select.option>
                         </x-ui.select.option-group>
                     </x-ui.select>
-                    <x-ui.dialog>
+                    <x-ui.dialog
+                        x-init="$watch('open', value => open && $ajax('{{ route('lazy.codelight') }}',{
+                        method:'get',
+                        body:{
+                            id:'theme-codelight',
+                            lang:'css',
+                            path:`../stubs/themes/${theme}.css`,
+                        },
+                        target:'theme-codelight'
+                        }))"
+
+                        @ajax:after="lucide.createIcons()"
+                    >
                         <x-ui.dialog.trigger>
                             <x-ui.button size="icon-sm" variant="outline"><i data-lucide="copy"></i></x-ui.button>
                         </x-ui.dialog.trigger>
-                        <x-ui.dialog.content>
+                        <x-ui.dialog.content
+                            variant="modern"
+                            class="flex max-h-[calc(70vh)] w-full flex-col sm:max-w-2xl"
+                        >
                             <x-ui.dialog.header>
-                                <x-ui.dialog.title>Edit profile</x-ui.dialog.title>
+                                <x-ui.dialog.title x-text="theme" class="capitalize"></x-ui.dialog.title>
                                 <x-ui.dialog.description>
-                                    Make changes to your profile here. Click save when you're done.
+                                    Copy and paste the following code into your CSS file.
                                 </x-ui.dialog.description>
                             </x-ui.dialog.header>
-
-                            <x-ui.dialog.footer>
-                                <x-ui.button variant="outline">Cancel</x-ui.button>
-                                <x-ui.button>Save Changes</x-ui.button>
-                            </x-ui.dialog.footer>
+                            <div
+                                class="relative grid h-screen min-h-0 w-full grid-cols-1 grid-rows-1 *:inset-0 *:[grid-area:1/1] *:aria-busy:hidden"
+                            >
+                                <div id="theme-codelight"></div>
+                                <div class="hidden place-content-center [[aria-busy]+&]:grid">
+                                    <i data-lucide="loader2" class="animate-spin"></i>
+                                </div>
+                            </div>
                         </x-ui.dialog.content>
                     </x-ui.dialog>
                 </div>

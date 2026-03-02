@@ -1,0 +1,1 @@
+<x-codelight language="{{$lang}}" path="{{$path}}" id="{{$id}}" class="w-full"/>

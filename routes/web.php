@@ -5,6 +5,7 @@ use App\Http\Controllers\ExamplesController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InstallationController;
 use App\Http\Controllers\IntroductionController;
+use App\Http\Controllers\LazyController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\ThemingController;
 use Illuminate\Support\Facades\Route;
@@ -14,6 +15,11 @@ use Illuminate\Support\Facades\Route;
  */
 Route::get('/', HomeController::class)->name('home');
 Route::get('/examples', ExamplesController::class)->name('example');
+
+/**
+ * Lazy
+ */
+Route::get('/lazy/codelight', [LazyController::class, 'codeLight'])->name('lazy.codelight');
 
 /**
  * Docs
