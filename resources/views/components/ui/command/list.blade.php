@@ -1,0 +1,14 @@
+@php
+    $baseClasses = 'hide-scrollbar max-h-72 scroll-py-1 overflow-x-hidden overflow-y-auto outline-none';
+@endphp
+
+<div
+    data-slot="command-list"
+    {{
+        $attributes->merge([
+            'class' => cn($baseClasses, $attributes->get('class')),
+        ])
+    }}
+>
+    {{ $slot }}
+</div>
