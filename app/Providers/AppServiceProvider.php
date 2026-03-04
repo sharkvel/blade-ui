@@ -34,5 +34,8 @@ class AppServiceProvider extends ServiceProvider
         View::composer(['components.sidebar', 'components.nav-bar', 'pages.components'], function ($view) {
             $view->with('sidebarItems', Constants::sidebarItems());
         });
+        View::composer(['components.nav-bar'], function ($view) {
+            $view->with('searchStaticContent', Constants::searchStaticContent());
+        });
     }
 }

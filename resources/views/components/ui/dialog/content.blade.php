@@ -20,6 +20,7 @@
             :data-open="open"
             :data-closed="!open"
             @click.stop
+            x-trap="open"
             {{
                 $attributes->merge([
                     'class' => cn($baseClasses, $variantClasses, $attributes->get('class')),

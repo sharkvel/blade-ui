@@ -274,4 +274,14 @@ class Constants
             ],
         );
     }
+
+    public static function searchStaticContent()
+    {
+        return [
+            [
+                'title' => 'Components',
+                'items' => self::sidebarItems()['Components'],
+            ],
+        ];
+    }
 }

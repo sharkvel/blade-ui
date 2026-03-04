@@ -1,5 +1,6 @@
 import Alpine from 'alpinejs';
 import mask from '@alpinejs/mask';
+import focus from '@alpinejs/focus'
 import ajax from '@imacrayon/alpine-ajax'
 import axios from 'axios';
 
@@ -18,6 +19,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
  * Config Alpine
  */
 Alpine.plugin(mask);
+Alpine.plugin(focus);
 Alpine.plugin(ajax);
 
 document.addEventListener('alpine:init', () => {
