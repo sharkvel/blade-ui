@@ -24,6 +24,7 @@
     $sizeClasses = match ($size) {
         'sm' => 'h-6 px-2 has-[svg]:px-1.5 [&_svg:not([class*=size-])]:size-3',
         'default' => 'h-8 px-3 has-[svg]:px-2',
+        'icon-xs' => 'size-5 [&_svg:not([class*=size-])]:size-2.5',
         'icon-sm' => 'size-6 [&_svg:not([class*=size-])]:size-3',
         'icon' => 'size-8',
     };

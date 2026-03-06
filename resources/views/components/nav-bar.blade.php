@@ -35,14 +35,48 @@
             @endforeach
         </ul>
         <div class="ml-auto flex items-center">
-            <x-ui.button variant="outline" class="hidden pr-1.5 text-muted-foreground shadow-none lg:flex">
+            <x-ui.button
+                variant="outline"
+                class="hidden pr-1.5 text-muted-foreground shadow-none lg:flex"
+                x-data
+                @click="document.querySelector(`#trigger-search-docs`).click()"
+            >
                 <i data-lucide="search" data-icon="inline-start"></i>
-                Search docs
+                Search documentation
                 <x-ui.kbd variant="secondary" size="sm" class="ms-2">
                     <i data-lucide="command" class="size-3"></i>
                     K
                 </x-ui.kbd>
             </x-ui.button>
+            <x-ui.command.dialog triggerId="trigger-search-docs" class="gap-0">
+                <x-ui.command class="rounded-none bg-transparent">
+                    <x-ui.command.input />
+                    <x-ui.command.empty>No records found</x-ui.command.empty>
+                    <x-ui.command.list>
+                        @foreach ($searchStaticContent as $content)
+                            <x-ui.command.group title="{{ $content['title'] }}">
+                                @foreach ($content['items'] as $item)
+                                    <x-ui.command.item
+                                        value="{{ $item['name'] }}"
+                                        x-bind:data-disabled="{{ blank($item['available_from']) ? 'true' :'false' }}"
+                                    >
+                                        <i data-lucide="circle-dashed" data-icon="inline-start"></i>
+                                        {{ $item['name'] }}
+                                    </x-ui.command.item>
+                                @endforeach
+                            </x-ui.command.group>
+                        @endforeach
+                    </x-ui.command.list>
+                </x-ui.command>
+                <div class="bg-muted px-6 py-2">
+                    <div class="flex items-center gap-2 leading-none text-muted-foreground text-xs">
+                        <x-ui.kbd size="icon-xs" variant="outline" class="bg-background">
+                            <i data-lucide="corner-down-left"></i>
+                        </x-ui.kbd>
+                        Go to Page
+                    </div>
+                </div>
+            </x-ui.command.dialog>
             <x-ui.separator orientation="vertical" class="mx-4 mr-2 hidden h-4 lg:block" />
             <a href="{{ REPO_URL }}" target="_blank">
                 <x-ui.button variant="ghost" size="icon" class="cursor-pointer">

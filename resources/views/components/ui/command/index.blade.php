@@ -1,5 +1,5 @@
 @php
-    $baseClasses = 'flex size-full flex-col overflow-hidden rounded-md bg-popover p-1 text-popover-foreground';
+    $baseClasses = 'flex size-full flex-col overflow-hidden rounded-md bg-popover p-1 text-popover-foreground outline-none';
 @endphp
 
 <div
@@ -9,43 +9,64 @@
         items: [],
         visible: open !== undefined ? open : true,
         init() {
-            $watch('query', (value) => {
-                if (this.items.length > 0) {
-                    if (value.trim().length > 0) {
-                        this.items.forEach((item) => {
-                            ! item.dataset.commandValue.includes(value.trim())
-                                ? item.setAttribute('hidden', true)
-                                : item.removeAttribute('hidden')
-                        })
-                    } else {
-                        this.items.forEach((item) => item.removeAttribute('hidden'))
-                    }
-                    this.selected = 0
-                    this.updateSelected()
-                }
-            })
             this.updateItems()
-            if (this.items.length > 0) {
-                this.updateSelected()
-            }
+            if (this.items.length) this.updateSelected()
+            $watch('query', () => this.filterItems())
         },
+
+        filterItems() {
+            const q = this.query.trim()
+            const all = [...$el.querySelectorAll(`[data-slot='command-item']`)]
+
+            this.items = q
+                ? all.filter((item) => {
+                      const match = item.dataset.commandValue?.match(
+                          new RegExp(q, 'i'),
+                      )
+                      item.toggleAttribute('hidden', ! match)
+                      return match
+                  })
+                : all.forEach((item) => {
+                      item.removeAttribute('hidden')
+                      item.removeAttribute('data-selected')
+                  }) || all
+
+            this.selected = 0
+            this.updateSelected()
+        },
+
         updateItems() {
             this.items = [...$el.querySelectorAll(`[data-slot='command-item']`)]
         },
+
         updateSelected() {
-            this.items.map((item) => item.removeAttribute('data-selected'))
+            this.items.forEach((item) => item.removeAttribute('data-selected'))
             const item = this.items[this.selected]
-            item.dataset.selected = true
+            if (item) {
+                item.dataset.selected = true
+                if (this.selected === 0) {
+                    $el.querySelector(`[data-slot='command-list']`).scrollTo({
+                        top: 0,
+                        behavior: 'instant',
+                    })
+                } else {
+                    item.scrollIntoView({ block: 'nearest', behavior: 'instant' })
+                }
+            }
         },
+
         onKey(e) {
-            const itemsLength = this.items.length
-            if (e.key === 'ArrowDown') {
+            if (e.key === 'Enter') {
+                const selectedItem = this.items[this.selected]
+                console.log(selectedItem.dataset.commandValue)
+                open = false
+                closing = true
+            } else {
+                const len = this.items.length
+                if (! len || ! ['ArrowDown', 'ArrowUp'].includes(e.key)) return
                 e.preventDefault()
-                this.selected = (this.selected + 1) % itemsLength
-                this.updateSelected()
-            } else if (e.key === 'ArrowUp') {
-                e.preventDefault()
-                this.selected = (this.selected - 1 + itemsLength) % itemsLength
+                this.selected =
+                    (this.selected + (e.key === 'ArrowDown' ? 1 : -1) + len) % len
                 this.updateSelected()
             }
         },

@@ -1,5 +1,6 @@
+@props(['title' => ''])
 @php
-    $baseClasses = 'overflow-hidden p-1';
+    $baseClasses = 'flex flex-col overflow-hidden px-3 pt-3 outline-none has-data-[slot=command-group-title]:pt-0';
 @endphp
 
 <div
@@ -10,5 +11,11 @@
         ])
     }}
 >
+    @if (filled($title))
+        <x-ui.label data-slot="command-group-title" class="px-3 py-1.5 text-xs text-muted-foreground">
+            {{ $title }}
+        </x-ui.label>
+    @endif
+
     {{ $slot }}
 </div>
