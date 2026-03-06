@@ -6,9 +6,11 @@
     x-data="{
         query: '',
         selected: 0,
+        groups: [],
         items: [],
         visible: open !== undefined ? open : true,
         init() {
+            this.groups = [...$el.querySelectorAll(`[data-slot='command-group']`)]
             this.updateItems()
             if (this.items.length) this.updateSelected()
             $watch('query', () => this.filterItems())
@@ -31,6 +33,15 @@
 
             this.selected = 0
             this.updateSelected()
+
+            this.groups.forEach((group) => {
+                const isEmpty =
+                    group.querySelector(
+                        `[data-slot='command-item']:not([hidden])`,
+                    ) === null
+
+                group.toggleAttribute('hidden', isEmpty)
+            })
         },
 
         updateItems() {
