@@ -57,10 +57,14 @@
                             <x-ui.command.group title="{{ $content['title'] }}">
                                 @foreach ($content['items'] as $item)
                                     <x-ui.command.item
+                                    class="font-medium"
                                         value="{{ $item['url'] }}"
                                         x-bind:data-disabled="{{ blank($item['available_from']) ? 'true' :'false' }}"
                                     >
-                                        <i data-lucide="circle-dashed" data-icon="inline-start"></i>
+                                        @if (filled($content['icon']))
+                                            <i data-lucide="{{ $content['icon'] }}" data-icon="inline-start"></i>
+                                        @endif
+
                                         {{ $item['name'] }}
                                     </x-ui.command.item>
                                 @endforeach

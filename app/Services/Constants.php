@@ -281,8 +281,19 @@ class Constants
             'search-static-content',
             fn() => [
                 [
+                    'title' => 'Pages',
+                    'items' => self::sidebarItems()['Menus'],
+                    'icon' => 'arrow-right',
+                ],
+                [
                     'title' => 'Components',
                     'items' => self::sidebarItems()['Components'],
+                    'icon' => 'circle-dashed',
+                ],
+                [
+                    'title' => 'Get Started',
+                    'items' => self::sidebarItems()['Get Started'],
+                    'icon' => 'arrow-right',
                 ],
             ],
         );
