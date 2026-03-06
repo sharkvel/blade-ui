@@ -8,7 +8,7 @@
     /**
      * Base classes
      */
-    $baseClasses = 'inline-flex w-full min-w-0 gap-1.5 rounded-md border border-transparent text-base transition-colors outline-none file:inline-flex file:align-middle file:text-sm file:leading-none file:font-medium file:text-foreground placeholder:text-muted-foreground focus-within:border-ring focus-visible:ring-2 focus-visible:ring-ring/40 disabled:pointer-events-none disabled:opacity-50 md:text-sm file:[&+text]:align-middle';
+    $baseClasses = 'inline-flex w-full min-w-0 gap-1.5 rounded-md border border-transparent text-base transition-colors outline-none file:inline-flex file:align-middle file:text-sm file:leading-none file:font-medium file:text-foreground placeholder:text-muted-foreground focus-within:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/40 disabled:pointer-events-none disabled:opacity-50 md:text-sm file:[&+text]:align-middle';
 
     /**
      * Variant classes

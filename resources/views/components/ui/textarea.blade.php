@@ -7,7 +7,7 @@
     /**
      * Base classes
      */
-    $baseClasses = 'flex field-sizing-content w-full resize-y rounded-md border border-transparent bg-transparent text-base transition-colors outline-none placeholder:text-muted-foreground focus-within:border-ring focus-visible:ring-2 focus-visible:ring-ring/40 disabled:pointer-events-none disabled:opacity-50 md:text-sm';
+    $baseClasses = 'flex field-sizing-content w-full resize-y rounded-md border border-transparent bg-transparent text-base transition-colors outline-none placeholder:text-muted-foreground focus-within:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/40 disabled:pointer-events-none disabled:opacity-50 md:text-sm';
 
     /**
      * Variant classes
