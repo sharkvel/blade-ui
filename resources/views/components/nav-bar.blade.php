@@ -48,7 +48,7 @@
                     K
                 </x-ui.kbd>
             </x-ui.button>
-            <x-ui.command.dialog triggerId="trigger-search-docs" class="gap-0">
+            <x-ui.command.dialog triggerId="trigger-search-docs" class="gap-0 sm:max-w-140">
                 <x-ui.command class="rounded-none bg-transparent">
                     <x-ui.command.input />
                     <x-ui.command.empty>No records found</x-ui.command.empty>
@@ -57,7 +57,7 @@
                             <x-ui.command.group title="{{ $content['title'] }}">
                                 @foreach ($content['items'] as $item)
                                     <x-ui.command.item
-                                        value="{{ $item['name'] }}"
+                                        value="{{ $item['url'] }}"
                                         x-bind:data-disabled="{{ blank($item['available_from']) ? 'true' :'false' }}"
                                     >
                                         <i data-lucide="circle-dashed" data-icon="inline-start"></i>
@@ -69,7 +69,7 @@
                     </x-ui.command.list>
                 </x-ui.command>
                 <div class="bg-muted px-6 py-2">
-                    <div class="flex items-center gap-2 leading-none text-muted-foreground text-xs">
+                    <div class="flex items-center gap-2 text-xs leading-none text-muted-foreground">
                         <x-ui.kbd size="icon-xs" variant="outline" class="bg-background">
                             <i data-lucide="corner-down-left"></i>
                         </x-ui.kbd>

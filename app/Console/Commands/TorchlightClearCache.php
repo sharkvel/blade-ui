@@ -2,45 +2,29 @@
 
 namespace App\Console\Commands;
 
-use Illuminate\Cache\Console\ClearCommand;
+use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
-use Symfony\Component\Console\Attribute\AsCommand;
 
-#[AsCommand(name: 'cache:clear')]
-class ExtendsBaseCacheClear extends ClearCommand
+class TorchlightClearCache extends Command
 {
     /**
-     * The console command name.
+     * The name and signature of the console command.
      *
      * @var string
      */
-    protected $name = 'cache:clear';
+    protected $signature = 'torchlight:clear-cache';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Extended version of base cache:clear';
+    protected $description = 'Clear torchlight cache';
 
     /**
      * Execute the console command.
      */
     public function handle()
-    {
-        // Perform the base cache:clear first
-        parent::handle();
-
-        // Extended logic
-        $this->clearCacheTorchlight();
-
-        return 1;
-    }
-
-    /**
-     * Clear torchlight cache
-     */
-    private function clearCacheTorchlight()
     {
         $keep = ['.gitignore'];
         $path = storage_path('torchlight/cache');
@@ -49,7 +33,7 @@ class ExtendsBaseCacheClear extends ClearCommand
             // Keep some files
             $backups = [];
             foreach ($keep as $file) {
-                $filePath = (string) $path.'/'.$file;
+                $filePath = (string) $path . '/' . $file;
                 if (File::exists($filePath)) {
                     $backups[$file] = File::get($filePath);
                 }
@@ -60,7 +44,7 @@ class ExtendsBaseCacheClear extends ClearCommand
 
             // Restore kept files
             foreach ($backups as $file => $content) {
-                $filePath = (string) $path.'/'.$file;
+                $filePath = (string) $path . '/' . $file;
                 File::put($filePath, $content);
             }
 

@@ -12,7 +12,7 @@
     }}
 >
     @if (filled($title))
-        <x-ui.label data-slot="command-group-title" class="px-3 py-1.5 text-xs text-muted-foreground">
+        <x-ui.label data-slot="command-group-title" class="px-3 py-1.5 pt-4 text-xs text-muted-foreground">
             {{ $title }}
         </x-ui.label>
     @endif

@@ -1,5 +1,5 @@
 @php
-    $baseClasses = 'hide-scrollbar max-h-72 scroll-py-3 overflow-x-hidden overflow-y-auto outline-none';
+    $baseClasses = 'hide-scrollbar max-h-80 scroll-py-3 overflow-x-hidden overflow-y-auto outline-none';
 @endphp
 
 <div

@@ -20,9 +20,7 @@
 
             this.items = q
                 ? all.filter((item) => {
-                      const match = item.dataset.commandValue?.match(
-                          new RegExp(q, 'i'),
-                      )
+                      const match = item.textContent?.match(new RegExp(q, 'i'))
                       item.toggleAttribute('hidden', ! match)
                       return match
                   })
@@ -58,7 +56,8 @@
         onKey(e) {
             if (e.key === 'Enter') {
                 const selectedItem = this.items[this.selected]
-                console.log(selectedItem.dataset.commandValue)
+                if (selectedItem.dataset.hasOwnProperty('disabled')) return
+                window.location.href = selectedItem.dataset.commandValue
                 open = false
                 closing = true
             } else {

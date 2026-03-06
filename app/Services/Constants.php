@@ -277,11 +277,14 @@ class Constants
 
     public static function searchStaticContent()
     {
-        return [
-            [
-                'title' => 'Components',
-                'items' => self::sidebarItems()['Components'],
+        return Cache::rememberForever(
+            'search-static-content',
+            fn() => [
+                [
+                    'title' => 'Components',
+                    'items' => self::sidebarItems()['Components'],
+                ],
             ],
-        ];
+        );
     }
 }
