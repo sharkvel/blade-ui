@@ -10,7 +10,7 @@
         items: [],
         visible: open !== undefined ? open : true,
         init() {
-            this.groups = [...$el.querySelectorAll(`[data-slot='command-group']`)]
+            this.updateGroups()
             this.updateItems()
             if (this.items.length) this.updateSelected()
             $watch('query', () => this.filterItems())
@@ -62,6 +62,10 @@
                     item.scrollIntoView({ block: 'nearest', behavior: 'instant' })
                 }
             }
+        },
+
+        updateGroups() {
+            this.groups = [...$el.querySelectorAll(`[data-slot='command-group']`)]
         },
 
         onKey(e) {
