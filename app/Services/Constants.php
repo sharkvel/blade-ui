@@ -10,7 +10,7 @@ class Constants
     {
         return Cache::rememberForever(
             'sidebar-items',
-            fn() => [
+            fn () => [
                 'Menus' => [
                     [
                         'url' => route('docs.installation'),
@@ -279,7 +279,7 @@ class Constants
     {
         return Cache::rememberForever(
             'search-static-content',
-            fn() => [
+            fn () => [
                 [
                     'title' => 'Pages',
                     'items' => self::sidebarItems()['Menus'],

@@ -31,10 +31,10 @@ class AppServiceProvider extends ServiceProvider
         Date::use(CarbonImmutable::class);
 
         // For Views
-        View::composer(['components.sidebar', 'components.nav-bar', 'pages.components'], function ($view) {
+        View::composer(['components.sidebar', 'components.nav-bar', 'pages.components'], function ($view): void {
             $view->with('sidebarItems', Constants::sidebarItems());
         });
-        View::composer(['components.nav-bar'], function ($view) {
+        View::composer(['components.nav-bar'], function ($view): void {
             $view->with('searchStaticContent', Constants::searchStaticContent());
         });
     }

@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\Constants;
 use Illuminate\Http\Request;
 
 class ComponentController extends Controller

@@ -33,7 +33,7 @@ class TorchlightClearCache extends Command
             // Keep some files
             $backups = [];
             foreach ($keep as $file) {
-                $filePath = (string) $path . '/' . $file;
+                $filePath = (string) $path.'/'.$file;
                 if (File::exists($filePath)) {
                     $backups[$file] = File::get($filePath);
                 }
@@ -44,7 +44,7 @@ class TorchlightClearCache extends Command
 
             // Restore kept files
             foreach ($backups as $file => $content) {
-                $filePath = (string) $path . '/' . $file;
+                $filePath = (string) $path.'/'.$file;
                 File::put($filePath, $content);
             }
 
