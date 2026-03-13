@@ -14,6 +14,10 @@
         ],
     ];
     $theme = $_GET["theme"] ?? "neutral";
+    $announcement = [
+        "title" => "Beta will release soon",
+        "url" => "#",
+    ];
 @endphp
 
 <x-app-layout>
@@ -28,6 +32,18 @@
     <div
         class="section-wrapper mx-auto flex min-h-[calc(100svh-4rem)] w-full flex-col items-center border-x-0 py-12 md:border-x"
     >
+        <!-- Announcement -->
+        @if (filled($announcement["title"]))
+            <div class="-mb-5">
+                <a href="{{ $announcement["url"] }}">
+                    <x-ui.badge variant="secondary">
+                        {{ $announcement["title"] }}
+                        <i data-lucide="arrow-right"></i>
+                    </x-ui.badge>
+                </a>
+            </div>
+        @endif
+
         {{-- Powered by --}}
         <div class="mx-auto mt-16 flex gap-x-8 text-center text-muted-foreground">
             <a href="https://tailwindcss.com/" target="_blank">
