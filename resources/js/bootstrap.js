@@ -1,7 +1,7 @@
 import Alpine from 'alpinejs';
 import mask from '@alpinejs/mask';
-import focus from '@alpinejs/focus'
-import ajax from '@imacrayon/alpine-ajax'
+import focus from '@alpinejs/focus';
+import ajax from '@imacrayon/alpine-ajax';
 import axios from 'axios';
 
 /**
@@ -51,7 +51,7 @@ document.addEventListener('alpine:init', () => {
         },
         unlock() {
             document.body.removeAttribute('data-scrollbar-lock');
-        }
+        },
     });
 
     // Scroll to fragment

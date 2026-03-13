@@ -4,7 +4,7 @@
     "singleAttributePerLine": false,
     "htmlWhitespaceSensitivity": "css",
     "printWidth": 120,
-    "plugins": ["@prettier/plugin-php", "prettier-plugin-tailwindcss", "prettier-plugin-laravel-blade"],
+    "plugins": ["@prettier/plugin-php", "prettier-plugin-tailwindcss", "prettier-plugin-blade"],
     "tailwindFunctions": ["clsx", "cn", "cva", "tw"],
     "tailwindStylesheet": "resources/css/app.css",
     "tabWidth": 4,
@@ -18,8 +18,7 @@
         {
             "files": ["**/*.blade.php"],
             "options": {
-                "parser": "blade",
-                "bladeSlotNameStyle": "preserve"
+                "parser": "blade"
             }
         }
     ]

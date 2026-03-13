@@ -57,7 +57,7 @@
                             <x-ui.command.group title="{{ $content['title'] }}">
                                 @foreach ($content['items'] as $item)
                                     <x-ui.command.item
-                                    class="font-medium"
+                                        class="font-medium"
                                         value="{{ $item['url'] }}"
                                         x-bind:data-disabled="{{ blank($item['available_from']) ? 'true' :'false' }}"
                                     >

@@ -26,9 +26,7 @@
     ];
 @endphp
 
-<x-document-layout
-    :nextPage="['url' => route('docs.installation'), 'title' => 'Installation']"
->
+<x-document-layout :nextPage="['url' => route('docs.installation'), 'title' => 'Installation']">
     <x-slot name="componentMeta" :onThisPage="$onThisPage"></x-slot>
     <x-ui.h1 class="text-4xl font-medium">Introduction</x-ui.h1>
     <x-ui.p class="mt-4 max-w-[55ch] text-muted-foreground">
