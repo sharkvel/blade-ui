@@ -11,12 +11,12 @@
     "devDependencies": {
         "@prettier/plugin-php": "^0.24.0",
         "@tailwindcss/vite": "^4.2.1",
-        "axios": "^1.13.5",
+        "axios": "^1.13.6",
         "concurrently": "^9.2.1",
         "eslint-config-prettier": "^10.1.8",
         "laravel-vite-plugin": "^2.1.0",
         "prettier": "^3.8.1",
-        "prettier-plugin-blade": "^2.1.21",
+        "prettier-plugin-blade": "^3.1.3",
         "prettier-plugin-laravel-blade": "^1.4.0",
         "prettier-plugin-tailwindcss": "^0.7.2",
         "tailwindcss": "^4.2.1",
@@ -26,8 +26,8 @@
     "dependencies": {
         "@alpinejs/focus": "^3.15.8",
         "@alpinejs/mask": "^3.15.8",
-        "@imacrayon/alpine-ajax": "^0.12.6",
+        "@imacrayon/alpine-ajax": "^0.12.7",
         "alpinejs": "^3.15.8",
-        "lucide": "^0.575.0"
+        "lucide": "^0.577.0"
     }
 }
