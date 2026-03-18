@@ -5,17 +5,17 @@
 <div
     {{ $attributes->merge(['class' => cn($baseClasses, $attributes->get('class'))]) }}
     x-data="{
-        isCopied: false,
-        async copy(text) {
-            try {
-                await navigator.clipboard.writeText(text)
-                if (! this.isCopied) setTimeout(() => (this.isCopied = false), 2000)
-                this.isCopied = true
-            } catch (error) {
-                console.error(error)
+            isCopied: false,
+            async copy(text) {
+                try {
+                    await navigator.clipboard.writeText(text);
+                    if (!this.isCopied) setTimeout(() => (this.isCopied = false), 2000);
+                    this.isCopied = true;
+                } catch (error) {
+                    console.error(error);
+                }
             }
-        },
-    }"
+        }"
 >
     <button
         @class([
@@ -25,13 +25,11 @@
         ])
         @click="copy($el.nextElementSibling.value)"
     >
-        <i data-lucide="copy" class="size-4 text-white/50 group-hover:text-white" x-show="!isCopied"></i>
-        <i data-lucide="check" class="size-4 text-white/50 group-hover:text-white" x-cloak x-show="isCopied"></i>
+        <i class="size-4 text-white/50 group-hover:text-white" data-lucide="copy" x-show="!isCopied"></i>
+        <i class="size-4 text-white/50 group-hover:text-white" data-lucide="check" x-cloak x-show="isCopied"></i>
     </button>
-
     <input type="hidden" value="{{ $content ?? $slot }}" />
-
-    @if ($title)
+    @if($title)
         <div
             class="flex h-10 items-center border-b border-input/10 px-4 font-mono text-sm font-normal text-white/50 dark:border-input/50"
         >
@@ -41,10 +39,20 @@
 
     <!-- prettier-ignore-start -->
     <pre class="grid overflow-x-auto [scrollbar-width:none]">
-        @if ($contentCache)
+        @if($contentCache)
             {!! $contentCache !!}
         @else
-            <x-torchlight-code language="{{ $language }}" data-torchlight-cache-key="{{ $cacheKey }}" class="[.torchlight]:block bg-transparent! [.torchlight]:py-4 text-sm [.torchlight]:min-w-max [&.torchlight_.line]:px-4 [&.torchlight_.line-number]:mr-4 [&_.line-highlight]:bg-neutral-800/80!" >@if ($content){!! $content !!}@else{{ $slot }}@endif</x-torchlight-code>
+            <x-torchlight-code
+                class="[.torchlight]:block bg-transparent! [.torchlight]:py-4 text-sm [.torchlight]:min-w-max [&.torchlight_.line]:px-4 [&.torchlight_.line-number]:mr-4 [&_.line-highlight]:bg-neutral-800/80!"
+                data-torchlight-cache-key="{{ $cacheKey }}"
+                language="{{ $language }}"
+            >
+                @if($content)
+                    {!! $content !!}
+                @else
+                    {{ $slot }}
+                @endif
+            </x-torchlight-code>
         @endif
     </pre>
     <!-- prettier-ignore-end -->
