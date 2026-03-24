@@ -80,7 +80,9 @@
             </a>
         </div>
         {{-- Hero Title --}}
-        <x-ui.h1 class="mt-5 text-center leading-[1.2] font-medium text-balance lg:text-6xl lg:tracking-tighter">
+        <x-ui.h1
+            class="mt-5 text-center leading-[1.2] font-medium text-balance lg:text-6xl lg:tracking-tighter max-w-[24ch]"
+        >
             Build faster with reusable blade components
         </x-ui.h1>
 
