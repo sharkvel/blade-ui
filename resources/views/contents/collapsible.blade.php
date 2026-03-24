@@ -1,6 +1,6 @@
 @php
     use Illuminate\Support\Uri;
-    $contentUri = Uri::route('component', 'collapsible');
+    $contentUri = Uri::route('components', 'collapsible');
 
     $onThisPage = [
         [

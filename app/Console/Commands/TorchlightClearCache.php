@@ -2,25 +2,15 @@
 
 namespace App\Console\Commands;
 
+use File;
+use Illuminate\Console\Attributes\Description;
+use Illuminate\Console\Attributes\Signature;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\File;
 
+#[Signature('torchlight:clear-cache')]
+#[Description('Clear torchlight cache')]
 class TorchlightClearCache extends Command
 {
-    /**
-     * The name and signature of the console command.
-     *
-     * @var string
-     */
-    protected $signature = 'torchlight:clear-cache';
-
-    /**
-     * The console command description.
-     *
-     * @var string
-     */
-    protected $description = 'Clear torchlight cache';
-
     /**
      * Execute the console command.
      */
@@ -33,7 +23,7 @@ class TorchlightClearCache extends Command
             // Keep some files
             $backups = [];
             foreach ($keep as $file) {
-                $filePath = (string) $path.'/'.$file;
+                $filePath = (string) $path . '/' . $file;
                 if (File::exists($filePath)) {
                     $backups[$file] = File::get($filePath);
                 }
@@ -44,7 +34,7 @@ class TorchlightClearCache extends Command
 
             // Restore kept files
             foreach ($backups as $file => $content) {
-                $filePath = (string) $path.'/'.$file;
+                $filePath = (string) $path . '/' . $file;
                 File::put($filePath, $content);
             }
 

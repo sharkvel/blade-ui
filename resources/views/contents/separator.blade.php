@@ -1,6 +1,6 @@
 @php
     use Illuminate\Support\Uri;
-    $contentUri = Uri::route('component', 'separator');
+    $contentUri = Uri::route('components', 'separator');
 
     $onThisPage = [
         [

@@ -1,6 +1,6 @@
 @php
     use Illuminate\Support\Uri;
-    $contentUri = Uri::route('component', 'select');
+    $contentUri = Uri::route('components', 'select');
 
     $onThisPage = [
         [

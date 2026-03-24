@@ -1,6 +1,6 @@
 @php
     use Illuminate\Support\Uri;
-    $contentUri = Uri::route('component', 'typography');
+    $contentUri = Uri::route('components', 'typography');
 
     $onThisPage = [
         [

@@ -1,6 +1,6 @@
 @php
     use Illuminate\Support\Uri;
-    $contentUri = Uri::route('component', 'tabs');
+    $contentUri = Uri::route('components', 'tabs');
 
     $onThisPage = [
         [

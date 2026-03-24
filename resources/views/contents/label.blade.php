@@ -1,6 +1,6 @@
 @php
     use Illuminate\Support\Uri;
-    $contentUri = Uri::route('component', 'label');
+    $contentUri = Uri::route('components', 'label');
 
     $onThisPage = [
         [

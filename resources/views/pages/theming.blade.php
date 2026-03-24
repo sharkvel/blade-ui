@@ -28,7 +28,7 @@
 
 <x-document-layout
     :previousPage="['url' => route('docs.installation'), 'title' => 'Installation']"
-    :nextPage="['url' => route('component'), 'title' => 'Components']"
+    :nextPage="['url' => route('components'), 'title' => 'Components']"
 >
     <x-slot name="componentMeta" :onThisPage="$onThisPage"></x-slot>
     <x-ui.h1 class="text-4xl font-medium">Theming</x-ui.h1>

@@ -1,6 +1,6 @@
 @php
     use Illuminate\Support\Uri;
-    $contentUri = Uri::route('component', 'kbd');
+    $contentUri = Uri::route('components', 'kbd');
 
     $onThisPage = [
         [

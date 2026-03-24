@@ -1,6 +1,6 @@
 @php
     use Illuminate\Support\Uri;
-    $contentUri = Uri::route('component', 'textarea');
+    $contentUri = Uri::route('components', 'textarea');
 
     $onThisPage = [
         [

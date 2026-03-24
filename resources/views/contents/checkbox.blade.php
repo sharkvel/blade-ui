@@ -1,6 +1,6 @@
 @php
     use Illuminate\Support\Uri;
-    $contentUri = Uri::route('component', 'checkbox');
+    $contentUri = Uri::route('components', 'checkbox');
 
     $onThisPage = [
         [

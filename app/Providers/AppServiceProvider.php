@@ -4,10 +4,9 @@ namespace App\Providers;
 
 use App\Services\Constants;
 use Carbon\CarbonImmutable;
-use Illuminate\Support\Facades\Date;
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Facades\View;
+use Date;
 use Illuminate\Support\ServiceProvider;
+use View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,9 +23,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        // For MySQL
-        Schema::defaultStringLength(191);
-
         // For Dates
         Date::use(CarbonImmutable::class);
 

@@ -1,20 +1,21 @@
 <?php
 
-use App\Http\Controllers\ComponentController;
-use App\Http\Controllers\ExamplesController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\InstallationController;
-use App\Http\Controllers\IntroductionController;
 use App\Http\Controllers\LazyController;
-use App\Http\Controllers\TestController;
-use App\Http\Controllers\ThemingController;
 use Illuminate\Support\Facades\Route;
 
 /**
- * Components
+ * Roots
  */
-Route::get('/', HomeController::class)->name('home');
-Route::get('/examples', ExamplesController::class)->name('example');
+Route::view('/', 'home')->name('home');
+Route::view('/examples', 'pages.examples')->name('examples');
+
+/**
+ * Docs
+ */
+Route::view('/docs', 'pages.introduction')->name('docs');
+Route::view('/docs/installation', 'pages.installation')->name('docs.installation');
+Route::view('/docs/theming', 'pages.theming')->name('docs.theming');
+Route::view('/docs/components/{name?}', 'pages.components')->name('components');
 
 /**
  * Lazy
@@ -22,18 +23,7 @@ Route::get('/examples', ExamplesController::class)->name('example');
 Route::get('/lazy/codelight', [LazyController::class, 'codeLight'])->name('lazy.codelight');
 
 /**
- * Docs
+ * Live examples
  */
-Route::get('/docs', IntroductionController::class)->name('docs');
-Route::get('/docs/installation', InstallationController::class)->name('docs.installation');
-Route::get('/docs/theming', ThemingController::class)->name('docs.theming');
-Route::get('/docs/components/{component?}', ComponentController::class)->name('component');
-
-/**
- * For testing
- */
-Route::view('/playground', 'pages.playground');
-Route::get('/live-example/sidebar', fn () => view('examples.components.sidebar.hero'))->name('live.sidebar');
-Route::get('/live-example/dashboard', fn () => view('examples.blocks.dashboard'))->name('live.dashboard');
-Route::get('/test', TestController::class);
-Route::get('/ping', fn () => response()->json(['ok' => true]));
+Route::view('/live-example/sidebar', 'examples.components.sidebar.hero')->name('live.sidebar');
+Route::view('/live-example/dashboard', 'examples.blocks.dashboard')->name('live.dashboard');

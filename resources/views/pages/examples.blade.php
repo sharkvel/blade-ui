@@ -64,7 +64,7 @@
                     <i data-lucide="arrow-right"></i>
                 </x-ui.button>
             </a>
-            <a href="{{ route("component") }}">
+            <a href="{{ route("components") }}">
                 <x-ui.button variant="outline" class="w-full cursor-pointer">View Components</x-ui.button>
             </a>
         </div>

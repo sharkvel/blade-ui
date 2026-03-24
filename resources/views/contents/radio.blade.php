@@ -1,6 +1,6 @@
 @php
     use Illuminate\Support\Uri;
-    $contentUri = Uri::route('component', 'radio');
+    $contentUri = Uri::route('components', 'radio');
 
     $onThisPage = [
         [

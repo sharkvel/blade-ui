@@ -3,8 +3,8 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use File;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
 use Symfony\Component\HttpFoundation\Response;
 use Torchlight\Middleware\RenderTorchlight;
 
@@ -13,11 +13,10 @@ class CachingTorchlight extends RenderTorchlight
     /**
      * Handle an incoming request.
      *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
+     * @param  Closure(Request): (Response)  $next
      */
     public function handle(Request $request, Closure $next): Response
     {
-
         $response = parent::handle($request, $next);
 
         $content = $response->getContent();
@@ -39,7 +38,7 @@ class CachingTorchlight extends RenderTorchlight
             '/<code\b(?=[^>]*class="[^"]*torchlight[^"]*")(?=[^>]*data-torchlight-cache-key="([^"]+)")[^>]*>.*?<\/code>/s',
             $html,
             $matches,
-            PREG_SET_ORDER
+            PREG_SET_ORDER,
         );
 
         foreach ($matches as $match) {
@@ -48,10 +47,9 @@ class CachingTorchlight extends RenderTorchlight
 
             $path = "{$cacheDir}/{$key}.html";
 
-            if (! File::exists($path)) {
+            if (!File::exists($path)) {
                 File::put($path, $block);
             }
         }
-
     }
 }
