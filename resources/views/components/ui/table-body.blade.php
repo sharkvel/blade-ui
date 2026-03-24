@@ -1,1 +1,0 @@
-<tbody {{ $attributes }}>{{ $slot }}</tbody>

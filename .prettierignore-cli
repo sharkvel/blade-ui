@@ -1,0 +1,5 @@
+build
+coverage
+resources/views/examples
+resources/views/components/ui
+resources/views/components/codelight.blade.php

@@ -1,16 +1,33 @@
-import Alpine from "alpinejs";
-import axios from "axios";
+import Alpine from 'alpinejs';
+import mask from '@alpinejs/mask';
+import focus from '@alpinejs/focus';
+import ajax from '@imacrayon/alpine-ajax';
+import axios from 'axios';
 
+/**
+ * Register in window object for global access
+ */
 window.axios = axios;
 window.Alpine = Alpine;
 
-window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
+/**
+ * Config Axios
+ */
+window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
-document.addEventListener("alpine:init", () => {
-    Alpine.store("darkMode", {
+/**
+ * Config Alpine
+ */
+Alpine.plugin(mask);
+Alpine.plugin(focus);
+Alpine.plugin(ajax);
+
+document.addEventListener('alpine:init', () => {
+    // Dark mode
+    Alpine.store('darkMode', {
         on: false,
         init() {
-            this.on = document.documentElement.classList.contains("dark");
+            this.on = document.documentElement.classList.contains('dark');
         },
         toggle() {
             if (!document.startViewTransition) return this.switchTheme();
@@ -19,19 +36,37 @@ document.addEventListener("alpine:init", () => {
         switchTheme() {
             this.on = !this.on;
 
-            localStorage.setItem("darkMode", this.on ? "dark" : "light");
+            localStorage.setItem('darkMode', this.on ? 'dark' : 'light');
         },
     });
-    Alpine.data("fragment", () => ({
+
+    // Scrollbar
+    Alpine.store('scrollbar', {
+        get scrollbarWidth() {
+            return window.innerWidth - document.documentElement.clientWidth;
+        },
+        lock() {
+            document.body.style.setProperty('--removed-body-scroll-bar-size', this.scrollbarWidth + 'px');
+            document.body.setAttribute('data-scrollbar-lock', true);
+        },
+        unlock() {
+            document.body.removeAttribute('data-scrollbar-lock');
+        },
+    });
+
+    // Scroll to fragment
+    Alpine.data('fragment', () => ({
         fragment: null,
         init() {
             const fragments = [...document.querySelectorAll(`a[href^='#']`)].reverse();
-            const triggerAt = 250; // Percentage
+            const triggerAt = 250; // PX
             function getActiveFragment() {
-                return fragments.find((fragment) => fragment.getBoundingClientRect().top <= triggerAt)?.getAttribute("href");
+                return fragments
+                    .find((fragment) => fragment.getBoundingClientRect().top <= triggerAt)
+                    ?.getAttribute('href');
             }
             this.update(getActiveFragment());
-            window.addEventListener("scroll", (e) => {
+            window.addEventListener('scroll', (e) => {
                 this.update(getActiveFragment());
             });
         },

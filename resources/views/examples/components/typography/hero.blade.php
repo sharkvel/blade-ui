@@ -4,6 +4,7 @@
     <x-ui.p class="mt-4 text-xl text-muted-foreground">
         Once upon a time, in a far-off land, there was a very lazy king who spent all day lounging on his throne.
     </x-ui.p>
+
     {{-- The King's Plan --}}
     <x-ui.h2 class="mt-12 font-medium">The King's Plan</x-ui.h2>
     <x-ui.p>
@@ -14,6 +15,7 @@
     <x-ui.blockquote class="mt-6">
         "After all," he said, "everyone enjoys a good joke, so it's only fair that they should pay for the privilege."
     </x-ui.blockquote>
+
     {{-- The Joke Tax --}}
     <x-ui.h3 class="mt-12 font-medium">The Joke Tax</x-ui.h3>
     <x-ui.p>The king's subjects were not amused. They grumbled and complained, but the king was firm:</x-ui.p>
@@ -26,6 +28,7 @@
         As a result, people stopped telling jokes, and the kingdom fell into a gloom. But there was one person who refused to let the king's
         foolishness get him down: a court jester named Jokester.
     </x-ui.p>
+
     {{-- Jokester's Revolt --}}
     <x-ui.h4 class="mt-12 font-medium">Jokester's Revolt</x-ui.h4>
     <x-ui.p>

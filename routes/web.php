@@ -1,20 +1,35 @@
 <?php
 
-use App\Http\Controllers\ComponentController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\InstallationController;
-use App\Http\Controllers\IntroductionController;
+use App\Http\Controllers\LazyController;
+use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 
-// Route::get('/', fn () => view('welcome'));
+/**
+ * Roots
+ */
+Route::view('/', 'home')->name('home');
+Route::view('/examples', 'pages.examples')->name('examples');
 
 /**
- * Components
+ * Docs
  */
-Route::get('/', HomeController::class)->name('home');
-Route::get('/playground', fn () => view('pages.playground'));
-Route::get('/live-example/sidebar', fn () => view('examples.components.sidebar.hero'))->name('live.sidebar');
+Route::view('/docs', 'pages.introduction')->name('docs');
+Route::view('/docs/installation', 'pages.installation')->name('docs.installation');
+Route::view('/docs/theming', 'pages.theming')->name('docs.theming');
+Route::view('/docs/components/{name?}', 'pages.components')->name('components');
 
-Route::get('/docs', IntroductionController::class)->name('docs');
-Route::get('/docs/installation', InstallationController::class)->name('docs.installation');
-Route::get('/docs/components/{component?}', ComponentController::class)->name('component');
+/**
+ * Lazy
+ */
+Route::get('/lazy/codelight', [LazyController::class, 'codeLight'])->name('lazy.codelight');
+
+/**
+ * Live examples
+ */
+Route::view('/live-example/sidebar', 'examples.components.sidebar.hero')->name('live.sidebar');
+Route::view('/live-example/dashboard', 'examples.blocks.dashboard')->name('live.dashboard');
+
+/**
+ * Testing
+ */
+Route::get('/test', TestController::class);

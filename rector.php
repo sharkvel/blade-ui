@@ -3,6 +3,8 @@
 declare(strict_types=1);
 
 use Rector\Config\RectorConfig;
+use RectorLaravel\Rector\MethodCall\AssertStatusToAssertMethodRector;
+use RectorLaravel\Rector\MethodCall\EloquentOrderByToLatestOrOldestRector;
 use RectorLaravel\Set\LaravelSetList;
 
 return RectorConfig::configure()
@@ -15,9 +17,7 @@ return RectorConfig::configure()
         __DIR__.'/routes',
         __DIR__.'/tests',
     ])
-    ->withSkip([
-        __DIR__.'/bootstrap/cache',
-    ])
+    ->withSkip([__DIR__.'/bootstrap/cache'])
     // uncomment to reach your current PHP version
     ->withPhpSets()
     ->withPreparedSets(
@@ -26,12 +26,16 @@ return RectorConfig::configure()
         earlyReturn: true,
         carbon: true,
     )
-    ->withTypeCoverageLevel(0)
-    ->withDeadCodeLevel(0)
-    ->withCodeQualityLevel(0)
-    ->withCodingStyleLevel(0)
+    ->withTypeCoverageLevel(1)
+    ->withDeadCodeLevel(1)
+    ->withCodeQualityLevel(1)
+    ->withCodingStyleLevel(1)
+    ->withRules([AssertStatusToAssertMethodRector::class])
+    ->withConfiguredRule(EloquentOrderByToLatestOrOldestRector::class, [
+        'allowed_patterns' => ['deleted_at'],
+    ])
     ->withSets([
-        LaravelSetList::LARAVEL_120,
+        LaravelSetList::LARAVEL_130,
         LaravelSetList::LARAVEL_CODE_QUALITY,
         LaravelSetList::LARAVEL_IF_HELPERS,
         LaravelSetList::LARAVEL_ARRAY_STR_FUNCTION_TO_STATIC_CALL,

@@ -1,29 +1,32 @@
 @php
     use Illuminate\Support\Uri;
-    $contentUri = Uri::route("component", "checkbox");
+    $contentUri = Uri::route('components', 'checkbox');
 
     $onThisPage = [
         [
-            "url" => $contentUri->withFragment("installation")->value(),
-            "name" => "Installation",
-            "available_from" => "2026-01-20",
+            'url' => $contentUri->withFragment('installation')->value(),
+            'name' => 'Installation',
+            'available_from' => '2026-01-20',
         ],
         [
-            "url" => $contentUri->withFragment("usage")->value(),
-            "name" => "Usage",
-            "available_from" => "2026-01-20",
+            'url' => $contentUri->withFragment('usage')->value(),
+            'name' => 'Usage',
+            'available_from' => '2026-01-20',
         ],
     ];
 @endphp
 
-<x-slot name="componentMeta" :onThisPage="$onThisPage"></x-slot>
+<x-slot:componentMeta :onThisPage="$onThisPage"></x-slot>
 
 <div class="flex flex-col">
     {{-- Base --}}
     <x-ui.h1 class="text-4xl font-medium">Checkbox</x-ui.h1>
-    <x-ui.p class="mt-4 max-w-[55ch] text-muted-foreground">A control that allows the user to toggle between checked and not checked.</x-ui.p>
-    <x-playground class="mt-12" example="examples.components.checkbox.hero" />
 
+    <x-ui.p class="mt-4 max-w-[55ch] text-muted-foreground">
+        A control that allows the user to toggle between checked and not checked.
+    </x-ui.p>
+
+    <x-playground class="mt-12" path="examples/components/checkbox/hero.blade.php" />
     {{-- Installation --}}
     <x-ui.h6 class="mt-16 max-w-fit font-medium">
         <a href="#installation" class="hash-link">Installation</a>
@@ -35,14 +38,13 @@
                 <x-ui.label class="font-mono leading-none font-normal text-muted-foreground">Terminal</x-ui.label>
             </div>
         </div>
-        <x-ui.codelight language="shell">php artisan ui:add checkbox</x-ui.codelight>
+        <x-codelight language="shell">php artisan ui:add checkbox</x-codelight>
     </div>
-
     {{-- Usage --}}
     <x-ui.h6 class="mt-16 max-w-fit font-medium">
         <a href="#usage" class="hash-link">Usage</a>
     </x-ui.h6>
     <div class="mt-6 rounded-lg border p-1">
-        <x-ui.codelight example="examples.components.checkbox.usage" />
+        <x-codelight path="examples/components/checkbox/usage.blade.php" />
     </div>
 </div>

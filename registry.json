@@ -1,0 +1,35 @@
+{
+    "name": "UI",
+    "items": [
+        {
+            "name": "button",
+            "type": "component",
+            "title": "Button",
+            "description": "A button component.",
+            "files": [
+                {
+                    "path": "resources/views/components/ui/button.blade.php",
+                    "type": "component:blade"
+                }
+            ],
+            "dependencies": [],
+            "composerDependencies": [],
+            "registryDependencies": []
+        },
+        {
+            "name": "input",
+            "type": "component",
+            "title": "Input",
+            "description": "A input component.",
+            "files": [
+                {
+                    "path": "resources/views/components/ui/input.blade.php",
+                    "type": "component:blade"
+                }
+            ],
+            "dependencies": [],
+            "composerDependencies": [],
+            "registryDependencies": []
+        }
+    ]
+}

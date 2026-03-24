@@ -2,26 +2,25 @@
     class="hide-scrollbar sticky top-16 hidden h-[calc(100svh-4rem)] w-3xs flex-col gap-10 overflow-auto overscroll-contain py-12 lg:flex"
     id="sidebar"
 >
-    @foreach ($sidebarItems as $section => $items)
-        @continue(in_array($section, ["Menus"]))
+    @foreach($sidebarItems as $section => $items)
+        @continue(in_array($section, ['Menus']))
         <div class="flex flex-col gap-2">
             <small class="pl-4 text-muted-foreground md:pl-12">{{ $section }}</small>
             <ul class="flex flex-col">
-                @foreach ($items as $menu)
-                    @if ($menu["available_from"])
-                        <a href="{{ $menu["url"] }}">
+                @foreach($items as $menu)
+                    @if($menu['available_from'])
+                        <a href="{{ $menu['url'] }}">
                             <li
                                 class="menu-item flex h-8 items-center gap-2 pl-4 text-[0.825rem] font-normal data-[active='true']:font-medium md:pl-12"
-                                data-active="{{ request()->url() === $menu["url"] ? "true" : "false" }}"
-                                data-available="{{ $menu["available_from"] ? "true" : "false" }}"
+                                data-active="{{ request()->url() === $menu['url'] ? 'true' : 'false' }}"
+                                data-available="{{ $menu['available_from'] ? 'true' : 'false' }}"
                             >
-                                {{ $menu["name"] }}
+                                {{ $menu['name'] }}
                             </li>
                         </a>
                     @else
-                        <li class="flex h-8 items-center gap-2 pl-4 text-[0.825rem] font-normal text-muted-foreground md:pl-12">
-                            {{ $menu["name"] }}
-                            <span class="flex items-center rounded-xs bg-muted px-0.5 py-0.5 text-xs leading-none text-muted-foreground">soon</span>
+                        <li class="flex h-8 items-center gap-2 pl-4 text-[0.825rem] font-normal opacity-50 md:pl-12">
+                            {{ $menu['name'] }}
                         </li>
                     @endif
                 @endforeach
@@ -30,9 +29,10 @@
     @endforeach
 </aside>
 
-@push("js")
+@push('js')
     <script>
         // Init
+        let sidebarScrollTimer = null;
         const sidebar = document.querySelector(`#sidebar`);
         const previousURL = new URL(document.referrer);
         const scroll = localStorage.getItem('sidebar-scroll') ?? 0;
@@ -46,8 +46,11 @@
 
         // Event
         sidebar.addEventListener('scroll', function () {
+            clearTimeout(sidebarScrollTimer);
             // Store current scroll state
-            localStorage.setItem('sidebar-scroll', this.scrollTop);
+            sidebarScrollTimer = setTimeout(() => {
+                localStorage.setItem('sidebar-scroll', this.scrollTop);
+            }, 150);
         });
     </script>
 @endpush

@@ -1,1 +1,0 @@
-<li {{ $attributes }}>{{ $slot }}</li>

@@ -1,8 +1,7 @@
-<x-ui.select class="w-45">
-    <option value="" selected hidden>Theme</option>
-    <optgroup label="Themes">
-        <option value="light">Light</option>
-        <option value="dark">Dark</option>
-        <option value="system">System</option>
-    </optgroup>
+<x-ui.select class="w-45" placeholder="Select a theme">
+    <x-ui.select.option-group label="Themes">
+        <x-ui.select.option value="light">Light</x-ui.select.option>
+        <x-ui.select.option value="dark">Dark</x-ui.select.option>
+        <x-ui.select.option value="system">System</x-ui.select.option>
+    </x-ui.select.option-group>
 </x-ui.select>

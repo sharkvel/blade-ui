@@ -41,12 +41,15 @@
                                         <x-ui.sidebar.menu.sub.item>
                                             <x-ui.sidebar.menu.sub.button>General</x-ui.sidebar.menu.sub.button>
                                         </x-ui.sidebar.menu.sub.item>
+
                                         <x-ui.sidebar.menu.sub.item>
                                             <x-ui.sidebar.menu.sub.button>Profile</x-ui.sidebar.menu.sub.button>
                                         </x-ui.sidebar.menu.sub.item>
+
                                         <x-ui.sidebar.menu.sub.item>
                                             <x-ui.sidebar.menu.sub.button>Security</x-ui.sidebar.menu.sub.button>
                                         </x-ui.sidebar.menu.sub.item>
+
                                         <x-ui.sidebar.menu.sub.item>
                                             <x-ui.sidebar.menu.sub.button>Account</x-ui.sidebar.menu.sub.button>
                                         </x-ui.sidebar.menu.sub.item>
@@ -73,7 +76,9 @@
     <div class="flex grow flex-col">
         <div class="flex h-14 items-center px-4">
             <x-ui.sidebar.trigger class="ms-auto">
-                <x-ui.button variant="ghost" size="icon"><i data-lucide="panel-left"></i></x-ui.button>
+                <x-ui.button variant="ghost" size="icon">
+                    <i data-lucide="panel-left"></i>
+                </x-ui.button>
             </x-ui.sidebar.trigger>
         </div>
     </div>

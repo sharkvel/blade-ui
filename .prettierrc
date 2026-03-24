@@ -1,13 +1,35 @@
 {
-    "plugins": ["prettier-plugin-blade", "@prettier/plugin-php", "prettier-plugin-tailwindcss"],
-    "tailwindStylesheet": "./resources/css/app.css",
-    "tailwindFunctions": ["clsx", "cn", "tw"],
-    "printWidth": 150,
+    "semi": true,
+    "singleQuote": true,
+    "singleAttributePerLine": false,
+    "htmlWhitespaceSensitivity": "css",
+    "printWidth": 120,
+    "plugins": ["@prettier/plugin-php", "prettier-plugin-tailwindcss", "prettier-plugin-laravel-blade"],
+    "tailwindFunctions": ["clsx", "cn", "cva", "tw"],
+    "tailwindStylesheet": "resources/css/app.css",
+    "tabWidth": 4,
     "overrides": [
         {
-            "files": ["*.blade.php"],
+            "files": "**/*.yml",
             "options": {
-                "parser": "blade"
+                "tabWidth": 2
+            }
+        },
+        {
+            "files": ["**/*.blade.php"],
+            "options": {
+                "tabWidth": 4,
+                "printWidth": 120,
+                "bladeClosingBracketStyle": "new_line",
+                "bladeSlotFormatting": "compact",
+                "bladeSlotNameStyle": "colon",
+                "bladeSlotSpacing": "after",
+                "bladeWrapAttributes": "auto",
+                "bladeAttributeSort": "none",
+                "bladeSelfClosingStyle": "preserve",
+                "bladeHtmlBlockSpacing": "between_blocks",
+                "bladeEchoSpacing": "spaced",
+                "bladeTrailingNewline": true
             }
         }
     ]

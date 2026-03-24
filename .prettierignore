@@ -1,3 +1,5 @@
 # Ignore artifacts:
 build
 coverage
+resources/views/components/ui
+resources/views/components/codelight.blade.php
