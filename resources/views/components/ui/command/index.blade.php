@@ -83,11 +83,11 @@
         }"
     x-init="$watch('open', (value) => (visible = open))"
     data-slot="command"
-    {{ $attributes->merge([
+    {{ $attributes
+    ->except('class')
+    ->merge([
             'class' => cn($baseClasses, $attributes->get('class')),
         ]) }}
     @keydown.window="visible && onKey($event)"
     tabindex="-1"
->
-    {{ $slot }}
-</div>
+>{{ $slot }}</div>

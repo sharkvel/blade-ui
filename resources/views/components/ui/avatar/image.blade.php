@@ -12,7 +12,9 @@
     x-init="if ($el.complete && $el.naturalWidth > 0) isLoaded = true"
     @load="isLoaded = true"
     src="{{ $src }}"
-    {{ $attributes->merge([
+    {{ $attributes
+    ->except('class')
+    ->merge([
             'class' => cn($baseClasses, $attributes->get('class')),
         ]) }}
 />

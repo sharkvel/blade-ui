@@ -1,8 +1,8 @@
 <div
     data-slot="card-content"
-    {{ $attributes->merge([
+    {{ $attributes
+    ->except('class')
+    ->merge([
             'class' => cn('px-5', $attributes->get('class')),
         ]) }}
->
-    {{ $slot }}
-</div>
+>{{ $slot }}</div>

@@ -6,7 +6,5 @@
     data-slot="command-empty"
     x-cloak
     x-show="items.length == 0"
-    {{ $attributes->merge(['class' => cn($baseClasses, $attributes->get('class'))]) }}
->
-    {{ $slot }}
-</div>
+    {{ $attributes->except('class')->merge(['class' => cn($baseClasses, $attributes->get('class'))]) }}
+>{{ $slot }}</div>

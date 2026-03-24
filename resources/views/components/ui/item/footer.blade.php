@@ -4,9 +4,9 @@
 
 <div
     data-slot="item-footer"
-    {{ $attributes->merge([
+    {{ $attributes
+    ->except('class')
+    ->merge([
             'class' => cn($baseClasses, $attributes->get('class')),
         ]) }}
->
-    {{ $slot }}
-</div>
+>{{ $slot }}</div>

@@ -8,15 +8,11 @@
     <div
         {{ $attributes }}
         x-show="tab === '{{ $value }}'"
-    >
-        {{ $slot }}
-    </div>
+    >{{ $slot }}</div>
 @else
     <div
         x-cloak
         {{ $attributes }}
         x-show="tab === '{{ $value }}'"
-    >
-        {{ $slot }}
-    </div>
+    >{{ $slot }}</div>
 @endif

@@ -4,6 +4,7 @@
 
 @php
     $baseClasses = 'flex shrink-0 items-center justify-center gap-2 group-has-data-[slot=item-description]/item:translate-y-0.5 group-has-data-[slot=item-description]/item:self-start [&_svg]:pointer-events-none';
+
     $variantClasses = match ($variant) {
         'default' => 'bg-transparent',
         'icon' => 'size-8 rounded-sm border bg-muted [&_svg:not([class*=size-])]:size-4',
@@ -14,9 +15,9 @@
 <div
     data-slot="item-media"
     data-variant="{{ $variant }}"
-    {{ $attributes->merge([
+    {{ $attributes
+    ->except('class')
+    ->merge([
             'class' => cn($baseClasses, $variantClasses, $attributes->get('class')),
         ]) }}
->
-    {{ $slot }}
-</div>
+>{{ $slot }}</div>

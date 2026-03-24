@@ -12,6 +12,4 @@
         @keydown.esc.window.prevent="if (open) { open = false; closing = true; }"
     @endif
     {{ $attributes }}
->
-    {{ $slot }}
-</div>
+>{{ $slot }}</div>

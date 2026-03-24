@@ -1,13 +1,12 @@
 @php
-    /**
-     * Base classes
-     */
     $baseClasses = 'relative -my-2 min-h-5 text-sm';
 @endphp
 
 <div
     data-slot="field-separator"
-    {{ $attributes->merge([
+    {{ $attributes
+    ->except('class')
+    ->merge([
             'class' => cn($baseClasses, $attributes->get('class')),
         ]) }}
 >
@@ -16,8 +15,6 @@
         <span
             class="relative mx-auto block w-fit bg-background px-2 text-muted-foreground"
             data-slot="field-separator-content"
-        >
-            {{ $slot }}
-        </span>
+        >{{ $slot }}</span>
     @endif
 </div>

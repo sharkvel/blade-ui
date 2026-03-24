@@ -11,7 +11,7 @@
 @endphp
 
 <x-ui.dialog
-    {{ $attributes->except(['class']) }}
+    {{ $attributes->except('class') }}
 >
     <x-ui.dialog.trigger id="{{ $triggerId }}" shortcut="ctrl.k" enableEsc class="hidden!" tabindex="-1"></x-ui.dialog.trigger>
 
@@ -19,7 +19,5 @@
         @class([cn($baseClasses, $attributes->get(key: 'class'))])
         :variant="$variant"
         :showCloseButton="$showCloseButton"
-    >
-        {{ $slot }}
-    </x-ui.dialog.content>
+    >{{ $slot }}</x-ui.dialog.content>
 </x-ui.dialog>

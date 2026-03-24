@@ -21,11 +21,12 @@
             :data-closed="!open"
             @click.stop
             x-trap="open"
-            {{ $attributes->merge([
+            {{ $attributes
+            ->except('class')
+            ->merge([
                     'class' => cn($baseClasses, $variantClasses, $attributes->get('class')),
                 ]) }}
-        >
-            {{ $slot }}
+        >{{ $slot }}
             @if($showCloseButton)
                 <x-ui.dialog.close @click="open = false; closing = true" class="absolute top-2 right-2">
                     <x-ui.button variant="ghost" size="icon-sm">

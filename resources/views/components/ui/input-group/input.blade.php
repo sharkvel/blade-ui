@@ -4,7 +4,9 @@
 
 <x-ui.input
     data-slot="input-group-control"
-    {{ $attributes->merge([
+    {{ $attributes
+    ->except('class')
+    ->merge([
         'class' => cn($baseClasses, $attributes->get('class')),
     ]) }}
 />

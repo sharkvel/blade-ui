@@ -3,14 +3,8 @@
 ])
 
 @php
-    /**
-     * Base classes
-     */
     $baseClasses = 'group/field flex w-full gap-2 data-[invalid=true]:text-destructive';
 
-    /**
-     * Orientation classes
-     */
     $orientationClasses = match ($orientation) {
         'vertical' => 'flex-col *:w-full [&>.sr-only]:w-auto',
         'horizontal' => 'flex-row items-center has-[>[data-slot=field-content]]:items-start *:data-[slot=field-label]:flex-auto has-[>[data-slot=field-content]]:[&>[role=checkbox],[role=radio]]:mt-px',
@@ -21,7 +15,7 @@
 <div
     role="group"
     data-slot="field"
-    {{ $attributes->merge(['class' => cn($baseClasses, $orientationClasses, $attributes->get('class'))]) }}
->
-    {{ $slot }}
-</div>
+    {{ $attributes
+    ->except('class')
+    ->merge(['class' => cn($baseClasses, $orientationClasses, $attributes->get('class'))]) }}
+>{{ $slot }}</div>

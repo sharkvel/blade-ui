@@ -7,11 +7,12 @@
 
 <div
     data-slot="dialog-footer"
-    {{ $attributes->merge([
+    {{ $attributes
+    ->except('class')
+    ->merge([
             'class' => cn($baseClasses, $attributes->get('class')),
         ]) }}
->
-    {{ $slot }}
+>{{ $slot }}
     @if($showCloseButton)
         <x-ui.button variant="outline">Close</x-ui.button>
     @endif

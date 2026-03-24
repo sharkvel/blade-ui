@@ -3,14 +3,9 @@
 ])
 
 @php
-    /**
-     * Base classes
-     */
+
     $baseClasses = 'mb-1.5 font-medium';
 
-    /**
-     * Variant classes
-     */
     $variantClasses = match ($variant) {
         'legend' => 'text-base',
         'label' => 'text-sm',
@@ -19,9 +14,9 @@
 
 <legend
     data-slot="field-legend"
-    {{ $attributes->merge([
+    {{ $attributes
+    ->except('class')
+    ->merge([
             'class' => cn($baseClasses, $variantClasses, $attributes->get('class')),
         ]) }}
->
-    {{ $slot }}
-</legend>
+>{{ $slot }}</legend>

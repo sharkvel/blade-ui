@@ -6,10 +6,9 @@
 ])
 
 @php
-    /**
-     * Base classes
-     */
+
     $baseClasses = 'z-10 w-full appearance-none bg-transparent outline-none [grid-area:1/1] [&::-webkit-slider-thumb]:appearance-none';
+
     $fireFoxClasses = ' [&::-moz-range-thumb]:border-none [&::-moz-range-thumb]:bg-transparent';
 
     $sizeClasses = match ('default') {
@@ -36,7 +35,9 @@
         max="{{ $max }}"
         value="{{ $value }}"
         step="{{ $step }}"
-        {{ $attributes->merge([
+        {{ $attributes
+        ->except('class')
+        ->merge([
                 'class' => cn($baseClasses, $fireFoxClasses, $sizeClasses, $attributes->get('class')),
             ]) }}
     />

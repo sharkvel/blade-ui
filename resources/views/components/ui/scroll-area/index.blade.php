@@ -30,7 +30,9 @@
 <div
     x-data="scrollbar()"
     x-init="init()"
-    {{ $attributes->merge([
+    {{ $attributes
+    ->except('class')
+    ->merge([
             "class" => cn($baseClasses, $attributes->get("class")),
         ]) }}
 >
@@ -49,9 +51,7 @@
         <div
             data-slot="scroll-area-viewport"
             class="rounded-[inherit] transition-[color,box-shadow] outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
-        >
-            {{ $slot }}
-        </div>
+        >{{ $slot }}</div>
     </div>
     <x-ui.scroll-area.scrollbar :orientation="$orientation" :scrollbar="$scrollbar" />
 </div>

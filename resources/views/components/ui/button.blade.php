@@ -5,14 +5,8 @@
 ])
 
 @php
-    /**
-     * Base classes
-     */
     $baseClasses = 'inline-flex shrink-0 items-center justify-center gap-2 rounded-md text-sm font-medium whitespace-nowrap outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*=size-])]:size-4';
 
-    /**
-     * Variant classes
-     */
     $variantClasses = match ($variant) {
         'default' => 'bg-primary text-primary-foreground hover:bg-primary/90',
         'secondary' => 'bg-secondary text-secondary-foreground hover:bg-secondary/80',
@@ -22,9 +16,6 @@
         'link' => 'text-primary underline-offset-4 hover:underline',
     };
 
-    /**
-     * Size classes
-     */
     $sizeClasses = match ($size) {
         'xs' => 'h-7 gap-1 px-2.5 text-xs has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2 [&_svg:not([class*=size-])]:size-3.5',
         'sm' => 'h-8 gap-1.5 px-3 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2',
@@ -38,7 +29,7 @@
 @endphp
 
 <button
-    {{ $attributes->merge(['class' => cn($baseClasses, $variantClasses, $sizeClasses, $attributes->get('class')), 'type' => $type]) }}
->
-    {{ $slot }}
-</button>
+    {{ $attributes
+    ->except('class')
+    ->merge(['class' => cn($baseClasses, $variantClasses, $sizeClasses, $attributes->get('class')), 'type' => $type]) }}
+>{{ $slot }}</button>

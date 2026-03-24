@@ -3,9 +3,9 @@
 @endphp
 
 <span
-    {{ $attributes->merge([
+    {{ $attributes
+    ->except('class')
+    ->merge([
         'class' => cn($baseClasses, $attributes->get('class')),
     ]) }}
->
-    {{ $slot }}
-</span>
+>{{ $slot }}</span>

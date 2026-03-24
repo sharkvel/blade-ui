@@ -5,7 +5,9 @@
 
 <div
     data-slot="command-group"
-    {{ $attributes->merge([
+    {{ $attributes
+    ->except('class')
+    ->merge([
             'class' => cn($baseClasses, $attributes->get('class')),
         ]) }}
 >

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LazyController;
+use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 
 /**
@@ -27,3 +28,8 @@ Route::get('/lazy/codelight', [LazyController::class, 'codeLight'])->name('lazy.
  */
 Route::view('/live-example/sidebar', 'examples.components.sidebar.hero')->name('live.sidebar');
 Route::view('/live-example/dashboard', 'examples.blocks.dashboard')->name('live.dashboard');
+
+/**
+ * Testing
+ */
+Route::get('/test', TestController::class);

@@ -9,9 +9,9 @@
 <x-ui.textarea
     data-slot="input-group-control"
     size="{{ $size }}"
-    {{ $attributes->merge([
+    {{ $attributes
+    ->except('class')
+    ->merge([
         'class' => cn($baseClasses, $attributes->get('class')),
     ]) }}
->
-    {{ $slot }}
-</x-ui.textarea>
+>{{ $slot }}</x-ui.textarea>

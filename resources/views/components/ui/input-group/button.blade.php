@@ -16,11 +16,11 @@
 @endphp
 
 <x-ui.button
-    {{ $attributes->merge([
+    {{ $attributes
+    ->except('class')
+    ->merge([
         'class' => cn($baseClasses, $sizeClasses, $attributes->get('class')),
         'type' => $type,
         'variant' => $variant,
     ]) }}
->
-    {{ $slot }}
-</x-ui.button>
+>{{ $slot }}</x-ui.button>

@@ -7,9 +7,9 @@
         <x-ui.input-group.input
             data-slot="command-input"
             x-model="query"
-            {{ $attributes->merge([
-        'class' => cn($baseClasses, $attributes->get('class')),
-    ]) }}
+            {{ $attributes
+            ->except('class')
+            ->merge(['class' => cn($baseClasses, $attributes->get('class'))]) }}
             placeholder="Search documentation..."
         />
 
