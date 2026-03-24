@@ -21,14 +21,15 @@
     ];
 @endphp
 
-<x-slot name="componentMeta" :onThisPage="$onThisPage"></x-slot>
+<x-slot:componentMeta :onThisPage="$onThisPage"></x-slot>
 
 <div class="flex flex-col">
     {{-- Base --}}
     <x-ui.h1 class="text-4xl font-medium">Separator</x-ui.h1>
-    <x-ui.p class="mt-4 max-w-[55ch] text-muted-foreground">Visually or semantically separates content.</x-ui.p>
-    <x-playground class="mt-12" path="examples/components/separator/hero.blade.php" />
 
+    <x-ui.p class="mt-4 max-w-[55ch] text-muted-foreground">Visually or semantically separates content.</x-ui.p>
+
+    <x-playground class="mt-12" path="examples/components/separator/hero.blade.php" />
     {{-- Installation --}}
     <x-ui.h6 class="mt-16 max-w-fit font-medium">
         <a href="#installation" class="hash-link">Installation</a>
@@ -42,7 +43,6 @@
         </div>
         <x-codelight language="shell">php artisan ui:add separator</x-codelight>
     </div>
-
     {{-- Usage --}}
     <x-ui.h6 class="mt-16 max-w-fit font-medium">
         <a href="#usage" class="hash-link">Usage</a>
@@ -50,11 +50,11 @@
     <div class="mt-6 rounded-lg border p-1">
         <x-codelight path="examples/components/separator/usage.blade.php" />
     </div>
-
     {{-- Reference --}}
     <x-ui.h6 class="mt-16 max-w-fit font-medium">
         <a href="#reference" class="hash-link">Reference</a>
     </x-ui.h6>
+
     <x-ui.p class="mt-4 max-w-[60ch]">
         The
         <x-ui.code>x-ui.separator</x-ui.code>
@@ -64,21 +64,25 @@
         <x-ui.code>vr</x-ui.code>
         element that adds a variety of styles and functionality.
     </x-ui.p>
-
     {{-- Table --}}
     <div class="mt-6 rounded-lg border">
         <x-ui.table>
             <x-ui.table.header>
                 <x-ui.table.row>
                     <x-ui.table.head>Prop</x-ui.table.head>
+
                     <x-ui.table.head>Type</x-ui.table.head>
+
                     <x-ui.table.head>Default</x-ui.table.head>
                 </x-ui.table.row>
             </x-ui.table.header>
+
             <x-ui.table.body>
                 <x-ui.table.row>
                     <x-ui.table.cell>orientation</x-ui.table.cell>
+
                     <x-ui.table.cell>"horizontal" | "vertical"</x-ui.table.cell>
+
                     <x-ui.table.cell>"horizontal"</x-ui.table.cell>
                 </x-ui.table.row>
             </x-ui.table.body>

@@ -18,11 +18,9 @@
 <span
     data-slot="avatar-fallback"
     x-effect="isLoaded && $el.remove()"
-    {{
-        $attributes->merge([
+    {{ $attributes->merge([
             'class' => cn($baseClasses, $sizeClasses, $attributes->get('class')),
-        ])
-    }}
+        ]) }}
 >
     {{ $slot }}
 </span>

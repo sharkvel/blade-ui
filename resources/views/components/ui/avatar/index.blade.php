@@ -21,11 +21,9 @@
 <div
     data-slot="avatar"
     x-data="{ isLoaded: false }"
-    {{
-        $attributes->merge([
+    {{ $attributes->merge([
             'class' => cn($baseClasses, $sizeClasses, $attributes->get('class')),
-        ])
-    }}
+        ]) }}
 >
     {{ $slot }}
 </div>

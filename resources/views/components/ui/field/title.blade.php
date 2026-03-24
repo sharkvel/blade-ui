@@ -8,11 +8,9 @@
 
 <div
     data-slot="field-label"
-    {{
-        $attributes->merge([
+    {{ $attributes->merge([
             'class' => cn($baseClasses, $attributes->get('class')),
-        ])
-    }}
+        ]) }}
 >
     {{ $slot }}
 </div>

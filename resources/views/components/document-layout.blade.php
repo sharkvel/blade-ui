@@ -17,10 +17,10 @@
         <div class="section-wrapper grow py-12">
             <div class="mx-auto flex min-h-full max-w-3xl flex-col">
                 {{ $slot }}
-                @if (filled($nextPage) || filled($previousPage))
+                @if(filled($nextPage) || filled($previousPage))
                     {{-- Next/Previous page footer --}}
                     <div class="mt-auto flex pt-12">
-                        @if (filled($previousPage))
+                        @if(filled($previousPage))
                             <a href="{{ $previousPage['url'] }}">
                                 <x-ui.button variant="secondary" size="sm" class="cursor-pointer">
                                     <i data-lucide="arrow-left"></i>
@@ -29,7 +29,7 @@
                             </a>
                         @endif
 
-                        @if (filled($nextPage))
+                        @if(filled($nextPage))
                             <a href="{{ $nextPage['url'] }}" class="ml-auto">
                                 <x-ui.button variant="secondary" size="sm" class="cursor-pointer">
                                     {{ $nextPage['title'] }}

@@ -14,22 +14,20 @@
 
 <x-ui.dialog.portal data-slot="dialog-portal">
     <div x-show="open || closing">
-        <x-ui.dialog.overlay @animationend="if (!open) closing = false;" @click="open = false; closing = true;" />
+        <x-ui.dialog.overlay @animationend="if (!open) closing = false" @click="open = false; closing = true" />
         <div
             data-slot="dialog-content"
             :data-open="open"
             :data-closed="!open"
             @click.stop
             x-trap="open"
-            {{
-                $attributes->merge([
+            {{ $attributes->merge([
                     'class' => cn($baseClasses, $variantClasses, $attributes->get('class')),
-                ])
-            }}
+                ]) }}
         >
             {{ $slot }}
-            @if ($showCloseButton)
-                <x-ui.dialog.close @click="open = false; closing = true;" class="absolute top-2 right-2">
+            @if($showCloseButton)
+                <x-ui.dialog.close @click="open = false; closing = true" class="absolute top-2 right-2">
                     <x-ui.button variant="ghost" size="icon-sm">
                         <i data-lucide="x"></i>
                     </x-ui.button>

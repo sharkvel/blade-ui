@@ -7,11 +7,9 @@
 
 <div
     data-slot="empty-title"
-    {{
-        $attributes->merge([
+    {{ $attributes->merge([
             'class' => cn($baseClasses, $attributes->get('class')),
-        ])
-    }}
+        ]) }}
 >
     {{ $slot }}
 </div>

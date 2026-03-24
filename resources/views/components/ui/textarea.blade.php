@@ -29,5 +29,5 @@
 <textarea
     {{ $attributes->merge(['class' => cn($baseClasses, $variantClasses, $sizeClasses, $attributes->get('class'))]) }}
 >
-{{ $slot }}</textarea
->
+    {{ $slot }}
+</textarea>

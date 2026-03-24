@@ -2,28 +2,20 @@
 <html
     lang="{{ str_replace('_', '-', app()->getLocale()) }}"
     x-data
-    :class="{'dark': $store.darkMode.on}"
+    :class="{ dark: $store.darkMode.on }"
     class="max-lg:has-[#mobile-sidebar-toggle:checked]:overflow-hidden"
 >
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-
         <title>{{ config('app.name', 'Laravel') }}</title>
-
         <link rel="icon" type="image/png" href="/favicon.png" />
-
         <!-- Fonts -->
-        {{--
-            <link rel="preload" fetchpriority="high" href="/fonts/Geist.woff2" crossorigin as="font" type="font/woff2" />
-            <link rel="preload" fetchpriority="high" href="/fonts/GeistMono.woff2" crossorigin as="font" type="font/woff2" />
-        --}}
-
+        {{-- <link rel="preload" fetchpriority="high" href="/fonts/Geist.woff2" crossorigin as="font" type="font/woff2" />
+            <link rel="preload" fetchpriority="high" href="/fonts/GeistMono.woff2" crossorigin as="font" type="font/woff2" /> --}}
         @stack('css')
-
         <!-- Styles / Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-
         {{-- Change favicon --}}
         <script>
             // Init dark mode preference
@@ -43,13 +35,10 @@
             window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', changeFavicon);
         </script>
     </head>
-
     <body>
         <div class="min-h-screen">
             {{-- Page Content --}}
-            <main>
-                {{ $slot }}
-            </main>
+            <main>{{ $slot }}</main>
         </div>
         @env('local')
             {{-- Indicator --}}

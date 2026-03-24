@@ -19,11 +19,9 @@
 
 <legend
     data-slot="field-legend"
-    {{
-        $attributes->merge([
+    {{ $attributes->merge([
             'class' => cn($baseClasses, $variantClasses, $attributes->get('class')),
-        ])
-    }}
+        ]) }}
 >
     {{ $slot }}
 </legend>

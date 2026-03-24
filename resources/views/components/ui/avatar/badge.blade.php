@@ -14,11 +14,9 @@
 
 <span
     data-slot="avatar-badge"
-    {{
-        $attributes->merge([
+    {{ $attributes->merge([
             'class' => cn($baseClasses, $sizeClasses, $attributes->get('class')),
-        ])
-    }}
+        ]) }}
 >
     {{ $slot }}
 </span>

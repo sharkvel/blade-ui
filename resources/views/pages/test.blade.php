@@ -2,9 +2,10 @@
     @php
         $start = now();
     @endphp
-
-    @for ($i=0;$i<1000;$i++)
-        <x-ui.button>Button {{ $i }}</x-ui.button>
+    @for($i=0;$i<1000;$i++)
+        <x-ui.button>
+            Button {{ $i }}
+        </x-ui.button>
     @endfor
 
     @php

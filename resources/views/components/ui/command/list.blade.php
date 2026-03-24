@@ -5,11 +5,9 @@
 <div
     data-slot="command-list"
     x-show="items.length > 0"
-    {{
-        $attributes->merge([
+    {{ $attributes->merge([
             'class' => cn($baseClasses, $attributes->get('class')),
-        ])
-    }}
+        ]) }}
 >
     {{ $slot }}
 </div>

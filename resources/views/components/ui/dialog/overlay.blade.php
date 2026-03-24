@@ -4,15 +4,13 @@
 @endphp
 
 <div
-    {{
-        $attributes->merge([
+    {{ $attributes->merge([
             'class' => cn($baseClasses, $attributes->get('class')),
-        ])
-    }}
+        ]) }}
     data-slot="dialog-overlay"
     :data-open="open"
     :data-closed="!open"
-    @click="open = false;"
+    @click="open = false"
 >
     {{ $slot }}
 </div>

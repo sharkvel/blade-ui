@@ -2,13 +2,13 @@
     class="hide-scrollbar sticky top-16 hidden h-[calc(100svh-4rem)] w-3xs flex-col gap-10 overflow-auto overscroll-contain py-12 lg:flex"
     id="sidebar"
 >
-    @foreach ($sidebarItems as $section => $items)
+    @foreach($sidebarItems as $section => $items)
         @continue(in_array($section, ['Menus']))
         <div class="flex flex-col gap-2">
             <small class="pl-4 text-muted-foreground md:pl-12">{{ $section }}</small>
             <ul class="flex flex-col">
-                @foreach ($items as $menu)
-                    @if ($menu['available_from'])
+                @foreach($items as $menu)
+                    @if($menu['available_from'])
                         <a href="{{ $menu['url'] }}">
                             <li
                                 class="menu-item flex h-8 items-center gap-2 pl-4 text-[0.825rem] font-normal data-[active='true']:font-medium md:pl-12"

@@ -12,12 +12,10 @@
 
 <x-ui.label
     data-slot="field-label"
-    {{
-    $attributes->merge([
+    {{ $attributes->merge([
         'class' => cn($baseClasses, $attributes->get('class')),
         'for' => $for,
-    ])
-}}
+    ]) }}
 >
     {{ $slot }}
 </x-ui.label>

@@ -7,11 +7,9 @@
 
 <fieldset
     data-slot="field-set"
-    {{
-        $attributes->merge([
+    {{ $attributes->merge([
             'class' => cn($baseClasses, $attributes->get('class')),
-        ])
-    }}
+        ]) }}
 >
     {{ $slot }}
 </fieldset>

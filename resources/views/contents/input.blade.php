@@ -21,13 +21,15 @@
     ];
 @endphp
 
-<x-slot name="componentMeta" :onThisPage="$onThisPage"></x-slot>
+<x-slot:componentMeta :onThisPage="$onThisPage"></x-slot>
 
 <div class="flex flex-col">
     <x-ui.h1 class="text-4xl font-medium">Input</x-ui.h1>
+
     <x-ui.p class="mt-4 max-w-[55ch] text-muted-foreground">
         Displays a form input field or a component that looks like an input field.
     </x-ui.p>
+
     <x-playground class="mt-12 [&_input]:max-w-xs" path="examples/components/input/hero.blade.php" />
     {{-- Installation --}}
     <x-ui.h6 class="mt-16 max-w-fit font-medium">
@@ -53,11 +55,13 @@
     <x-ui.h6 class="mt-16 max-w-fit font-medium">
         <a href="#reference" class="hash-link">Reference</a>
     </x-ui.h6>
+
     <x-ui.p class="mt-4 max-w-[60ch]">
         The
         <x-ui.code>
-            @verbatim x-ui.input @endverbatim
-                
+            @verbatim
+                x-ui.input
+            @endverbatim
         </x-ui.code>
         component is a wrapper around the
         <x-ui.code>input</x-ui.code>
@@ -68,14 +72,19 @@
             <x-ui.table.header>
                 <x-ui.table.row>
                     <x-ui.table.head class="px-4">Prop</x-ui.table.head>
+
                     <x-ui.table.head class="px-4">Type</x-ui.table.head>
+
                     <x-ui.table.head class="px-4">Default</x-ui.table.head>
                 </x-ui.table.row>
             </x-ui.table.header>
+
             <x-ui.table.body>
                 <x-ui.table.row>
                     <x-ui.table.cell class="px-4">size</x-ui.table.cell>
+
                     <x-ui.table.cell class="px-4">"default" | "sm" | "lg"</x-ui.table.cell>
+
                     <x-ui.table.cell class="px-4">"default"</x-ui.table.cell>
                 </x-ui.table.row>
             </x-ui.table.body>

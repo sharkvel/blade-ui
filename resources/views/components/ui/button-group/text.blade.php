@@ -2,8 +2,8 @@
     $baseClasses = "bg-muted flex items-center gap-2 rounded-md border px-4 text-sm font-medium shadow-xs [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4";
 @endphp
 
-<div {{
-    $attributes->merge([
+<div
+    {{ $attributes->merge([
         'class' => cn($baseClasses, $attributes->get('class')),
-    ])
-}}></div>
+    ]) }}
+></div>

@@ -7,8 +7,8 @@
 @endphp
 
 <div
-    @if (! $open)
-        x-cloak
+    @if(! $open)
+    x-cloak
     @endif
     x-show="open"
     {{ $attributes->merge(["class" => cn($baseClasses, $attributes->get("class"))]) }}

@@ -2,16 +2,15 @@
     class="hide-scrollbar sticky top-16 hidden h-[calc(100svh-4rem)] w-3xs flex-col gap-10 overflow-auto py-12 xl:flex"
     x-data='fragment'
 >
-    @if (! empty($onThisPage))
+    @if(! empty($onThisPage))
         <div class="flex flex-col gap-2">
             <small class="text-muted-foreground">On this page</small>
             <ul class="mt-2 flex flex-col gap-1 border-l">
-                @foreach ($onThisPage as $menu)
-                    @if ($menu['available_from'])
+                @foreach($onThisPage as $menu)
+                    @if($menu['available_from'])
                         @php
                             $menuFragment = '#' . Uri::of($menu['url'])->fragment();
                         @endphp
-
                         <a href="{{ $menu['url'] }}">
                             <li
                                 class="menu-item flex h-6 items-center pl-2 text-[0.8rem] font-normal text-muted-foreground hover:text-foreground data-[active='true']:font-medium data-[active='true']:text-foreground md:pl-8"

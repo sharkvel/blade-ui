@@ -16,14 +16,15 @@
     ];
 @endphp
 
-<x-slot name="componentMeta" :onThisPage="$onThisPage"></x-slot>
+<x-slot:componentMeta :onThisPage="$onThisPage"></x-slot>
 
 <div class="flex flex-col">
     {{-- Base --}}
     <x-ui.h1 class="text-4xl font-medium">Typography</x-ui.h1>
-    <x-ui.p class="mt-4 max-w-[55ch] text-muted-foreground">Styles for headings, paragraphs, lists...etc</x-ui.p>
-    <x-playground class="mt-12" path="examples/components/typography/hero.blade.php" />
 
+    <x-ui.p class="mt-4 max-w-[55ch] text-muted-foreground">Styles for headings, paragraphs, lists...etc</x-ui.p>
+
+    <x-playground class="mt-12" path="examples/components/typography/hero.blade.php" />
     {{-- Installation --}}
     <x-ui.h6 class="mt-16 max-w-fit font-medium">
         <a href="#installation" class="hash-link">Installation</a>
@@ -37,7 +38,6 @@
         </div>
         <x-codelight language="shell">php artisan ui:add typography</x-codelight>
     </div>
-
     {{-- Usage --}}
     <x-ui.h6 class="mt-16 max-w-fit font-medium">
         <a href="#usage" class="hash-link">Usage</a>

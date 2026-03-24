@@ -25,7 +25,7 @@
                 "bladeSlotNameStyle": "colon",
                 "bladeSlotSpacing": "after",
                 "bladeWrapAttributes": "auto",
-                "bladeAttributeSort": "by_type",
+                "bladeAttributeSort": "none",
                 "bladeSelfClosingStyle": "preserve",
                 "bladeHtmlBlockSpacing": "between_blocks",
                 "bladeEchoSpacing": "spaced",

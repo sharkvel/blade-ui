@@ -14,11 +14,9 @@
     role="group"
     data-slot="button-group"
     data-orientation="{{ $orientation }}"
-    {{
-        $attributes->merge([
+    {{ $attributes->merge([
             'class' => cn($baseClasses, $orientationClasses, $attributes->get('class')),
-        ])
-    }}
+        ]) }}
 >
     {{ $slot }}
 </div>

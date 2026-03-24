@@ -40,14 +40,16 @@
     :previousPage="['url' => route('docs'), 'title' => 'Introduction']"
     :nextPage="['url' => route('docs.theming'), 'title' => 'Theming']"
 >
-    <x-slot name="componentMeta" :onThisPage="$onThisPage"></x-slot>
-    <x-ui.h1 class="text-4xl font-medium">Installation</x-ui.h1>
-    <x-ui.p class="mt-4 max-w-[55ch] text-muted-foreground">Install and configure library for Laravel</x-ui.p>
+    <x-slot:componentMeta :onThisPage="$onThisPage"></x-slot>
 
+    <x-ui.h1 class="text-4xl font-medium">Installation</x-ui.h1>
+
+    <x-ui.p class="mt-4 max-w-[55ch] text-muted-foreground">Install and configure library for Laravel</x-ui.p>
     {{-- Create project --}}
     <x-ui.h6 class="mt-12 max-w-fit font-medium">
         <a href="#create-project" class="hash-link">1. Create project</a>
     </x-ui.h6>
+
     <x-ui.p class="mt-2">
         Start by creating a new Laravel project with No-starter kit using the laravel installer laravel new my-app or
         visit the
@@ -57,11 +59,11 @@
     <div class="mt-6 rounded-lg border p-1">
         <x-codelight language="shell">laravel new example-app</x-codelight>
     </div>
-
     {{-- Install Tailwind CSS --}}
     <x-ui.h6 class="mt-12 max-w-fit font-medium">
         <a href="#add-tailwind-css" class="hash-link">2. Add Tailwind CSS</a>
     </x-ui.h6>
+
     <x-ui.p class="mt-2">
         By default laravel have built in integration of tailwind css. So you can skip this step. Checkout
         <x-ui.a href="https://tailwindcss.com/docs/installation">Tailwind CSS</x-ui.a>
@@ -69,8 +71,10 @@
     </x-ui.p>
     <div class="mt-6 rounded-lg border p-1">
         <!-- prettier-ignore -->
-        <x-codelight language="shell" >
-            npm install tailwindcss @tailwindcss/vite
+        <x-codelight language="shell">
+            npm install tailwindcss
+            @tailwindcss
+            /vite
         </x-codelight>
     </div>
     <x-ui.p>
@@ -88,19 +92,24 @@
     </div>
     <x-ui.p>
         Add an
-        <x-ui.code>@import</x-ui.code>
+        <x-ui.code>
+            @import
+        </x-ui.code>
         to your
         <x-ui.code>resources/css/app.css</x-ui.code>
         file that imports Tailwind CSS.
     </x-ui.p>
     <div class="mt-6 rounded-lg border p-1">
-        <x-codelight language="css">@import "tailwindcss";</x-codelight>
+        <x-codelight language="css">
+            @import
+            "tailwindcss";
+        </x-codelight>
     </div>
-
     {{-- Install Alpine JS --}}
     <x-ui.h6 class="mt-12 max-w-fit font-medium">
         <a href="#add-alpinejs" class="hash-link">3. Add AlpineJs</a>
     </x-ui.h6>
+
     <x-ui.p class="mt-2">
         Install alpine js for fantastic functionality with less javascript code. Visit
         <x-ui.a href="https://alpinejs.dev/">AlpineJs</x-ui.a>
@@ -117,31 +126,31 @@
     <div class="mt-6 rounded-lg border p-1">
         <x-codelight language="js" path="examples/others/alpinejs-bootstrap.js" />
     </div>
-
     {{-- Install library --}}
     <x-ui.h6 class="mt-12 max-w-fit font-medium">
         <a href="#install-library" class="hash-link">4. Install library</a>
     </x-ui.h6>
+
     <x-ui.p class="mt-2">Add library using composer package manager to your project.</x-ui.p>
     <div class="mt-6 rounded-lg border p-1">
         <x-codelight language="shell">composer require sharkvel/blade-ui</x-codelight>
     </div>
-
     {{-- Initialize library --}}
     <x-ui.h6 class="mt-12 max-w-fit font-medium">
         <a href="#initialize" class="hash-link">5. Initialize</a>
     </x-ui.h6>
+
     <x-ui.p class="mt-2">
         Initialize library in your application. This check and install required files and configs.
     </x-ui.p>
     <div class="mt-6 rounded-lg border p-1">
         <x-codelight language="shell">php artisan ui:init</x-codelight>
     </div>
-
     {{-- Add component --}}
     <x-ui.h6 class="mt-12 max-w-fit font-medium">
         <a href="#add-component" class="hash-link">6. Add component</a>
     </x-ui.h6>
+
     <x-ui.p class="mt-2">
         You can add components after successfully initialize using
         <x-ui.code>php artisan ui:add {component}</x-ui.code>

@@ -9,6 +9,9 @@
             <x-ui.a href="{{ REPO_URL }}" target="_blank" class="text-inherit">GitHub</x-ui.a>
             .
         </x-ui.p>
-        <x-ui.small class="mt-2 text-center text-muted-foreground">{{ config('app.version') }}</x-ui.small>
+
+        <x-ui.small class="mt-2 text-center text-muted-foreground">
+            {{ config('app.version') }}
+        </x-ui.small>
     </div>
 </footer>

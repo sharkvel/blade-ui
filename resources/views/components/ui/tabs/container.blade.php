@@ -30,6 +30,8 @@
     };
 @endphp
 
-<div {{ $attributes->merge(['class' => cn($baseClasses, $variantClasses, $sizeClasses, $attributes->get('class'))]) }}>
+<div
+    {{ $attributes->merge(['class' => cn($baseClasses, $variantClasses, $sizeClasses, $attributes->get('class'))]) }}
+>
     {{ $slot }}
 </div>

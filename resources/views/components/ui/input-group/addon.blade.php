@@ -18,11 +18,9 @@
     data-align="{{ $align }}"
     x-data
     @click="!$event.target.closest('button') && $event.currentTarget.parentElement?.querySelector('input')?.focus()"
-    {{
-        $attributes->merge([
+    {{ $attributes->merge([
             'class' => cn($baseClasses, $alignClasses, $attributes->get('class')),
-        ])
-    }}
+        ]) }}
 >
     {{ $slot }}
 </div>

@@ -36,22 +36,20 @@
         max="{{ $max }}"
         value="{{ $value }}"
         step="{{ $step }}"
-        {{
-            $attributes->merge([
+        {{ $attributes->merge([
                 'class' => cn($baseClasses, $fireFoxClasses, $sizeClasses, $attributes->get('class')),
-            ])
-        }}
+            ]) }}
     />
     {{-- Progress --}}
     <div
         class="relative z-1 flex h-1 w-(--range,0%) items-center justify-end rounded-l-full bg-primary will-change-[width] [grid-area:1/1]"
-        :style="{'--range': percent+'%'}"
+        :style="{ '--range': percent + '%' }"
     >
         {{-- Thumb --}}
         <div
             class="pointer-events-none absolute left-full z-10 block size-3.5 shrink-0 -translate-x-(--_x) rounded-full border border-ring bg-white ring-ring/50 transition-[color,box-shadow] [grid-area:1/1] group-focus-within:ring-2 group-hover:ring-2"
-            :class="{'ml-[0.5px]':percent>95}"
-            :style="{'--_x': percent+'%'}"
+            :class="{ 'ml-[0.5px]': percent > 95 }"
+            :style="{ '--_x': percent + '%' }"
         ></div>
     </div>
     {{-- Track --}}

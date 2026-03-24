@@ -12,7 +12,7 @@
         'opacity-0 group-hover/scrollbar:opacity-100' => $scrollbar === 'auto',
         'hidden' => $scrollbar === 'hidden' || ! ($orientation === 'vertical' || $orientation === 'both'),
     ])
-    :class="{'opacity-100': drag === 'y'}"
+    :class="{ 'opacity-100': drag === 'y' }"
     x-ref="trackY"
     @mousedown="jumpY($event)"
 >
@@ -33,7 +33,7 @@
         'opacity-0 group-hover/scrollbar:opacity-100' => $scrollbar === 'auto',
         'hidden' => $scrollbar === 'hidden' || ! ($orientation === 'horizontal' || $orientation === 'both'),
     ])
-    :class="{'opacity-100': drag === 'x'}"
+    :class="{ 'opacity-100': drag === 'x' }"
     x-ref="trackX"
     @mousedown="jumpX($event)"
 >
@@ -46,6 +46,6 @@
 </div>
 
 <!-- Corder -->
-@if ($orientation === 'both')
+@if($orientation === 'both')
     <div class="absolute right-0 bottom-0 size-3"></div>
 @endif

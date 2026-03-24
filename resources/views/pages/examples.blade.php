@@ -4,10 +4,10 @@
 
 <x-app-layout>
     @push("css")
-        <link rel="stylesheet" href="{{ asset("css/themes/blue.css") }}" />
-        <link rel="stylesheet" href="{{ asset("css/themes/yellow.css") }}" />
-        <link rel="stylesheet" href="{{ asset("css/themes/neutral.css") }}" />
-        <link rel="stylesheet" href="{{ asset("css/themes/green.css") }}" />
+        <link rel="stylesheet" href='{{ asset("css/themes/blue.css") }}' />
+        <link rel="stylesheet" href='{{ asset("css/themes/yellow.css") }}' />
+        <link rel="stylesheet" href='{{ asset("css/themes/neutral.css") }}' />
+        <link rel="stylesheet" href='{{ asset("css/themes/green.css") }}' />
     @endpush
 
     <x-nav-bar />
@@ -53,22 +53,22 @@
         <x-ui.h1 class="mt-5 text-center leading-[1.2] font-medium text-balance lg:text-6xl lg:tracking-tighter">
             Build faster with reusable blade components
         </x-ui.h1>
+
         <x-ui.p class="max-w-[60ch] text-center text-pretty lg:text-lg">
             Open-source, production-ready components built to accelerate Laravel development while giving you full
             control to customize, extend, and scale.
         </x-ui.p>
         <div class="mt-8 grid w-full gap-x-3 gap-y-4 md:w-auto md:grid-cols-2">
-            <a href="{{ route("docs.installation") }}">
+            <a href='{{ route("docs.installation") }}'>
                 <x-ui.button class="w-full cursor-pointer">
                     Get Started
                     <i data-lucide="arrow-right"></i>
                 </x-ui.button>
             </a>
-            <a href="{{ route("components") }}">
+            <a href='{{ route("components") }}'>
                 <x-ui.button variant="outline" class="w-full cursor-pointer">View Components</x-ui.button>
             </a>
         </div>
-
         {{-- Credit --}}
         <div class="mt-8">
             <x-ui.small class="text-muted-foreground">
@@ -76,14 +76,13 @@
                 <x-ui.a href="https://ui.shadcn.com/" target="_blank" class="text-xs text-inherit">Shadcn</x-ui.a>
             </x-ui.small>
         </div>
-
         {{-- Previews --}}
         <div
             class="mt-18 w-full"
-            @if (! empty($theme))
-                x-data="{ theme: @js($theme) }"
+            @if(! empty($theme))
+            x-data="{ theme: @js($theme) }"
             @else
-                x-data="{ theme: 'neutral' }"
+            x-data="{ theme: 'neutral' }"
             @endif
         >
             <x-ui.tabs defaultValue="{{ $_GET['tab'] ?? 'dashboard' }}" class="w-full">
@@ -93,38 +92,47 @@
                         <x-ui.a
                             href="{{ route('home') }}"
                             x-bind:href="() => {
-                                const url = new URL($el.getAttribute('href'));
-                                url.searchParams.set('theme',theme);
-                                return url.toString();
-                            }"
+                                    const url = new URL($el.getAttribute('href'));
+                                    url.searchParams.set('theme', theme);
+                                    return url.toString();
+                                }"
                             class="text-muted-foreground no-underline"
                         >
                             Examples
                         </x-ui.a>
+
                         <x-ui.tabs.container variant="simple" class="gap-2 *:cursor-pointer *:text-base">
                             <x-ui.tabs.trigger value="dashboard">Dashboard</x-ui.tabs.trigger>
+
                             <x-ui.tabs.trigger value="authentication">Authentication</x-ui.tabs.trigger>
                         </x-ui.tabs.container>
                     </div>
+
                     <div class="ms-auto flex shrink-0 items-center gap-2">
                         <x-ui.select defaultValue="{{ $theme }}" size="sm" id="theme" @change="theme = $el.value">
                             <x-ui.select.option-group label="Themes">
                                 <x-ui.select.option value="blue">Blue</x-ui.select.option>
+
                                 <x-ui.select.option value="green">Green</x-ui.select.option>
+
                                 <x-ui.select.option value="neutral">Neutral</x-ui.select.option>
+
                                 <x-ui.select.option value="yellow">Yellow</x-ui.select.option>
                             </x-ui.select.option-group>
                         </x-ui.select>
-                        <x-ui.button size="icon-sm" variant="outline"><i data-lucide="copy"></i></x-ui.button>
+
+                        <x-ui.button size="icon-sm" variant="outline">
+                            <i data-lucide="copy"></i>
+                        </x-ui.button>
                     </div>
                 </div>
-
                 {{-- tabs content --}}
-                <div :class="['theme-' + theme, $store.darkMode.on ? 'dark' : '' ]">
+                <div :class="['theme-' + theme, $store.darkMode.on ? 'dark' : '']">
                     <div class="overflow-hidden rounded-lg border">
                         <x-ui.tabs.content value="authentication">
                             @include("examples/blocks/authentication-page")
                         </x-ui.tabs.content>
+
                         <x-ui.tabs.content value="dashboard">
                             @include("examples/blocks/dashboard")
                         </x-ui.tabs.content>

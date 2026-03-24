@@ -20,11 +20,9 @@
     data-slot="item"
     data-variant="{{ $variant }}"
     data-size="{{ $size }}"
-    {{
-        $attributes->merge([
+    {{ $attributes->merge([
             'class' => cn($baseClasses, $variantClasses, $sizeClasses, $attributes->get('class')),
-        ])
-    }}
+        ]) }}
 >
     {{ $slot }}
 </div>

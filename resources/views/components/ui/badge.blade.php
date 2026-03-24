@@ -28,11 +28,9 @@
 @endphp
 
 <span
-    {{
-        $attributes->merge([
+    {{ $attributes->merge([
             'class' => cn($baseClasses, $variantClasses, $sizeClasses, $attributes->get('class')),
-        ])
-    }}
+        ]) }}
 >
     {{ $slot }}
 </span>

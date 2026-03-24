@@ -14,11 +14,9 @@
 <div
     data-slot="item-media"
     data-variant="{{ $variant }}"
-    {{
-        $attributes->merge([
+    {{ $attributes->merge([
             'class' => cn($baseClasses, $variantClasses, $attributes->get('class')),
-        ])
-    }}
+        ]) }}
 >
     {{ $slot }}
 </div>

@@ -16,16 +16,17 @@
     ];
 @endphp
 
-<x-slot name="componentMeta" :onThisPage="$onThisPage"></x-slot>
+<x-slot:componentMeta :onThisPage="$onThisPage"></x-slot>
 
 <div class="flex flex-col">
     {{-- Base --}}
     <x-ui.h1 class="text-4xl font-medium">Checkbox</x-ui.h1>
+
     <x-ui.p class="mt-4 max-w-[55ch] text-muted-foreground">
         A control that allows the user to toggle between checked and not checked.
     </x-ui.p>
-    <x-playground class="mt-12" path="examples/components/checkbox/hero.blade.php" />
 
+    <x-playground class="mt-12" path="examples/components/checkbox/hero.blade.php" />
     {{-- Installation --}}
     <x-ui.h6 class="mt-16 max-w-fit font-medium">
         <a href="#installation" class="hash-link">Installation</a>
@@ -39,7 +40,6 @@
         </div>
         <x-codelight language="shell">php artisan ui:add checkbox</x-codelight>
     </div>
-
     {{-- Usage --}}
     <x-ui.h6 class="mt-16 max-w-fit font-medium">
         <a href="#usage" class="hash-link">Usage</a>

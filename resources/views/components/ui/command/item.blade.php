@@ -8,11 +8,9 @@
 <div
     data-slot="command-item"
     data-command-value="{{ $value }}"
-    {{
-        $attributes->merge([
+    {{ $attributes->merge([
             'class' => cn($baseClasses, $attributes->get('class')),
-        ])
-    }}
+        ]) }}
 >
     {{ $slot }}
 </div>

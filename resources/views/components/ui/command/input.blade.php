@@ -7,13 +7,12 @@
         <x-ui.input-group.input
             data-slot="command-input"
             x-model="query"
-            {{
-    $attributes->merge([
+            {{ $attributes->merge([
         'class' => cn($baseClasses, $attributes->get('class')),
-    ])
-}}
+    ]) }}
             placeholder="Search documentation..."
         />
+
         <x-ui.input-group.addon>
             <i data-lucide="search" data-icon="inline-start" class="shrink-0"></i>
         </x-ui.input-group.addon>

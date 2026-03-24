@@ -2,9 +2,7 @@
     <div class="section-wrapper mx-auto flex w-full items-center gap-6">
         <div class="flex items-center gap-2">
             <label for="mobile-sidebar-toggle" class="lg:hidden">
-                <div class="grid size-9 place-content-center">
-                    <i data-lucide="menu" class="size-4"></i>
-                </div>
+                <div class="grid size-9 place-content-center"><i data-lucide="menu" class="size-4"></i></div>
             </label>
             {{-- Logo --}}
             <a href="{{ route('home') }}">
@@ -23,10 +21,9 @@
                 </x-ui.button>
             </a>
         </div>
-
         {{-- Nav items --}}
         <ul class="hidden gap-6 text-[0.93rem] lg:flex">
-            @foreach ($sidebarItems['Menus'] as $menu)
+            @foreach($sidebarItems['Menus'] as $menu)
                 <li>
                     <x-ui.a href="{{ $menu['url'] }}" class="no-underline">
                         {{ $menu['name'] }}
@@ -34,6 +31,7 @@
                 </li>
             @endforeach
         </ul>
+
         <div class="ml-auto flex items-center">
             <x-ui.button
                 variant="outline"
@@ -48,20 +46,23 @@
                     K
                 </x-ui.kbd>
             </x-ui.button>
+
             <x-ui.command.dialog triggerId="trigger-search-docs" class="gap-0 sm:max-w-140">
                 <x-ui.command class="rounded-none bg-transparent">
                     <x-ui.command.input />
+
                     <x-ui.command.empty>No records found</x-ui.command.empty>
+
                     <x-ui.command.list>
-                        @foreach ($searchStaticContent as $content)
+                        @foreach($searchStaticContent as $content)
                             <x-ui.command.group title="{{ $content['title'] }}">
-                                @foreach ($content['items'] as $item)
+                                @foreach($content['items'] as $item)
                                     <x-ui.command.item
                                         class="font-medium"
                                         value="{{ $item['url'] }}"
                                         x-bind:data-disabled="{{ blank($item['available_from']) ? 'true' :'false' }}"
                                     >
-                                        @if (filled($content['icon']))
+                                        @if(filled($content['icon']))
                                             <i data-lucide="{{ $content['icon'] }}" data-icon="inline-start"></i>
                                         @endif
 
@@ -81,6 +82,7 @@
                     </div>
                 </div>
             </x-ui.command.dialog>
+
             <x-ui.separator orientation="vertical" class="mx-4 mr-2 hidden h-4 lg:block" />
             <a href="{{ REPO_URL }}" target="_blank">
                 <x-ui.button variant="ghost" size="icon" class="cursor-pointer">
@@ -98,10 +100,13 @@
                 </x-ui.button>
             </a>
             <x-ui.separator orientation="vertical" class="mx-2 h-4" />
+
             <x-ui.button id="appearanceToggle" size="icon" variant="ghost" @click="$store.darkMode.toggle()">
                 <i data-lucide="contrast"></i>
             </x-ui.button>
+
             <x-ui.separator orientation="vertical" class="mx-4 ml-2 h-4" />
+
             <x-ui.button>Get Started</x-ui.button>
         </div>
     </div>
@@ -112,16 +117,15 @@
 <aside
     class="hide-scrollbar fixed top-16 left-0 z-50 hidden h-[calc(100svh-4rem)] w-full flex-col gap-10 overflow-auto bg-background py-12 lg:hidden!"
 >
-    @foreach ($sidebarItems as $section => $items)
+    @foreach($sidebarItems as $section => $items)
         @php
             $allowSidebarFeatures = ! in_array($section, ['Menus']);
         @endphp
-
         <div class="flex flex-col gap-2">
             <small class="pl-4 text-muted-foreground md:pl-12">{{ $section }}</small>
             <ul class="flex flex-col">
-                @foreach ($items as $menu)
-                    @if ($menu['available_from'])
+                @foreach($items as $menu)
+                    @if($menu['available_from'])
                         <a href="{{ $menu['url'] }}">
                             <li
                                 class="menu-item flex h-10 items-center gap-2 pl-4 text-base font-normal data-[active='true']:font-medium md:pl-12 lg:h-8 lg:text-[0.825rem]"
