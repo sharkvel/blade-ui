@@ -9,7 +9,7 @@
             x-model="query"
             {{ $attributes
             ->except('class')
-            ->merge(['class' => cn($baseClasses, $attributes->get('class'))]) }}
+            ->merge(['class' => cn($baseClasses, $attributes->get('class'))], escape: false) }}
             placeholder="Search documentation..."
         />
 

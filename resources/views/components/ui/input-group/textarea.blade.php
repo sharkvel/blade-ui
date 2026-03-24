@@ -13,5 +13,5 @@
     ->except('class')
     ->merge([
         'class' => cn($baseClasses, $attributes->get('class')),
-    ]) }}
+    ], escape: false) }}
 >{{ $slot }}</x-ui.textarea>

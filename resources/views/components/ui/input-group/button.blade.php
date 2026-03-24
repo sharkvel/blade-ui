@@ -22,5 +22,5 @@
         'class' => cn($baseClasses, $sizeClasses, $attributes->get('class')),
         'type' => $type,
         'variant' => $variant,
-    ]) }}
+    ], escape: false) }}
 >{{ $slot }}</x-ui.button>

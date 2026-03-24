@@ -14,5 +14,5 @@
     ->merge([
         'class' => cn($baseClasses, $attributes->get('class')),
         'for' => $for,
-    ]) }}
+    ], escape: false) }}
 >{{ $slot }}</x-ui.label>

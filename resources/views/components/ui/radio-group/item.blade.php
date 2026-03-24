@@ -12,5 +12,5 @@
     ->merge([
         'checked' => $defaultValue === $value,
         'value' => $value,
-    ]) }}
+    ], escape: false) }}
 />

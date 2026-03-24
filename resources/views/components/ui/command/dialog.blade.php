@@ -16,7 +16,7 @@
     <x-ui.dialog.trigger id="{{ $triggerId }}" shortcut="ctrl.k" enableEsc class="hidden!" tabindex="-1"></x-ui.dialog.trigger>
 
     <x-ui.dialog.content
-        @class([cn($baseClasses, $attributes->get(key: 'class'))])
+        class="{!! cn($baseClasses, $attributes->get(key: 'class')) !!}"
         :variant="$variant"
         :showCloseButton="$showCloseButton"
     >{{ $slot }}</x-ui.dialog.content>

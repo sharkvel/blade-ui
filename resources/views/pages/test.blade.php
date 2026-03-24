@@ -1,14 +1,3 @@
 <x-app-layout>
-    @php
-        $start = now();
-    @endphp
-    @for($i=0;$i<1000;$i++)
-        <x-ui.button>
-            Button {{ $i }}
-        </x-ui.button>
-    @endfor
-
-    @php
-        echo $start->diffInMilliseconds(now());
-    @endphp
+    <x-ui.field.label>dd</x-ui.field.label>
 </x-app-layout>
