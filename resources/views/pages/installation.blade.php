@@ -57,7 +57,7 @@
         official site for creation guidance for new Laravel project:
     </x-ui.p>
     <div class="mt-6 rounded-lg border p-1">
-        <x-codelight language="shell">laravel new example-app</x-codelight>
+        <x-codelight language="shell" code="laravel new example-app" />
     </div>
     {{-- Install Tailwind CSS --}}
     <x-ui.h6 class="mt-12 max-w-fit font-medium">
@@ -71,18 +71,11 @@
     </x-ui.p>
     <div class="mt-6 rounded-lg border p-1">
         <!-- prettier-ignore -->
-        <x-codelight language="shell">
-            npm install tailwindcss
-            @tailwindcss
-            /vite
-        </x-codelight>
+        <x-codelight language="shell" code="npm install tailwindcss @tailwindcss/vite" />
     </div>
     <x-ui.p>
         Add the
-        <x-ui.code>
-            @tailwindcss
-            /vite
-        </x-ui.code>
+        <x-ui.code code="@tailwindcss/vite" />
         plugin to your
         <x-ui.code>vite.config.js</x-ui.code>
         vite configuration file.
@@ -100,10 +93,7 @@
         file that imports Tailwind CSS.
     </x-ui.p>
     <div class="mt-6 rounded-lg border p-1">
-        <x-codelight language="css">
-            @import
-            "tailwindcss";
-        </x-codelight>
+        <x-codelight language="css" code='@import "tailwindcss";' />
     </div>
     {{-- Install Alpine JS --}}
     <x-ui.h6 class="mt-12 max-w-fit font-medium">
@@ -170,4 +160,5 @@
     <div class="mt-6 rounded-lg border p-1">
         <x-codelight path="examples/components/button/installed.blade.php" />
     </div>
+</x-ui.p>
 </x-document-layout>

@@ -1,9 +1,16 @@
+@props([
+'language' => 'blade',
+'path' => null,
+'title' => null,
+'code' => null
+])
+
 @php
     $baseClasses = 'relative grid rounded-md border border-input bg-neutral-900 dark:bg-input/30';
 @endphp
 
 <div
-    {{ $attributes->merge(['class' => cn($baseClasses, $attributes->get('class'))]) }}
+    {{ $attributes->except('class')->merge(['class' => cn($baseClasses, $attributes->get('class'))]) }}
     x-data="{
             isCopied: false,
             async copy(text) {
@@ -46,13 +53,7 @@
                 class="[.torchlight]:block bg-transparent! [.torchlight]:py-4 text-sm [.torchlight]:min-w-max [&.torchlight_.line]:px-4 [&.torchlight_.line-number]:mr-4 [&_.line-highlight]:bg-neutral-800/80!"
                 data-torchlight-cache-key="{{ $cacheKey }}"
                 language="{{ $language }}"
-            >
-                @if($content)
-                    {!! $content !!}
-                @else
-                    {{ $slot }}
-                @endif
-            </x-torchlight-code>
+            >@if($content){!! $content !!}@else{{ $slot }}@endif</x-torchlight-code>
         @endif
     </pre>
     <!-- prettier-ignore-end -->
