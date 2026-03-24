@@ -47,7 +47,7 @@ class CachingTorchlight extends RenderTorchlight
 
             $path = "{$cacheDir}/{$key}.html";
 
-            if (!File::exists($path)) {
+            if (! File::exists($path)) {
                 File::put($path, $block);
             }
         }
