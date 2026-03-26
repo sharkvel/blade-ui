@@ -2,8 +2,9 @@
 
 namespace App\Http\Middleware;
 
+use Override;
+use Illuminate\Support\Facades\File;
 use Closure;
-use File;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Torchlight\Middleware\RenderTorchlight;
@@ -15,6 +16,7 @@ class CachingTorchlight extends RenderTorchlight
      *
      * @param  Closure(Request): (Response)  $next
      */
+    #[Override]
     public function handle(Request $request, Closure $next): Response
     {
         $response = parent::handle($request, $next);

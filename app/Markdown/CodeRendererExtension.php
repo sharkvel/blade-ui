@@ -2,15 +2,18 @@
 
 namespace App\Markdown;
 
+use League\CommonMark\Environment\EnvironmentBuilderInterface;
+use League\CommonMark\Node\Node;
+use League\CommonMark\Renderer\ChildNodeRendererInterface;
 use League\CommonMark\Extension\ExtensionInterface;
 use League\CommonMark\Renderer\NodeRendererInterface;
 
 class CodeRendererExtension implements ExtensionInterface, NodeRendererInterface
 {
-    public function register(\League\CommonMark\Environment\EnvironmentBuilderInterface $environment): void {}
+    public function register(EnvironmentBuilderInterface $environment): void {}
 
     public function render(
-        \League\CommonMark\Node\Node $node,
-        \League\CommonMark\Renderer\ChildNodeRendererInterface $childRenderer,
+        Node $node,
+        ChildNodeRendererInterface $childRenderer,
     ) {}
 }

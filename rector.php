@@ -9,27 +9,23 @@ use RectorLaravel\Set\LaravelSetList;
 
 return RectorConfig::configure()
     ->withPaths([
-        __DIR__.'/app',
-        __DIR__.'/bootstrap',
-        __DIR__.'/config',
-        __DIR__.'/public',
-        __DIR__.'/resources',
-        __DIR__.'/routes',
-        __DIR__.'/tests',
+        __DIR__ . '/app',
+        __DIR__ . '/bootstrap',
+        __DIR__ . '/config',
+        __DIR__ . '/public',
+        __DIR__ . '/resources',
+        __DIR__ . '/routes',
+        __DIR__ . '/tests',
     ])
-    ->withSkip([__DIR__.'/bootstrap/cache'])
+    ->withSkip([__DIR__ . '/bootstrap/cache'])
     // uncomment to reach your current PHP version
     ->withPhpSets()
-    ->withPreparedSets(
-        privatization: true,
-        instanceOf: true,
-        earlyReturn: true,
-        carbon: true,
-    )
+    ->withPreparedSets(privatization: true, instanceOf: true, earlyReturn: true, carbon: true)
     ->withTypeCoverageLevel(1)
     ->withDeadCodeLevel(1)
     ->withCodeQualityLevel(1)
     ->withCodingStyleLevel(1)
+    ->withImportNames(removeUnusedImports: true)
     ->withRules([AssertStatusToAssertMethodRector::class])
     ->withConfiguredRule(EloquentOrderByToLatestOrOldestRector::class, [
         'allowed_patterns' => ['deleted_at'],

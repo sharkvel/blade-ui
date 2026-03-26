@@ -2,17 +2,19 @@
 
 namespace App\Providers;
 
+use Override;
+use Illuminate\Support\Facades\Date;
+use Illuminate\Support\Facades\View;
 use App\Services\Constants;
 use Carbon\CarbonImmutable;
-use Date;
 use Illuminate\Support\ServiceProvider;
-use View;
 
 class AppServiceProvider extends ServiceProvider
 {
     /**
      * Register any application services.
      */
+    #[Override]
     public function register(): void
     {
         //
