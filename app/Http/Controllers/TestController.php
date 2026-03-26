@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Markdown\CodeRendererExtension;
 use Illuminate\Http\Request;
 
 class TestController extends Controller
@@ -11,6 +12,10 @@ class TestController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return view('pages.test');
+        CodeRendererExtension::$allowBladeForNextDocument = true;
+
+        return view('pages.test', [
+            'view' => 'contents.test',
+        ]);
     }
 }

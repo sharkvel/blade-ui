@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Markdown\CodeRendererExtension;
 use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
 use League\CommonMark\Extension\Table\TableExtension;
 use Torchlight\Commonmark\V2\TorchlightExtension;
@@ -50,7 +51,9 @@ return [
     'extensions' => [
         CommonMarkCoreExtension::class,
         TableExtension::class,
+
         TorchlightExtension::class,
+        CodeRendererExtension::class,
     ],
 
     /*
