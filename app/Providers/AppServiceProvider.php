@@ -2,12 +2,12 @@
 
 namespace App\Providers;
 
-use Override;
-use Illuminate\Support\Facades\Date;
-use Illuminate\Support\Facades\View;
 use App\Services\Constants;
 use Carbon\CarbonImmutable;
+use Illuminate\Support\Facades\Date;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
+use Override;
 
 class AppServiceProvider extends ServiceProvider
 {

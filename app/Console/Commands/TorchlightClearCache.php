@@ -2,10 +2,10 @@
 
 namespace App\Console\Commands;
 
-use Illuminate\Support\Facades\File;
 use Illuminate\Console\Attributes\Description;
 use Illuminate\Console\Attributes\Signature;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\File;
 
 #[Signature('torchlight:clear-cache')]
 #[Description('Clear torchlight cache')]

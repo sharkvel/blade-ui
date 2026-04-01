@@ -2,10 +2,10 @@
 
 namespace App\Http\Middleware;
 
-use Override;
-use Illuminate\Support\Facades\File;
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Override;
 use Symfony\Component\HttpFoundation\Response;
 use Torchlight\Middleware\RenderTorchlight;
 
