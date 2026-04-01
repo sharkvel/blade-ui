@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use File;
+use Illuminate\Support\Facades\File;
 use Illuminate\Console\Attributes\Description;
 use Illuminate\Console\Attributes\Signature;
 use Illuminate\Console\Command;
