@@ -103,7 +103,7 @@
     }
 
     i[data-lucide] {
-        @apply size-4 border;
+        @apply size-4;
     }
 
     ::view-transition-new(root) {
