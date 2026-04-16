@@ -102,12 +102,12 @@
             </a>
         </div>
         {{-- Credit --}}
-        <div class="mt-8">
+        {{-- <div class="mt-8">
             <x-ui.small class="text-muted-foreground">
                 Inspired by
                 <x-ui.a class="text-xs text-inherit" href="https://ui.shadcn.com/" target="_blank">Shadcn</x-ui.a>
             </x-ui.small>
-        </div>
+        </div> --}}
         {{-- Previews --}}
         <div
             class="mt-18 flex w-full flex-col gap-2"

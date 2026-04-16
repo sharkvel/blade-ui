@@ -1,6 +1,6 @@
 <x-document-layout :nextPage="['url' => route('components', 'button'), 'title' => 'Button']">
     @if(isset($name) && filled($name))
-        @include("contents.$name")
+        @include("contents.".$name)
     @else
         <x-ui.h1 class="text-4xl font-medium">Components</x-ui.h1>
 
