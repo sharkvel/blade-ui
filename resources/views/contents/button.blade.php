@@ -23,20 +23,19 @@
 
 <x-slot:componentMeta :onThisPage="$onThisPage"></x-slot>
 
-<div class="flex flex-col">
+<x-article>
     {{-- Base --}}
-    <x-ui.h1 class="text-4xl font-medium">Button</x-ui.h1>
+    <x-article.heading>Button</x-article.heading>
 
-    <x-ui.p class="mt-4 max-w-[55ch] text-muted-foreground">
-        Displays a button or a component that looks like a button
-    </x-ui.p>
-
-    <x-playground class="mt-12" path="examples/components/button/hero.blade.php" />
+    <x-article.subheading>Displays a button or a component that looks like a button</x-article.subheading>
+    <br />
+    <x-playground path="examples/components/button/hero.blade.php" />
+    <br />
     {{-- Installation --}}
-    <x-ui.h6 class="mt-16 max-w-fit font-medium">
+    <x-article.heading2>
         <a href="#installation" class="hash-link">Installation</a>
-    </x-ui.h6>
-    <div class="mt-6 rounded-lg border p-1 pt-0">
+    </x-article.heading2>
+    <div class="rounded-lg border p-1 pt-0">
         <div class="flex h-9 items-center px-4">
             <div class="flex items-center gap-2 text-muted-foreground">
                 <i data-lucide="terminal" class="size-4"></i>
@@ -45,27 +44,29 @@
         </div>
         <x-codelight language="shell">php artisan ui:add button</x-codelight>
     </div>
+    <br />
     {{-- Usage --}}
-    <x-ui.h6 class="mt-16 max-w-fit font-medium">
+    <x-article.heading2>
         <a href="#usage" class="hash-link">Usage</a>
-    </x-ui.h6>
-    <div class="mt-6 rounded-lg border p-1">
+    </x-article.heading2>
+    <div class="rounded-lg border p-1">
         <x-codelight path="examples/components/button/usage.blade.php" />
     </div>
+    <br />
     {{-- Reference --}}
-    <x-ui.h6 class="mt-16 max-w-fit font-medium">
+    <x-article.heading2>
         <a href="#reference" class="hash-link">Reference</a>
-    </x-ui.h6>
+    </x-article.heading2>
 
-    <x-ui.p class="mt-4 max-w-[60ch]">
+    <x-article.description>
         The
         <x-ui.code>x-ui.button</x-ui.code>
         component is a wrapper around the
         <x-ui.code>button</x-ui.code>
         element that adds a variety of styles and functionality.
-    </x-ui.p>
+    </x-article.description>
     {{-- Table --}}
-    <div class="mt-6 w-full rounded-lg border">
+    <div class="w-full rounded-lg border">
         <x-ui.table>
             <x-ui.table.header>
                 <x-ui.table.row>
@@ -98,4 +99,4 @@
             </x-ui.table.body>
         </x-ui.table>
     </div>
-</div>
+</x-article>

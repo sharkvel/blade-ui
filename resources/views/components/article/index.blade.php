@@ -1,0 +1,1 @@
+<article class="flex flex-col gap-y-4">{{ $slot }}</article>

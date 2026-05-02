@@ -2,4 +2,5 @@
 build
 coverage
 resources/views/components/ui
+resources/views/components/article
 resources/views/components/codelight.blade.php
